@@ -1,0 +1,6 @@
+D:\Applications\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Data.dll
+D:\Applications\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Data.pdb
+D:\Applications\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csprojAssemblyReference.cache
+D:\Applications\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csproj.CoreCompileInputs.cache
+D:\Applications\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.dll
+D:\Applications\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.pdb

@@ -1,0 +1,5 @@
+D:\Applications\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Services.dll
+D:\Applications\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Services.pdb
+D:\Applications\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.csproj.CoreCompileInputs.cache
+D:\Applications\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.dll
+D:\Applications\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.pdb
