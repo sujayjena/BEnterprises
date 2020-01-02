@@ -5,6 +5,7 @@ D:\Applications\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.dll
 D:\Applications\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.pdb
 D:\Project\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Services.dll
 D:\Project\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Services.pdb
+D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.csprojAssemblyReference.cache
 D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.csproj.CoreCompileInputs.cache
 D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.dll
 D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.pdb
