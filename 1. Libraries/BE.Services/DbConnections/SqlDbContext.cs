@@ -7,18 +7,19 @@
 //------------------------------------------------------------------------------
 
 using System;
+using BE.Core;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace BE.Services.SqlDbConnections
+namespace BE.Services.DbConnections
 {
     public partial class SqlDbContext : DbContext
     {
-        public SqlDbContext() : base(SqlSqlDbConnection.ConString)
+        public SqlDbContext() : base(SqlDbConnection.ConString)
         {
             Database.SetInitializer<SqlDbContext>(null);
             //SqlDbConnection.ConString
-            //name=BEnterprisesConnectionEntities
+            //name=OsConnectionEntities
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -27,5 +28,6 @@ namespace BE.Services.SqlDbConnections
             base.OnModelCreating(modelBuilder);
         }
 
+        public virtual DbSet<Menu_Categories> Menu_Categories{ get; set; }
     }
 }

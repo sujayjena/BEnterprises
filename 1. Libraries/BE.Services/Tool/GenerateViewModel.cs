@@ -1,4 +1,4 @@
-﻿using BE.Services.SqlDbConnections;
+﻿using BE.Services.DbConnections;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -23,7 +23,7 @@ namespace BE.Services.Tool
         #region Replace Sql To C# Data Type
 
         private static readonly string[] SqlServerTypes = { "bigint", "binary", "bit", "char", "date", "datetime", "datetime2", "datetimeoffset", "decimal", "filestream", "float", "geography", "geometry", "hierarchyid", "image", "int", "money", "nchar", "ntext", "numeric", "nvarchar", "real", "rowversion", "smalldatetime", "smallint", "smallmoney", "sql_variant", "text", "time", "timestamp", "tinyint", "uniqueidentifier", "varbinary", "varchar", "xml" };
-        private static readonly string[] CSharpTypes = { "long", "byte[]", "bool", "char", "DateTime", "DateTime", "DateTime", "DateTimeOffset", "decimal", "byte[]", "double", "MicrBEnterprisesoft.SqlServer.Types.SqlGeography", "MicrBEnterprisesoft.SqlServer.Types.SqlGeometry", "MicrBEnterprisesoft.SqlServer.Types.SqlHierarchyId", "byte[]", "int", "decimal", "string", "string", "decimal", "string", "Single", "byte[]", "DateTime", "short", "decimal", "object", "string", "TimeSpan", "byte[]", "byte", "Guid", "bite[]", "string", "string" };
+        private static readonly string[] CSharpTypes = { "long", "byte[]", "bool", "char", "DateTime", "DateTime", "DateTime", "DateTimeOffset", "decimal", "byte[]", "double", "Microsoft.SqlServer.Types.SqlGeography", "Microsoft.SqlServer.Types.SqlGeometry", "Microsoft.SqlServer.Types.SqlHierarchyId", "byte[]", "int", "decimal", "string", "string", "decimal", "string", "Single", "byte[]", "DateTime", "short", "decimal", "object", "string", "TimeSpan", "byte[]", "byte", "Guid", "bite[]", "string", "string" };
         public static string ConvertSqlServerFormatToCSharp(string typeName)
         {
             var index = Array.IndexOf(SqlServerTypes, typeName);
@@ -32,7 +32,7 @@ namespace BE.Services.Tool
                 ? CSharpTypes[index]
                 : "object";
         }
-        public static string ConvertCSharpFormatTBEnterprisesqlServer(string typeName)
+        public static string ConvertCSharpFormatToSqlServer(string typeName)
         {
             var index = Array.IndexOf(CSharpTypes, typeName);
 
@@ -58,33 +58,33 @@ namespace BE.Services.Tool
         {
             string sqlQuery = @"SELECT TABLE_NAME
                                 FROM INFORMATION_SCHEMA.TABLES
-                                WHERE (TABLE_SCHEMA = 'Paylite4.5Standard_Dev' OR TABLE_SCHEMA = 'dbo')
-                                --AND TABLE_NAME='CTGEMP0'
+                                WHERE (TABLE_SCHEMA = 'dbo')
+                                AND TABLE_NAME <> 'sysdiagrams'
                                 ORDER BY TABLE_NAME";
 
             dtAllTables = new DataTable();
 
-            using (SqlConnection connection = new SqlSqlDbConnection()._sqlConn)
+            using (SqlConnection connection = new SqlDbConnection()._sqlConn)
             {
                 connection.Open();
                 _dataSet = new DataSet();
                 try
                 {
                     _sqlCommand = new SqlCommand { CommandText = sqlQuery };
-                    _sqlDataAdapter = new SqlDataAdapter(Convert.TBEnterprisestring(sqlQuery), connection);
+                    _sqlDataAdapter = new SqlDataAdapter(Convert.ToString(sqlQuery), connection);
                     _sqlDataAdapter.Fill(dtAllTables);
 
                 }
                 catch (Exception)
                 {
-                    _sqlCommand.DispBEnterprisese();
+                    _sqlCommand.Dispose();
                 }
                 finally
                 {
-                    connection.ClBEnterprisese();
-                    _sqlCommand.DispBEnterprisese();
+                    connection.Close();
+                    _sqlCommand.Dispose();
                     if (_sqlDataAdapter != null)
-                        _sqlDataAdapter.DispBEnterprisese();
+                        _sqlDataAdapter.Dispose();
                 }
                 return dtAllTables;
             }
@@ -94,31 +94,31 @@ namespace BE.Services.Tool
         {
             string sqlQuery = @"SELECT COLUMN_NAME,DATA_TYPE,CASE WHEN IS_NULLABLE = 'YES' THEN 1 ELSE 0 END AS IS_NULLABLE
                                 FROM INFORMATION_SCHEMA.COLUMNS
-                                WHERE TABLE_NAME = '" + TableName + "' ORDER BY ORDINAL_PBEnterprisesITION";
+                                WHERE TABLE_NAME = '" + TableName + "' ORDER BY ORDINAL_POSITION";
 
             dtAllColumns = new DataTable();
-            using (SqlConnection connection = new SqlSqlDbConnection()._sqlConn)
+            using (SqlConnection connection = new SqlDbConnection()._sqlConn)
             {
                 connection.Open();
                 _dataSet = new DataSet();
                 try
                 {
                     _sqlCommand = new SqlCommand { CommandText = sqlQuery };
-                    _sqlDataAdapter = new SqlDataAdapter(Convert.TBEnterprisestring(sqlQuery), connection);
+                    _sqlDataAdapter = new SqlDataAdapter(Convert.ToString(sqlQuery), connection);
                     DataSet ds = new DataSet();
                     _sqlDataAdapter.Fill(ds, TableName);
                     dtAllColumns = ds.Tables[0];
                 }
                 catch (Exception)
                 {
-                    _sqlCommand.DispBEnterprisese();
+                    _sqlCommand.Dispose();
                 }
                 finally
                 {
-                    connection.ClBEnterprisese();
-                    _sqlCommand.DispBEnterprisese();
+                    connection.Close();
+                    _sqlCommand.Dispose();
                     if (_sqlDataAdapter != null)
-                        _sqlDataAdapter.DispBEnterprisese();
+                        _sqlDataAdapter.Dispose();
                 }
                 return dtAllColumns;
             }
@@ -157,7 +157,7 @@ namespace BE.Services.Tool
                 string root = AppDomain.CurrentDomain.BaseDirectory;
                 string[] sArray = root.Split('\\');
 
-                string sSolutionFolderName = "BE\\1. Libraries\\BE.Core\\";
+                string sSolutionFolderName = "BEnterprises\\1. Libraries\\BE.Core\\";
 
                 StringBuilder sbPath = new StringBuilder();
                 foreach (var item in sArray)
@@ -203,7 +203,7 @@ namespace BE.Services.Tool
 
                 foreach (DataRow item in dtAllTables.Rows)
                 {
-                    string path = @"" + sPath + "\\" + Convert.TBEnterprisestring(item["TABLE_NAME"]) + ".cs";
+                    string path = @"" + sPath + "\\" + Convert.ToString(item["TABLE_NAME"]) + ".cs";
                     if (File.Exists(path))
                     {
                         continue;
@@ -238,10 +238,10 @@ namespace BE.Services.Tool
                         //sw.WriteLine(@"using System.Web;");
                         sw.WriteLine(@"");
 
-                        sw.WriteLine(@"namespace " + Convert.TBEnterprisestring("BE.Core"));
+                        sw.WriteLine(@"namespace " + Convert.ToString("BE.Core"));
                         sw.WriteLine(@"{");
 
-                        string sPartialClassMetaDataType = Convert.TBEnterprisestring(item["TABLE_NAME"]) + "_MetaData";
+                        string sPartialClassMetaDataType = Convert.ToString(item["TABLE_NAME"]) + "_MetaData";
                         //[MetadataType(typeof(urlmetadata))]
                         //public partial class TBurl
                         //{
@@ -250,7 +250,7 @@ namespace BE.Services.Tool
                         string getSet = "{ get; set; }";
 
                         sw.WriteLine(@"    " + "[MetadataType(typeof(" + sPartialClassMetaDataType + "))]");
-                        sw.WriteLine(@"    " + "public partial class " + Convert.TBEnterprisestring(item["TABLE_NAME"]));
+                        sw.WriteLine(@"    " + "public partial class " + Convert.ToString(item["TABLE_NAME"]));
                         sw.WriteLine(@"    " + "{");
 
                         //sw.WriteLine(@"        " + "public string sErrorMessage" + " " + getSet);
@@ -262,13 +262,13 @@ namespace BE.Services.Tool
                         sw.WriteLine(@"    " + "public class " + sPartialClassMetaDataType);
                         sw.WriteLine(@"    " + "{");
 
-                        GetAllColumns(Convert.TBEnterprisestring(item["TABLE_NAME"]));
+                        GetAllColumns(Convert.ToString(item["TABLE_NAME"]));
                         foreach (DataRow row in dtAllColumns.Rows)
                         {
                             string propertyTypes = string.Empty;
 
-                            string columnName = row["COLUMN_NAME"].TBEnterprisestring();
-                            string dataType = row["DATA_TYPE"].TBEnterprisestring();
+                            string columnName = row["COLUMN_NAME"].ToString();
+                            string dataType = row["DATA_TYPE"].ToString();
                             bool isNullable = Convert.ToBoolean(row["IS_NULLABLE"]);
 
                             //if (columnName == "Photo")
@@ -278,7 +278,7 @@ namespace BE.Services.Tool
                             //    }
                             //}
 
-                            propertyTypes = ConvertSqlServerFormatToCSharp(dataType.TBEnterprisestring());
+                            propertyTypes = ConvertSqlServerFormatToCSharp(dataType.ToString());
                             if (isNullable && propertyTypes != "string")
                             {
                                 if (propertyTypes.Contains("[]"))
@@ -288,7 +288,7 @@ namespace BE.Services.Tool
                                     if (propertyTypes == "DateTime" || propertyTypes == "Date")
                                         propertyTypes = "Nullable<" + "System.DateTime" + ">";
                                     else
-                                        propertyTypes = "Nullable<" + ConvertSqlServerFormatToCSharp(dataType.TBEnterprisestring()) + ">";
+                                        propertyTypes = "Nullable<" + ConvertSqlServerFormatToCSharp(dataType.ToString()) + ">";
                                 }
                             }
                             else
@@ -296,7 +296,7 @@ namespace BE.Services.Tool
                                 if (propertyTypes == "DateTime" || propertyTypes == "Date")
                                     propertyTypes = "System.DateTime";
                                 else
-                                    propertyTypes = ConvertSqlServerFormatToCSharp(dataType.TBEnterprisestring());
+                                    propertyTypes = ConvertSqlServerFormatToCSharp(dataType.ToString());
                             }
 
                             //[DisplayName("Amount per square meter")]

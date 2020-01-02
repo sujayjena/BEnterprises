@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using BE.Services.SqlDbConnections;
+using BE.Services.DbConnections;
 
-namespace BE.Services.RepBEnterprisesitory
+namespace BE.Services.Repository
 {
-    public partial class GenericRepBEnterprisesitory<TEntity> : IGenericRepBEnterprisesitory<TEntity> where TEntity : class
+    public partial class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
         private SqlDbContext _context;
         private DbSet<TEntity> _dbSet;
 
-        public GenericRepBEnterprisesitory(SqlDbContext dbContext)
+        public GenericRepository(SqlDbContext dbContext)
         {
             this._context = dbContext;
             this._dbSet = _context.Set<TEntity>();

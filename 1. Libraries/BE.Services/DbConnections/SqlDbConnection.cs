@@ -2,15 +2,15 @@
 using System.Configuration;
 using System.Data.SqlClient;
 
-namespace BE.Services.SqlDbConnections
+namespace BE.Services.DbConnections
 {
-    public class SqlSqlDbConnection
+    public class SqlDbConnection
     {
         public SqlConnection _sqlConn;
-        private static SqlSqlDbConnection _ConsString = null;
+        private static SqlDbConnection _ConsString = null;
         private String _String = null;
 
-        public SqlSqlDbConnection()
+        public SqlDbConnection()
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = ConfigurationManager.AppSettings["DataSource"];
@@ -28,7 +28,7 @@ namespace BE.Services.SqlDbConnections
             {
                 if (_ConsString == null)
                 {
-                    _ConsString = new SqlSqlDbConnection { _String = SqlSqlDbConnection.Connect() };
+                    _ConsString = new SqlDbConnection { _String = SqlDbConnection.Connect() };
                     return _ConsString._String;
                 }
                 else
@@ -70,7 +70,7 @@ namespace BE.Services.SqlDbConnections
             //{
             //    //Provider = "System.Data.SqlClient",
             //    //Metadata = @"..\..\bin\Debug\EntityModelDemo.csdl|..\..\bin\Debug\EntityModelDemo.ssdl|..\..\bin\Debug\EntityModelDemo.msl;",
-            //    //ProviderConnectionString = sqlString.TBEnterprisestring()
+            //    //ProviderConnectionString = sqlString.ToString()
             //};
             //return entityString.ConnectionString;
         }

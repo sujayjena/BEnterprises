@@ -116,6 +116,8 @@ D:\Applications\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csproj.Core
 D:\Applications\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csproj.CopyComplete
 D:\Applications\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.dll
 D:\Applications\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.pdb
+D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Mvc.xml
+D:\Project\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csproj.CoreCompileInputs.cache
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Web.dll.config
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Web.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Web.pdb
@@ -169,6 +171,7 @@ D:\Project\BEnterprises\2. Presentation\BE.Web\bin\roslyn\vbc.rsp
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\roslyn\VBCSCompiler.exe
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\roslyn\VBCSCompiler.exe.config
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Antlr3.Runtime.dll
+D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Data.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\EntityFramework.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\EntityFramework.SqlServer.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.Identity.Core.dll
@@ -199,6 +202,9 @@ D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.Deploymen
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.Razor.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\WebGrease.dll
+D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Services.dll
+D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Core.dll
+D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Data.pdb
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\EntityFramework.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\EntityFramework.SqlServer.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.Identity.Core.xml
@@ -220,15 +226,15 @@ D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Diagnostics.Diagnostic
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Memory.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Helpers.xml
-D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Mvc.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Razor.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.Deployment.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.Razor.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Optimization.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Antlr3.Runtime.pdb
+D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Services.pdb
+D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Core.pdb
 D:\Project\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csprojAssemblyReference.cache
-D:\Project\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csproj.CoreCompileInputs.cache
 D:\Project\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csproj.CopyComplete
 D:\Project\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.pdb

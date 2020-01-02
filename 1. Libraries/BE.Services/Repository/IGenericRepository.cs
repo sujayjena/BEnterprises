@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace BE.Services.RepBEnterprisesitory
+namespace BE.Services.Repository
 {
-    public interface IGenericRepBEnterprisesitory<TEntity> where TEntity : class
+    public interface IGenericRepository<TEntity> where TEntity : class
     {
         /// <summary>
         /// Get all entities from db

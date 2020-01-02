@@ -1,4 +1,4 @@
-﻿using BE.Services.SqlDbConnections;
+﻿using BE.Services.DbConnections;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -58,13 +58,13 @@ namespace BE.Services.Tool
         {
             string sqlQuery = @"SELECT TABLE_NAME
                                 FROM INFORMATION_SCHEMA.TABLES
-                                WHERE (TABLE_SCHEMA = 'Paylite4.5Standard_Dev' OR TABLE_SCHEMA = 'dbo')
-                                --AND TABLE_NAME='CTGEMP0'
+                                WHERE (TABLE_SCHEMA = 'dbo')
+                                AND TABLE_NAME <> 'sysdiagrams'
                                 ORDER BY TABLE_NAME";
 
             dtAllTables = new DataTable();
 
-            using (SqlConnection connection = new SqlSqlDbConnection()._sqlConn)
+            using (SqlConnection connection = new SqlDbConnection()._sqlConn)
             {
                 connection.Open();
                 _dataSet = new DataSet();
@@ -97,7 +97,7 @@ namespace BE.Services.Tool
                                 WHERE TABLE_NAME = '" + TableName + "' ORDER BY ORDINAL_POSITION";
 
             dtAllColumns = new DataTable();
-            using (SqlConnection connection = new SqlSqlDbConnection()._sqlConn)
+            using (SqlConnection connection = new SqlDbConnection()._sqlConn)
             {
                 connection.Open();
                 _dataSet = new DataSet();
@@ -136,7 +136,7 @@ namespace BE.Services.Tool
                                 AND      OBJECT_NAME(IC.OBJECT_ID)='" + TableName + "'";
 
             DataTable dtAllPrimaryKey = new DataTable();
-            using (SqlConnection connection = new SqlSqlDbConnection()._sqlConn)
+            using (SqlConnection connection = new SqlDbConnection()._sqlConn)
             {
                 connection.Open();
                 _dataSet = new DataSet();
@@ -179,7 +179,7 @@ namespace BE.Services.Tool
 	                            WHERE ccu.table_name ='" + TableName + "' ORDER BY ccu.table_name";
 
             DataTable dtAllForeignKey = new DataTable();
-            using (SqlConnection connection = new SqlSqlDbConnection()._sqlConn)
+            using (SqlConnection connection = new SqlDbConnection()._sqlConn)
             {
                 connection.Open();
                 _dataSet = new DataSet();
@@ -222,7 +222,7 @@ namespace BE.Services.Tool
 	                            WHERE kcu.table_name ='" + TableName + "' ORDER BY ccu.table_name";
 
             DataTable dtAllForeignKey = new DataTable();
-            using (SqlConnection connection = new SqlSqlDbConnection()._sqlConn)
+            using (SqlConnection connection = new SqlDbConnection()._sqlConn)
             {
                 connection.Open();
                 _dataSet = new DataSet();
@@ -281,12 +281,12 @@ namespace BE.Services.Tool
                 string root = AppDomain.CurrentDomain.BaseDirectory;
                 string[] sArray = root.Split('\\');
 
-                string sSolutionFolderName = "BE\\1. Libraries\\BE.Core\\";
+                string sSolutionFolderName = "BEnterprises\\1. Libraries\\BE.Core\\";
 
                 StringBuilder sbPath = new StringBuilder();
                 foreach (var item in sArray)
                 {
-                    if (item.Contains("OS"))
+                    if (item.Contains("BEnterprises"))
                         break;
                     else
                         sbPath.Append(item + "\\");

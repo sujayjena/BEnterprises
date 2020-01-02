@@ -1,4 +1,4 @@
-﻿using BE.Services.SqlDbConnections;
+﻿using BE.Services.DbConnections;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -23,7 +23,7 @@ namespace BE.Services.Tool
         #region Replace Sql To C# Data Type
 
         private static readonly string[] SqlServerTypes = { "bigint", "binary", "bit", "char", "date", "datetime", "datetime2", "datetimeoffset", "decimal", "filestream", "float", "geography", "geometry", "hierarchyid", "image", "int", "money", "nchar", "ntext", "numeric", "nvarchar", "real", "rowversion", "smalldatetime", "smallint", "smallmoney", "sql_variant", "text", "time", "timestamp", "tinyint", "uniqueidentifier", "varbinary", "varchar", "xml" };
-        private static readonly string[] CSharpTypes = { "long", "byte[]", "bool", "char", "DateTime", "DateTime", "DateTime", "DateTimeOffset", "decimal", "byte[]", "double", "MicrBEnterprisesoft.SqlServer.Types.SqlGeography", "MicrBEnterprisesoft.SqlServer.Types.SqlGeometry", "MicrBEnterprisesoft.SqlServer.Types.SqlHierarchyId", "byte[]", "int", "decimal", "string", "string", "decimal", "string", "Single", "byte[]", "DateTime", "short", "decimal", "object", "string", "TimeSpan", "byte[]", "byte", "Guid", "bite[]", "string", "string" };
+        private static readonly string[] CSharpTypes = { "long", "byte[]", "bool", "char", "DateTime", "DateTime", "DateTime", "DateTimeOffset", "decimal", "byte[]", "double", "Microsoft.SqlServer.Types.SqlGeography", "Microsoft.SqlServer.Types.SqlGeometry", "Microsoft.SqlServer.Types.SqlHierarchyId", "byte[]", "int", "decimal", "string", "string", "decimal", "string", "Single", "byte[]", "DateTime", "short", "decimal", "object", "string", "TimeSpan", "byte[]", "byte", "Guid", "bite[]", "string", "string" };
         public static string ConvertSqlServerFormatToCSharp(string typeName)
         {
             var index = Array.IndexOf(SqlServerTypes, typeName);
@@ -32,7 +32,7 @@ namespace BE.Services.Tool
                 ? CSharpTypes[index]
                 : "object";
         }
-        public static string ConvertCSharpFormatTBEnterprisesqlServer(string typeName)
+        public static string ConvertCSharpFormatToSqlServer(string typeName)
         {
             var index = Array.IndexOf(CSharpTypes, typeName);
 
@@ -58,33 +58,33 @@ namespace BE.Services.Tool
         {
             string sqlQuery = @"SELECT TABLE_NAME
                                 FROM INFORMATION_SCHEMA.TABLES
-                                WHERE (TABLE_SCHEMA = 'Paylite4.5Standard_Dev' OR TABLE_SCHEMA = 'dbo')
-                                --AND TABLE_NAME='CTGEMP0'
+                                WHERE (TABLE_SCHEMA = 'dbo')
+                                AND TABLE_NAME <> 'sysdiagrams'
                                 ORDER BY TABLE_NAME";
 
             dtAllTables = new DataTable();
 
-            using (SqlConnection connection = new SqlSqlDbConnection()._sqlConn)
+            using (SqlConnection connection = new SqlDbConnection()._sqlConn)
             {
                 connection.Open();
                 _dataSet = new DataSet();
                 try
                 {
                     _sqlCommand = new SqlCommand { CommandText = sqlQuery };
-                    _sqlDataAdapter = new SqlDataAdapter(Convert.TBEnterprisestring(sqlQuery), connection);
+                    _sqlDataAdapter = new SqlDataAdapter(Convert.ToString(sqlQuery), connection);
                     _sqlDataAdapter.Fill(dtAllTables);
 
                 }
                 catch (Exception)
                 {
-                    _sqlCommand.DispBEnterprisese();
+                    _sqlCommand.Dispose();
                 }
                 finally
                 {
-                    connection.ClBEnterprisese();
-                    _sqlCommand.DispBEnterprisese();
+                    connection.Close();
+                    _sqlCommand.Dispose();
                     if (_sqlDataAdapter != null)
-                        _sqlDataAdapter.DispBEnterprisese();
+                        _sqlDataAdapter.Dispose();
                 }
                 return dtAllTables;
             }
@@ -94,31 +94,31 @@ namespace BE.Services.Tool
         {
             string sqlQuery = @"SELECT COLUMN_NAME,DATA_TYPE,CASE WHEN IS_NULLABLE = 'YES' THEN 1 ELSE 0 END AS IS_NULLABLE
                                 FROM INFORMATION_SCHEMA.COLUMNS
-                                WHERE TABLE_NAME = '" + TableName + "' ORDER BY ORDINAL_PBEnterprisesITION";
+                                WHERE TABLE_NAME = '" + TableName + "' ORDER BY ORDINAL_POSITION";
 
             dtAllColumns = new DataTable();
-            using (SqlConnection connection = new SqlSqlDbConnection()._sqlConn)
+            using (SqlConnection connection = new SqlDbConnection()._sqlConn)
             {
                 connection.Open();
                 _dataSet = new DataSet();
                 try
                 {
                     _sqlCommand = new SqlCommand { CommandText = sqlQuery };
-                    _sqlDataAdapter = new SqlDataAdapter(Convert.TBEnterprisestring(sqlQuery), connection);
+                    _sqlDataAdapter = new SqlDataAdapter(Convert.ToString(sqlQuery), connection);
                     DataSet ds = new DataSet();
                     _sqlDataAdapter.Fill(ds, TableName);
                     dtAllColumns = ds.Tables[0];
                 }
                 catch (Exception)
                 {
-                    _sqlCommand.DispBEnterprisese();
+                    _sqlCommand.Dispose();
                 }
                 finally
                 {
-                    connection.ClBEnterprisese();
-                    _sqlCommand.DispBEnterprisese();
+                    connection.Close();
+                    _sqlCommand.Dispose();
                     if (_sqlDataAdapter != null)
-                        _sqlDataAdapter.DispBEnterprisese();
+                        _sqlDataAdapter.Dispose();
                 }
                 return dtAllColumns;
             }
@@ -155,7 +155,7 @@ namespace BE.Services.Tool
                 string root = AppDomain.CurrentDomain.BaseDirectory;
                 string[] sArray = root.Split('\\');
 
-                string sSolutionFolderName = "BE\\1.Libraries\\BE.Services\\UnitOfWork\\";
+                string sSolutionFolderName = "BEnterprises\\1. Libraries\\BE.Services\\UnitOfWork\\";
 
                 StringBuilder sbPath = new StringBuilder();
                 foreach (var item in sArray)
@@ -219,19 +219,19 @@ namespace BE.Services.Tool
                     //sw.WriteLine(@"using System.ComponentModel;");
                     //sw.WriteLine(@"using System.ComponentModel.DataAnnotations;");
                     //sw.WriteLine(@"using System.Linq;");
-                    sw.WriteLine(@"using BE.Services.RepBEnterprisesitory;");
-                    sw.WriteLine(@"using BE.Services.SqlDbConnections;");
+                    sw.WriteLine(@"using BE.Services.Repository;");
+                    sw.WriteLine(@"using BE.Services.DbConnections;");
                     sw.WriteLine(@"using BE.Core;");
                     sw.WriteLine(@"");
 
-                    sw.WriteLine(@"namespace " + Convert.TBEnterprisestring(sProjectName));
+                    sw.WriteLine(@"namespace " + Convert.ToString(sProjectName));
                     sw.WriteLine(@"{");
 
-                    sw.WriteLine(@"    " + "public partial class UnitOfWork : IUnitOfWork, System.IDispBEnterprisesable");
+                    sw.WriteLine(@"    " + "public partial class UnitOfWork : IUnitOfWork, System.IDisposable");
                     sw.WriteLine(@"    " + "{");
 
                     sw.WriteLine(@"        " + "private readonly SqlDbContext _context;");
-                    sw.WriteLine(@"        " + "private bool dispBEnterprisesed;");
+                    sw.WriteLine(@"        " + "private bool disposed;");
                     sw.WriteLine(@"");
 
                     // Constructure
@@ -240,10 +240,10 @@ namespace BE.Services.Tool
                     sw.WriteLine(@"            " + "this._context = new SqlDbContext();");
                     sw.WriteLine(@"        " + "}");
 
-                    // DispBEnterprisese
-                    sw.WriteLine(@"        " + "public void DispBEnterprisese()");
+                    // Dispose
+                    sw.WriteLine(@"        " + "public void Dispose()");
                     sw.WriteLine(@"        " + "{");
-                    sw.WriteLine(@"            " + "DispBEnterprisese(true);");
+                    sw.WriteLine(@"            " + "Dispose(true);");
                     sw.WriteLine(@"            " + "GC.SuppressFinalize(this);");
                     sw.WriteLine(@"        " + "}");
 
@@ -253,28 +253,28 @@ namespace BE.Services.Tool
                     sw.WriteLine(@"            " + "_context.SaveChanges();");
                     sw.WriteLine(@"        " + "}");
 
-                    // DispBEnterprisese
-                    sw.WriteLine(@"        " + "public virtual void DispBEnterprisese(bool dispBEnterprisesing)");
+                    // Dispose
+                    sw.WriteLine(@"        " + "public virtual void Dispose(bool disposing)");
                     sw.WriteLine(@"        " + "{");
-                    sw.WriteLine(@"            " + "if (!dispBEnterprisesed)");
+                    sw.WriteLine(@"            " + "if (!disposed)");
                     sw.WriteLine(@"            " + "{");
-                    sw.WriteLine(@"                " + "if (dispBEnterprisesing)");
+                    sw.WriteLine(@"                " + "if (disposing)");
                     sw.WriteLine(@"                " + "{");
-                    sw.WriteLine(@"                    " + "_context.DispBEnterprisese();");
+                    sw.WriteLine(@"                    " + "_context.Dispose();");
                     sw.WriteLine(@"                " + "}");
                     sw.WriteLine(@"            " + "}");
-                    sw.WriteLine(@"            " + "dispBEnterprisesed = true;");
+                    sw.WriteLine(@"            " + "disposed = true;");
                     sw.WriteLine(@"        " + "}");
                     sw.WriteLine(@"");
                     sw.WriteLine(@"");
 
 
                     // Models Inherit From IUnitOfWork
-                    //public IGenericRepBEnterprisesitory<Dto_Test> Dto_Test_RepBEnterprisesitory { get; set; }
-                    //public IGenericRepBEnterprisesitory<Dto_Test> _Dto_Test_RepBEnterprisesitory
+                    //public IGenericRepository<Dto_Test> Dto_Test_Repository { get; set; }
+                    //public IGenericRepository<Dto_Test> _Dto_Test_Repository
                     //{
-                    //    get { return Dto_Test_RepBEnterprisesitory ?? (Dto_Test_RepBEnterprisesitory = new GenericRepBEnterprisesitory<Dto_Test>(_context)); }
-                    //    set { Dto_Test_RepBEnterprisesitory = value; }
+                    //    get { return Dto_Test_Repository ?? (Dto_Test_Repository = new GenericRepository<Dto_Test>(_context)); }
+                    //    set { Dto_Test_Repository = value; }
                     //}
 
                     string propertyTypes = string.Empty;
@@ -282,16 +282,16 @@ namespace BE.Services.Tool
 
                     foreach (DataRow item in dtAllTables.Rows)
                     {
-                        string TablesName = item["TABLE_NAME"].TBEnterprisestring();
+                        string TablesName = item["TABLE_NAME"].ToString();
 
-                        sw.WriteLine(@"        " + "public IGenericRepBEnterprisesitory<" + TablesName + "> " + TablesName + "_RepBEnterprisesitory " + getSet);
+                        sw.WriteLine(@"        " + "public IGenericRepository<" + TablesName + "> " + TablesName + "_Repository " + getSet);
 
-                        sw.WriteLine(@"        " + "public IGenericRepBEnterprisesitory<" + TablesName + "> _" + TablesName + "_RepBEnterprisesitory");
+                        sw.WriteLine(@"        " + "public IGenericRepository<" + TablesName + "> _" + TablesName + "_Repository");
                         sw.WriteLine(@"        " + "{");
 
-                        sw.WriteLine(@"            " + "get { return " + TablesName + "_RepBEnterprisesitory ?? (" + TablesName + "_RepBEnterprisesitory" + "= new GenericRepBEnterprisesitory<" + TablesName + ">(_context)); }");
+                        sw.WriteLine(@"            " + "get { return " + TablesName + "_Repository ?? (" + TablesName + "_Repository" + "= new GenericRepository<" + TablesName + ">(_context)); }");
 
-                        sw.WriteLine(@"            " + "set { _" + TablesName + "_RepBEnterprisesitory" + " = value; }");
+                        sw.WriteLine(@"            " + "set { _" + TablesName + "_Repository" + " = value; }");
 
                         sw.WriteLine(@"        " + "}");
                     }

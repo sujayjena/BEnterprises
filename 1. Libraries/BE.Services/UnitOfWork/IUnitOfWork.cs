@@ -7,7 +7,8 @@
 //------------------------------------------------------------------------------
 
 using System;
-using BE.Services.RepBEnterprisesitory;
+using BE.Services.Repository;
+using BE.Core;
 
 namespace BE.Services.UnitOfWork
 {
@@ -15,5 +16,6 @@ namespace BE.Services.UnitOfWork
     {
         void Save();
 
+        IGenericRepository<Menu_Categories> Menu_Categories_Repository { get; set; }
     }
 }

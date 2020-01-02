@@ -7,41 +7,48 @@
 //------------------------------------------------------------------------------
 
 using System;
-using BE.Services.RepBEnterprisesitory;
-using BE.Services.SqlDbConnections;
+using BE.Services.Repository;
+using BE.Services.DbConnections;
+using BE.Core;
 
 namespace BE.Services.UnitOfWork
 {
-    public partial class UnitOfWork : IUnitOfWork, System.IDispBEnterprisesable
+    public partial class UnitOfWork : IUnitOfWork, System.IDisposable
     {
         private readonly SqlDbContext _context;
-        private bool dispBEnterprisesed;
+        private bool disposed;
 
         public UnitOfWork()
         {
             this._context = new SqlDbContext();
         }
-        public void DispBEnterprisese()
+        public void Dispose()
         {
-            DispBEnterprisese(true);
+            Dispose(true);
             GC.SuppressFinalize(this);
         }
         public void Save()
         {
             _context.SaveChanges();
         }
-        public virtual void DispBEnterprisese(bool dispBEnterprisesing)
+        public virtual void Dispose(bool disposing)
         {
-            if (!dispBEnterprisesed)
+            if (!disposed)
             {
-                if (dispBEnterprisesing)
+                if (disposing)
                 {
-                    _context.DispBEnterprisese();
+                    _context.Dispose();
                 }
             }
-            dispBEnterprisesed = true;
+            disposed = true;
         }
 
 
+        public IGenericRepository<Menu_Categories> Menu_Categories_Repository { get; set; }
+        public IGenericRepository<Menu_Categories> _Menu_Categories_Repository
+        {
+            get { return Menu_Categories_Repository ?? (Menu_Categories_Repository= new GenericRepository<Menu_Categories>(_context)); }
+            set { _Menu_Categories_Repository = value; }
+        }
     }
 }
