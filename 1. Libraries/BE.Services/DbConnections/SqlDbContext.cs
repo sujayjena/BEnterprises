@@ -28,6 +28,13 @@ namespace BE.Services.DbConnections
             base.OnModelCreating(modelBuilder);
         }
 
-        public virtual DbSet<Menu_Categories> Menu_Categories{ get; set; }
+        public virtual DbSet<M_Branch> M_Branch{ get; set; }
+        public virtual DbSet<M_Brand> M_Brand{ get; set; }
+        public virtual DbSet<M_Company> M_Company{ get; set; }
+        public virtual DbSet<M_Guage> M_Guage{ get; set; }
+        public virtual DbSet<M_Product> M_Product{ get; set; }
+        public virtual DbSet<M_ProductType> M_ProductType{ get; set; }
+        public virtual DbSet<M_Supplier> M_Supplier{ get; set; }
+        public virtual DbSet<M_UOM> M_UOM{ get; set; }
     }
 }

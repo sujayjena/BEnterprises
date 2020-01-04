@@ -4,7 +4,6 @@ D:\Applications\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csprojAssemb
 D:\Applications\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csproj.CoreCompileInputs.cache
 D:\Applications\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.dll
 D:\Applications\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.pdb
-D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csproj.CoreCompileInputs.cache
 D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Data.dll
 D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Data.pdb
 D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Services.dll
@@ -14,6 +13,7 @@ D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Services.pdb
 D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Core.pdb
 D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\EntityFramework.xml
 D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csprojAssemblyReference.cache
+D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csproj.CoreCompileInputs.cache
 D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csproj.CopyComplete
 D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.dll
 D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.pdb

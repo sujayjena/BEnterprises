@@ -44,11 +44,53 @@ namespace BE.Services.UnitOfWork
         }
 
 
-        public IGenericRepository<Menu_Categories> Menu_Categories_Repository { get; set; }
-        public IGenericRepository<Menu_Categories> _Menu_Categories_Repository
+        public IGenericRepository<M_Branch> M_Branch_Repository { get; set; }
+        public IGenericRepository<M_Branch> _M_Branch_Repository
         {
-            get { return Menu_Categories_Repository ?? (Menu_Categories_Repository= new GenericRepository<Menu_Categories>(_context)); }
-            set { _Menu_Categories_Repository = value; }
+            get { return M_Branch_Repository ?? (M_Branch_Repository= new GenericRepository<M_Branch>(_context)); }
+            set { _M_Branch_Repository = value; }
+        }
+        public IGenericRepository<M_Brand> M_Brand_Repository { get; set; }
+        public IGenericRepository<M_Brand> _M_Brand_Repository
+        {
+            get { return M_Brand_Repository ?? (M_Brand_Repository= new GenericRepository<M_Brand>(_context)); }
+            set { _M_Brand_Repository = value; }
+        }
+        public IGenericRepository<M_Company> M_Company_Repository { get; set; }
+        public IGenericRepository<M_Company> _M_Company_Repository
+        {
+            get { return M_Company_Repository ?? (M_Company_Repository= new GenericRepository<M_Company>(_context)); }
+            set { _M_Company_Repository = value; }
+        }
+        public IGenericRepository<M_Guage> M_Guage_Repository { get; set; }
+        public IGenericRepository<M_Guage> _M_Guage_Repository
+        {
+            get { return M_Guage_Repository ?? (M_Guage_Repository= new GenericRepository<M_Guage>(_context)); }
+            set { _M_Guage_Repository = value; }
+        }
+        public IGenericRepository<M_Product> M_Product_Repository { get; set; }
+        public IGenericRepository<M_Product> _M_Product_Repository
+        {
+            get { return M_Product_Repository ?? (M_Product_Repository= new GenericRepository<M_Product>(_context)); }
+            set { _M_Product_Repository = value; }
+        }
+        public IGenericRepository<M_ProductType> M_ProductType_Repository { get; set; }
+        public IGenericRepository<M_ProductType> _M_ProductType_Repository
+        {
+            get { return M_ProductType_Repository ?? (M_ProductType_Repository= new GenericRepository<M_ProductType>(_context)); }
+            set { _M_ProductType_Repository = value; }
+        }
+        public IGenericRepository<M_Supplier> M_Supplier_Repository { get; set; }
+        public IGenericRepository<M_Supplier> _M_Supplier_Repository
+        {
+            get { return M_Supplier_Repository ?? (M_Supplier_Repository= new GenericRepository<M_Supplier>(_context)); }
+            set { _M_Supplier_Repository = value; }
+        }
+        public IGenericRepository<M_UOM> M_UOM_Repository { get; set; }
+        public IGenericRepository<M_UOM> _M_UOM_Repository
+        {
+            get { return M_UOM_Repository ?? (M_UOM_Repository= new GenericRepository<M_UOM>(_context)); }
+            set { _M_UOM_Repository = value; }
         }
     }
 }

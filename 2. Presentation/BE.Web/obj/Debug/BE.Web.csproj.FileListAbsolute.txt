@@ -116,8 +116,6 @@ D:\Applications\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csproj.Core
 D:\Applications\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csproj.CopyComplete
 D:\Applications\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.dll
 D:\Applications\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.pdb
-D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Mvc.xml
-D:\Project\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csproj.CoreCompileInputs.cache
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Web.dll.config
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Web.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Web.pdb
@@ -226,6 +224,7 @@ D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Diagnostics.Diagnostic
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Memory.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Helpers.xml
+D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Mvc.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Razor.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.Deployment.xml
@@ -235,6 +234,7 @@ D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Antlr3.Runtime.pdb
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Services.pdb
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Core.pdb
 D:\Project\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csprojAssemblyReference.cache
+D:\Project\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csproj.CoreCompileInputs.cache
 D:\Project\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csproj.CopyComplete
 D:\Project\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.pdb

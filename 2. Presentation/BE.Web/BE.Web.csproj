@@ -720,12 +720,13 @@
     <Content Include="assets\font\weathericons-regular-webfont-2.html" />
     <Content Include="assets\font\weathericons-regular-webfont-3.html" />
     <Content Include="assets\font\weathericons-regular-webfont.html" />
+    <Content Include="assets\images\avatars\avatar-16.png" />
     <Content Include="assets\images\avatars\avatar-1.png" />
     <Content Include="assets\images\avatars\avatar-10.png" />
     <Content Include="assets\images\avatars\avatar-13.png" />
     <Content Include="assets\images\avatars\avatar-14.png" />
     <Content Include="assets\images\avatars\avatar-15.png" />
-    <Content Include="assets\images\avatars\avatar-16.png" />
+    <Content Include="assets\images\avatars\avatar-16_1.png" />
     <Content Include="assets\images\avatars\avatar-17.png" />
     <Content Include="assets\images\avatars\avatar-18.png" />
     <Content Include="assets\images\avatars\avatar-2.png" />
@@ -804,7 +805,7 @@
     <Content Include="assets\images\gallery\slider-7.jpg" />
     <Content Include="assets\images\gallery\slider-8.jpg" />
     <Content Include="assets\images\gallery\slider-9.jpg" />
-    <Content Include="assets\images\logo-icon.png" />
+    <Content Include="assets\images\logo-icon1.png" />
     <Content Include="assets\images\payment-icons\american-dark.png" />
     <Content Include="assets\images\payment-icons\mastro-dark.png" />
     <Content Include="assets\images\payment-icons\paypal-dark.png" />
@@ -820,6 +821,7 @@
     <Content Include="assets\images\products\property03.jpg" />
     <Content Include="assets\images\products\property04.jpg" />
     <Content Include="assets\images\products\property05.jpg" />
+    <Content Include="assets\images\logo-icon.png" />
     <Content Include="assets\images\textures\1.png" />
     <Content Include="assets\images\textures\2.png" />
     <Content Include="assets\images\textures\3.png" />
@@ -850,6 +852,7 @@
     <Content Include="assets\js\index.js" />
     <Content Include="assets\js\jquery.loading-indicator.html" />
     <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\loadingoverlay.min.js" />
     <Content Include="assets\js\popper.min.js" />
     <Content Include="assets\js\sidebar-menu.js" />
     <Content Include="assets\plugins\alerts-boxes\js\sweet-alert-script.js" />
@@ -995,6 +998,8 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />

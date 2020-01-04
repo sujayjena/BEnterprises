@@ -4,5 +4,281 @@
     Layout = "~/Views/Shared/_LayoutMaster.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Generate Model</h2>
+
+<div class="row pt-2 pb-2">
+    <div class="col-sm-9">
+        @*<h4 class="page-title">Blank Page</h4>*@
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javaScript:void();">Setting</a></li>
+            <li class="breadcrumb-item"><a href="javaScript:void();">Generate Model</a></li>
+        </ol>
+    </div>
+    <div class="col-sm-3">
+        <div class="btn-group float-sm-right">
+            <button type="button" class="btn btn-light waves-effect waves-light"><i class="fa fa-cog mr-1"></i> Setting</button>
+            <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split waves-effect waves-light" data-toggle="dropdown">
+                <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu">
+                <a href="javaScript:void();" class="dropdown-item">Action</a>
+                <a href="javaScript:void();" class="dropdown-item">Another action</a>
+                <a href="javaScript:void();" class="dropdown-item">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a href="javaScript:void();" class="dropdown-item">Separated link</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*@using (Ajax.BeginForm("AjaxExample", "Tool", new AjaxOptions { UpdateTargetId = "Productresult", HttpMethod = "POST", Confirm = "Are you Sure?" }))*@
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken();
+
+    <div class="row">
+        <div oncl class="col-12 col-lg-4 col-xl-4">
+            <div class="card gradient-warning rounded-0">
+                <div class="card-body p-1">
+                    <div class="media align-items-center bg-white p-4">
+                        <div class="media-body">
+                            <h5 class="mb-0 text-dark">9856</h5>
+                            <a href="javascript:;"> <p class="mb-0 text-dark" onclick="GenerateModel();">Generate Model</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 col-xl-4">
+            <div class="card gradient-danger rounded-0">
+                <div class="card-body p-1">
+                    <div class="media align-items-center bg-white p-4">
+                        <div class="media-body">
+                            <h5 class="mb-0 text-dark">54642</h5>
+                            <a href="javascript:;"> <p class="mb-0 text-dark" onclick="GenerateViewModel();">Generate View Model</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 col-xl-4">
+            <div class="card gradient-secondary rounded-0">
+                <div class="card-body p-1">
+                    <div class="media align-items-center bg-white p-4">
+                        <div class="media-body">
+                            <h5 class="mb-0 text-dark">3562</h5>
+                            <a href="javascript:;"> <p class="mb-0 text-dark" onclick="GenerateUnitOfWork();">Generate Unit Of Work</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-4 col-xl-4">
+            <div class="card gradient-danger rounded-0">
+                <div class="card-body p-1">
+                    <div class="media align-items-center bg-white p-4">
+                        <div class="media-body">
+                            <h5 class="mb-0 text-dark">75642</h5>
+                            <a href="javascript:;"> <p class="mb-0 text-dark" onclick="GenerateDbContext();">Generate Database Context</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div class="col-12 col-lg-4 col-xl-4">
+                <div class="card gradient-secondary rounded-0">
+                    <div class="card-body p-1">
+                        <div class="media align-items-center bg-white p-4">
+                            <div class="media-body">
+                                <h5 class="mb-0 text-dark">4562</h5>
+                                <p class="mb-0 text-dark">Generate Unit Of Work</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 col-xl-4">
+                <div class="card gradient-warning rounded-0">
+                    <div class="card-body p-1">
+                        <div class="media align-items-center bg-white p-4">
+                            <div class="media-body">
+                                <h5 class="mb-0 text-dark">9856</h5>
+                                <p class="mb-0 text-dark">Generate Model</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+    </div>
+}
+
+<script>
+    function GenerateModel() {
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("GenerateModel", "Tool")",
+            dataType: 'JSON',
+            cache: false,
+            async: true
+        }).done(function (response) {
+            if (response.Result) {
+                SucessMsgAllert(response.Message)
+            }
+            })
+            .fail(function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                if (msg != '') {
+                    ErrorMsgAllert(msg)
+                }
+                else {
+                    ErrorMsgAllert(response.Message)
+                }            })
+            .always(function () {
+               // alert("complete");
+            });
+    }
+
+    function GenerateViewModel() {
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("GenerateViewModel", "Tool")",
+            dataType: 'JSON',
+            cache: false,
+            async: true
+        }).done(function (response) {
+            if (response.Result) {
+                SucessMsgAllert(response.Message)
+            }
+            })
+            .fail(function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                if (msg != '') {
+                    ErrorMsgAllert(msg)
+                }
+                else {
+                    ErrorMsgAllert(response.Message)
+                }
+            })
+            .always(function () {
+               // alert("complete");
+            });
+    }
+
+    function GenerateUnitOfWork() {
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("GenerateUnitOfWork", "Tool")",
+            dataType: 'JSON',
+            cache: false,
+            async: true
+        }).done(function (response) {
+            if (response.Result) {
+                SucessMsgAllert(response.Message)
+            }
+            })
+            .fail(function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                if (msg != '') {
+                    ErrorMsgAllert(msg)
+                }
+                else {
+                    ErrorMsgAllert(response.Message)
+                }
+            })
+            .always(function () {
+               // alert("complete");
+            });
+    }
+
+    function GenerateDbContext() {
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("GenerateDbContext", "Tool")",
+            dataType: 'JSON',
+            cache: false,
+            async: true
+        }).done(function (response) {
+            if (response.Result) {
+                SucessMsgAllert(response.Message)
+            }
+            })
+            .fail(function (jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                if (msg != '') {
+                    ErrorMsgAllert(msg)
+                }
+                else {
+                    ErrorMsgAllert(response.Message)
+                }
+            })
+            .always(function () {
+               // alert("complete");
+            });
+    }
+</script>
+
+
 

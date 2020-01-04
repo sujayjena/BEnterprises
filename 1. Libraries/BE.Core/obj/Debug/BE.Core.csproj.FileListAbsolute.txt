@@ -8,3 +8,4 @@ D:\Project\BEnterprises\1. Libraries\BE.Core\bin\Debug\BE.Core.pdb
 D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.csproj.CoreCompileInputs.cache
 D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.dll
 D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.pdb
+D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.csprojAssemblyReference.cache
