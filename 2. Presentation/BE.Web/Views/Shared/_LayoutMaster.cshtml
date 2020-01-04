@@ -4,8 +4,6 @@
 
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>_LayoutMaster</title>
-
     <!--favicon-->
     @*@Styles.Render("~/assets/images/favicon.ico")*@
     <!-- Vector CSS -->
@@ -54,7 +52,7 @@
                     <ul class="user-setting-menu">
                         <li><a href="javaScript:void();"><i class="icon-user"></i>  My Profile</a></li>
                         <li><a href="javaScript:void();"><i class="icon-settings"></i> Setting</a></li>
-                        <li><a href="javaScript:void();"><i class="icon-power"></i> Logout</a></li>
+                        <li><a href="~/Login/Index"><i class="icon-power"></i> Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -248,7 +246,7 @@
                             <li class="dropdown-divider"></li>
                             <li class="dropdown-item"><i class="icon-settings mr-2"></i> Setting</li>
                             <li class="dropdown-divider"></li>
-                            <li class="dropdown-item"><i class="icon-power mr-2"></i> Logout</li>
+                            <li class="dropdown-item"> <i class="icon-power mr-2"></i> <a href="~/Login/Index">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -421,7 +419,7 @@
 
     </script>
     <!-- Index js -->
-    @*@Scripts.Render("~/assets/js/index.js")*@
+    @Scripts.Render("~/assets/js/index.js")
 
     @RenderSection("scripts", required: false)
 </body>

@@ -47,7 +47,7 @@ namespace BE.Web.Controllers
         {
             try
             {
-                _bl_Entity.GenerateModel();
+                _bl_Entity.GenerateUnitOfWork();
                 return Json(new { Result = true, Message = "Entity unit of work generated" }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
@@ -61,7 +61,7 @@ namespace BE.Web.Controllers
         {
             try
             {
-                _bl_Entity.GenerateModel();
+                _bl_Entity.GenerateDbContext();
                 return Json(new { Result = true, Message = "Entity db context generated" }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)

@@ -92,5 +92,11 @@ namespace BE.Services.UnitOfWork
             get { return M_UOM_Repository ?? (M_UOM_Repository= new GenericRepository<M_UOM>(_context)); }
             set { _M_UOM_Repository = value; }
         }
+        public IGenericRepository<M_User> M_User_Repository { get; set; }
+        public IGenericRepository<M_User> _M_User_Repository
+        {
+            get { return M_User_Repository ?? (M_User_Repository= new GenericRepository<M_User>(_context)); }
+            set { _M_User_Repository = value; }
+        }
     }
 }

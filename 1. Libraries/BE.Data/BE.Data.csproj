@@ -42,12 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\bl_Entity.cs" />
+    <Compile Include="Login\bl_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Menu\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BE.Core\BE.Core.csproj">
+      <Project>{6b14219c-7c2b-491a-898c-b8e2571dcae5}</Project>
+      <Name>BE.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BE.Services\BE.Services.csproj">
       <Project>{d4d25f1a-a923-4fa4-830d-b5e29e4a0da8}</Project>
       <Name>BE.Services</Name>

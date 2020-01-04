@@ -184,6 +184,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ToolController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1123,6 +1124,7 @@
     <Content Include="Views\Shared\_LayoutMaster.cshtml" />
     <Content Include="Views\Home\Form.cshtml" />
     <Content Include="Views\Tool\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1139,6 +1141,10 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\1. Libraries\BE.Core\BE.Core.csproj">
+      <Project>{6b14219c-7c2b-491a-898c-b8e2571dcae5}</Project>
+      <Name>BE.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\1. Libraries\BE.Data\BE.Data.csproj">
       <Project>{1e61bde2-a086-41f6-9c60-fdab8faae327}</Project>
       <Name>BE.Data</Name>
