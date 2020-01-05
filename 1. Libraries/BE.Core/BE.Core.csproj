@@ -49,6 +49,7 @@
     <Compile Include="Model\M_Guage.cs" />
     <Compile Include="Model\M_Product.cs" />
     <Compile Include="Model\M_ProductType.cs" />
+    <Compile Include="Model\M_Roles.cs" />
     <Compile Include="Model\M_Supplier.cs" />
     <Compile Include="Model\M_UOM.cs" />
     <Compile Include="Model\M_User.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="ViewModel\M_Guage.cs" />
     <Compile Include="ViewModel\M_Product.cs" />
     <Compile Include="ViewModel\M_ProductType.cs" />
+    <Compile Include="ViewModel\M_Roles.cs" />
     <Compile Include="ViewModel\M_Supplier.cs" />
     <Compile Include="ViewModel\M_UOM.cs" />
     <Compile Include="ViewModel\M_User.cs" />

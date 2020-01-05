@@ -14,11 +14,10 @@
     <WebStackScaffolding_ControllerDialogWidth>600.576</WebStackScaffolding_ControllerDialogWidth>
     <ProjectView>ProjectFiles</ProjectView>
     <WebStackScaffolding_ViewDialogWidth>600.576</WebStackScaffolding_ViewDialogWidth>
-    <WebStackScaffolding_LayoutPageFile>
-    </WebStackScaffolding_LayoutPageFile>
-    <WebStackScaffolding_IsLayoutPageSelected>False</WebStackScaffolding_IsLayoutPageSelected>
+    <WebStackScaffolding_LayoutPageFile>~/Views/Shared/_LayoutMaster.cshtml</WebStackScaffolding_LayoutPageFile>
+    <WebStackScaffolding_IsLayoutPageSelected>True</WebStackScaffolding_IsLayoutPageSelected>
     <WebStackScaffolding_IsPartialViewSelected>False</WebStackScaffolding_IsPartialViewSelected>
-    <WebStackScaffolding_IsReferencingScriptLibrariesSelected>True</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
+    <WebStackScaffolding_IsReferencingScriptLibrariesSelected>False</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
   </PropertyGroup>
   <ProjectExtensions>

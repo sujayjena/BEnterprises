@@ -9,6 +9,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BE.Core
 {
@@ -26,6 +27,7 @@ namespace BE.Core
         public string ModifyBy { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
 
+        [ForeignKey("CompanyId")]
         public virtual M_Company M_Company { get; set; }
     }
 }

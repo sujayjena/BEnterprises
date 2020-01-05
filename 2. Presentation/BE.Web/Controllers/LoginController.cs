@@ -1,6 +1,9 @@
-﻿using BE.Core;
-using BE.Data.Login;
+﻿using System;
+using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.Security;
+using BE.Core;
+using BE.Data.User;
 
 namespace BE.Web.Controllers
 {
@@ -8,22 +11,35 @@ namespace BE.Web.Controllers
     {
         bl_Login _objLogin = new bl_Login();
 
-        // GET: Login
+        // GET: Login   
         public ActionResult Index()
         {
+            FormsAuthentication.SignOut();
             return View();
         }
 
         [HttpPost]
-        public ActionResult CheckUser(M_User _ObjUser)
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Login(M_User _ObjUser)
         {
-            if (!string.IsNullOrWhiteSpace(_ObjUser.UserName) && !string.IsNullOrWhiteSpace(_ObjUser.UserPassword))
+            try
             {
-                var vObject = _objLogin.CheckUser(_ObjUser);
-                if (vObject != null)
-                    return Json(new { Result = true, Message = "Login Sucess", RedirectTo = Url.Action("Index", "Home") }, JsonRequestBehavior.AllowGet);
-                else
-                    return Json(new { Result = false, Message = "Login Failed, Please enter valid user name and password!" }, JsonRequestBehavior.AllowGet);
+                if (!string.IsNullOrWhiteSpace(_ObjUser.UserName) && !string.IsNullOrWhiteSpace(_ObjUser.UserPassword))
+                {
+                    var vObject = _objLogin.CheckUser(_ObjUser);
+                    if (vObject != null)
+                    {
+                        FormsAuthentication.SetAuthCookie(vObject.UserName, true);
+                        return Json(new { Result = true, Message = "Login Sucess", RedirectTo = Url.Action("Index", "Home") }, JsonRequestBehavior.AllowGet);
+                    }
+                    else
+                        return Json(new { Result = false, Message = "Login Failed, Please enter valid user name and password!" }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
             return Json(new { Result = false, Message = "Login Failed, Please enter valid user name and password!" }, JsonRequestBehavior.AllowGet);
         }

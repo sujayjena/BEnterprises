@@ -9,6 +9,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BE.Core
 {
@@ -21,6 +22,7 @@ namespace BE.Core
         public string Email { get; set; }
         public string UserName { get; set; }
         public string UserPassword { get; set; }
+        public string RoleId { get; set; }
         public Nullable<System.DateTime> LastLoginTime { get; set; }
         public string LastLoginIP { get; set; }
         public Nullable<System.DateTime> CurrentLoginTime { get; set; }
@@ -30,5 +32,7 @@ namespace BE.Core
         public string ModifyBy { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
 
+        [ForeignKey("RoleId")]
+        public virtual M_Roles M_Roles { get; set; }
     }
 }

@@ -42,8 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\bl_Entity.cs" />
-    <Compile Include="Login\bl_Login.cs" />
+    <Compile Include="User\bl_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\bl_User.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Menu\" />

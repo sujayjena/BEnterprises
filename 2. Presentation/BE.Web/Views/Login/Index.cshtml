@@ -18,7 +18,7 @@
 
     <!-- Bootstrap core JavaScript-->
     @Scripts.Render("~/assets/js/jquery.min.js")
-
+    @Scripts.Render("~/Scripts/jquery_Common.js")
 </head>
 <body>
     @*<button type="button" class="btn btn-light waves-effect waves-light" data-toggle="modal" data-target="#divModalPopopOpen">SHOW ME</button>*@
@@ -57,11 +57,11 @@
                             <p class="card-text text-white pt-3">
                                 Deals In: PVC, ACP,  WPC, ALUMMINIUM, STEEL <br />
 
-                                . Aluminium & PVC & WPC (Door & Fream), Sliding Windows, Partition <br />
+                                @*. Aluminium & PVC & WPC (Door & Fream), Sliding Windows, Partition <br />
                                 . Steel Railing, Balcony Ralling, Steel Gate <br />
                                 . Glass Door, Moulding Doors, Flush Door <br />
                                 . False Ceiling, Thermocol Jipson Ceiling <br />
-                                . Wallpaper(Complete Range), Blinds, Planks(Fibre Cement Board), Wooden Flooring
+                                . Wallpaper(Complete Range), Blinds, Planks(Fibre Cement Board), Wooden Flooring*@
                             </p>
                         </div>
                     </div>
@@ -163,9 +163,10 @@
                 UserName: vUserName,
                 UserPassword: vPassword
             };
+            addAntiForgeryToken(vDataModel);
         $.ajax({
             type: "POST",
-            url: "@Url.Action("CheckUser", "Login")",
+            url: "@Url.Action("Login", "Login")",
             dataType: 'JSON',
             data: vDataModel,
             cache: false,
@@ -206,7 +207,8 @@
             .always(function () {
                // alert("complete");
             });
-    }
+        }
+        
     </script>
 </body>
 </html>

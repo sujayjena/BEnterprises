@@ -169,6 +169,7 @@ D:\Project\BEnterprises\2. Presentation\BE.Web\bin\roslyn\vbc.rsp
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\roslyn\VBCSCompiler.exe
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\roslyn\VBCSCompiler.exe.config
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Antlr3.Runtime.dll
+D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Core.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Data.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\EntityFramework.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\EntityFramework.SqlServer.dll
@@ -201,7 +202,7 @@ D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.Razor.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\WebGrease.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Services.dll
-D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Core.dll
+D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Core.pdb
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Data.pdb
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\EntityFramework.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\EntityFramework.SqlServer.xml
@@ -232,7 +233,6 @@ D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.Razor.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Optimization.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Antlr3.Runtime.pdb
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Services.pdb
-D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Core.pdb
 D:\Project\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csprojAssemblyReference.cache
 D:\Project\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csproj.CoreCompileInputs.cache
 D:\Project\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csproj.CopyComplete

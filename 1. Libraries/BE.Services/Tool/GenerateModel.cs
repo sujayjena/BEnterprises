@@ -354,6 +354,7 @@ namespace BE.Services.Tool
                         sw.WriteLine(@"using System.Collections.Generic;");
                         //sw.WriteLine(@"using System.ComponentModel;");
                         sw.WriteLine(@"using System.ComponentModel.DataAnnotations;");
+                        sw.WriteLine(@"using System.ComponentModel.DataAnnotations.Schema;");
                         //sw.WriteLine(@"using System.Linq;");
                         //sw.WriteLine(@"using System.Web;");
                         sw.WriteLine(@"");
@@ -454,6 +455,8 @@ namespace BE.Services.Tool
                         foreach (DataRow dritem in dtForeignKey.Rows)
                         {
                             //public virtual User User { get; set; }
+                            //[ForeignKey("RoleId")]
+                            sw.WriteLine(@"        [ForeignKey(" + '"' + Convert.ToString(dritem["SourceColumn"]) + '"' + ")]");
                             sw.WriteLine(@"        " + "public" + " virtual" + " " + Convert.ToString(dritem["TargetTable"]) + " " + Convert.ToString(dritem["TargetTable"]) + " " + getSet);
                         }
 

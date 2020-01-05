@@ -41,6 +41,9 @@ namespace BE.Core
         [Required(ErrorMessage = "{0} is required")]
         public string UserPassword { get; set; }
 
+        [Display(Name= "RoleId")]
+        public Nullable<Guid> RoleId { get; set; }
+
         [Display(Name= "LastLoginTime")]
         public Nullable<System.DateTime> LastLoginTime { get; set; }
 

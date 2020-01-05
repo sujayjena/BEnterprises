@@ -242,8 +242,8 @@ D:\Project\BEnterprises\2. Presentation\BE.API\bin\System.Web.WebPages.Deploymen
 D:\Project\BEnterprises\2. Presentation\BE.API\bin\System.Web.WebPages.Razor.xml
 D:\Project\BEnterprises\2. Presentation\BE.API\bin\System.Web.Optimization.xml
 D:\Project\BEnterprises\2. Presentation\BE.API\bin\Antlr3.Runtime.pdb
+D:\Project\BEnterprises\2. Presentation\BE.API\obj\Debug\BE.API.csprojAssemblyReference.cache
 D:\Project\BEnterprises\2. Presentation\BE.API\obj\Debug\BE.API.csproj.CoreCompileInputs.cache
 D:\Project\BEnterprises\2. Presentation\BE.API\obj\Debug\BE.API.csproj.CopyComplete
 D:\Project\BEnterprises\2. Presentation\BE.API\obj\Debug\BE.API.dll
 D:\Project\BEnterprises\2. Presentation\BE.API\obj\Debug\BE.API.pdb
-D:\Project\BEnterprises\2. Presentation\BE.API\obj\Debug\BE.API.csprojAssemblyReference.cache

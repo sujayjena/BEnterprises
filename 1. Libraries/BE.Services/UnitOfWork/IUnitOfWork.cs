@@ -22,6 +22,7 @@ namespace BE.Services.UnitOfWork
         IGenericRepository<M_Guage> M_Guage_Repository { get; set; }
         IGenericRepository<M_Product> M_Product_Repository { get; set; }
         IGenericRepository<M_ProductType> M_ProductType_Repository { get; set; }
+        IGenericRepository<M_Roles> M_Roles_Repository { get; set; }
         IGenericRepository<M_Supplier> M_Supplier_Repository { get; set; }
         IGenericRepository<M_UOM> M_UOM_Repository { get; set; }
         IGenericRepository<M_User> M_User_Repository { get; set; }

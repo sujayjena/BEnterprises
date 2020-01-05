@@ -34,6 +34,7 @@ namespace BE.Services.DbConnections
         public virtual DbSet<M_Guage> M_Guage{ get; set; }
         public virtual DbSet<M_Product> M_Product{ get; set; }
         public virtual DbSet<M_ProductType> M_ProductType{ get; set; }
+        public virtual DbSet<M_Roles> M_Roles{ get; set; }
         public virtual DbSet<M_Supplier> M_Supplier{ get; set; }
         public virtual DbSet<M_UOM> M_UOM{ get; set; }
         public virtual DbSet<M_User> M_User{ get; set; }

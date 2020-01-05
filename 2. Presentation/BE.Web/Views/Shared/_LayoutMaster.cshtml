@@ -61,10 +61,11 @@
                 <li><a href="~/Home/Index" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span></a></li>
                 <li>
                     <a href="javaScript:void();" class="waves-effect">
-                        <i class="zmdi zmdi-format-list-bulleted"></i> <span>Forms</span>
+                        <i class="zmdi zmdi-format-list-bulleted"></i> <span>Master</span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="sidebar-submenu">
+                        <li><a href="~/User/Index"><i class="zmdi zmdi-dot-circle-alt"></i> User</a></li>
                         <li><a href="form-text-editor.html"><i class="zmdi zmdi-dot-circle-alt"></i> Form Editor</a></li>
                     </ul>
                 </li>
@@ -86,7 +87,6 @@
 
         </div>
         <!--End sidebar-wrapper-->
-
         <!--Start topbar header-->
         <header class="topbar-nav">
             <nav id="header-setting" class="navbar navbar-expand fixed-top">
@@ -273,14 +273,14 @@
                 </div>
                 <div class="row" id="divErrorAlert">
                     @*<div class="alert alert-outline-danger alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <div class="alert-icon">
-                            <i class="fa fa-times"></i>
-                        </div>
-                        <div class="alert-message">
-                            <span><strong>Danger!</strong> Lorem Ipsum is <a href="javascript:void();" class="alert-link">simply dummy text.</a></span>
-                        </div>
-                    </div>*@
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <div class="alert-icon">
+                                <i class="fa fa-times"></i>
+                            </div>
+                            <div class="alert-message">
+                                <span><strong>Danger!</strong> Lorem Ipsum is <a href="javascript:void();" class="alert-link">simply dummy text.</a></span>
+                            </div>
+                        </div>*@
                 </div>
 
                 @RenderBody()
@@ -291,11 +291,9 @@
             <!-- End container-fluid-->
         </div>
         <!--End content-wrapper-->
-
         <!--Start Back To Top Button-->
         <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
         <!--End Back To Top Button-->
-
         <!--Start footer-->
         <footer class="footer">
             <div class="container">
@@ -305,7 +303,6 @@
             </div>
         </footer>
         <!--End footer-->
-
         <!--start color switcher-->
         <div class="right-sidebar">
             <div class="switcher-icon">
@@ -350,6 +347,7 @@
 
 
     <!--End wrapper-->
+    @Scripts.Render("~/Scripts/jquery_Common.js")
     @Scripts.Render("~/assets/js/popper.min.js")
     @Scripts.Render("~/assets/js/bootstrap.min.js")
 

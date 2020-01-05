@@ -80,6 +80,12 @@ namespace BE.Services.UnitOfWork
             get { return M_ProductType_Repository ?? (M_ProductType_Repository= new GenericRepository<M_ProductType>(_context)); }
             set { _M_ProductType_Repository = value; }
         }
+        public IGenericRepository<M_Roles> M_Roles_Repository { get; set; }
+        public IGenericRepository<M_Roles> _M_Roles_Repository
+        {
+            get { return M_Roles_Repository ?? (M_Roles_Repository= new GenericRepository<M_Roles>(_context)); }
+            set { _M_Roles_Repository = value; }
+        }
         public IGenericRepository<M_Supplier> M_Supplier_Repository { get; set; }
         public IGenericRepository<M_Supplier> _M_Supplier_Repository
         {
