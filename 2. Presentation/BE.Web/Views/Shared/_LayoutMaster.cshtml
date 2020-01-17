@@ -3,11 +3,10 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width" />
     <!--favicon-->
     @*@Styles.Render("~/assets/images/favicon.ico")*@
     <!-- Vector CSS -->
-    @Styles.Render("~/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css")
+    @*@Styles.Render("~/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css")*@
     <!-- simplebar CSS-->
     @Styles.Render("~/assets/plugins/simplebar/css/simplebar.css")
     <!-- Bootstrap core CSS-->
@@ -23,8 +22,12 @@
     <!-- skins CSS-->
     @Styles.Render("~/assets/css/skins.css")
 
+    @Styles.Render("~/assets/kendo/styles/kendo.default.min.css")
+    @Styles.Render("~/assets/kendo/styles/kendo.common.min.css")
+
     <!-- Bootstrap core JavaScript-->
     @Scripts.Render("~/assets/js/jquery.min.js")
+    @Scripts.Render("~/Scripts/jquery_Common.js")
 </head>
 
 <body>
@@ -45,14 +48,14 @@
                 <div class="media align-items-center user-pointer collapsed" data-toggle="collapse" data-target="#user-dropdown">
                     <div class="avatar"><img class="mr-3 side-user-img" src="~/assets/images/avatars/avatar-16.png" alt="user avatar"></div>
                     <div class="media-body">
-                        <h6 class="side-user-name">Sujay Jena</h6>
+                        <h6 class="side-user-name"><span id="UserName"></span> </h6>
                     </div>
                 </div>
                 <div id="user-dropdown" class="collapse">
                     <ul class="user-setting-menu">
                         <li><a href="javaScript:void();"><i class="icon-user"></i>  My Profile</a></li>
                         <li><a href="javaScript:void();"><i class="icon-settings"></i> Setting</a></li>
-                        <li><a href="~/Login/Index"><i class="icon-power"></i> Logout</a></li>
+                        <li><a href="~/Login/Logout"><i class="icon-power"></i> Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -97,10 +100,19 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <form class="search-bar">
-                            <input type="text" class="form-control" placeholder="Enter keywords">
-                            <a href="javascript:void();"><i class="icon-magnifier"></i></a>
-                        </form>
+                        @*<form class="search-bar">
+                                <input type="text" class="form-control" placeholder="Enter keywords">
+                                <a href="javascript:void();"><i class="icon-magnifier"></i></a>
+                            </form>*@
+
+                        <div class="search-bar">
+                            <div class="media-body">
+                                <span id="spanLastSeen"></span>
+                            </div>
+                            <div class="media-body" id="divCurrentLogin">
+                                <span id="spanCurrentLogin"></span>
+                            </div>
+                        </div>
                     </li>
                 </ul>
 
@@ -123,42 +135,6 @@
                                                 <h6 class="mt-0 msg-title">Jhon Deo</h6>
                                                 <p class="msg-info">Lorem ipsum dolor sit amet...</p>
                                                 <small>Today, 4:10 PM</small>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="javaScript:void();">
-                                        <div class="media">
-                                            <div class="avatar"><img class="align-self-start mr-3" src="~/assets/images/avatars/avatar-6.png" alt="user avatar"></div>
-                                            <div class="media-body">
-                                                <h6 class="mt-0 msg-title">Sara Jen</h6>
-                                                <p class="msg-info">Lorem ipsum dolor sit amet...</p>
-                                                <small>Yesterday, 8:30 AM</small>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="javaScript:void();">
-                                        <div class="media">
-                                            <div class="avatar"><img class="align-self-start mr-3" src="~/assets/images/avatars/avatar-7.png" alt="user avatar"></div>
-                                            <div class="media-body">
-                                                <h6 class="mt-0 msg-title">Dannish Josh</h6>
-                                                <p class="msg-info">Lorem ipsum dolor sit amet...</p>
-                                                <small>5/11/2018, 2:50 PM</small>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="javaScript:void();">
-                                        <div class="media">
-                                            <div class="avatar"><img class="align-self-start mr-3" src="~/assets/images/avatars/avatar-8.png" alt="user avatar"></div>
-                                            <div class="media-body">
-                                                <h6 class="mt-0 msg-title">Katrina Mccoy</h6>
-                                                <p class="msg-info">Lorem ipsum dolor sit amet.</p>
-                                                <small>1/11/2018, 2:50 PM</small>
                                             </div>
                                         </div>
                                     </a>
@@ -233,8 +209,8 @@
                                     <div class="media">
                                         <div class="avatar"><img class="align-self-start mr-3" src="~/assets/images/avatars/avatar-16.png" alt="user avatar"></div>
                                         <div class="media-body">
-                                            <h6 class="mt-2 user-title">Sujay Jena</h6>
-                                            <p class="user-subtitle">sujay@gmail.com</p>
+                                            <h6 class="mt-2 user-title"><span id="UserNameTop"></span></h6>
+                                            <p class="user-subtitle"><span id="UserEmailTop"></span></p>
                                         </div>
                                     </div>
                                 </a>
@@ -246,7 +222,7 @@
                             <li class="dropdown-divider"></li>
                             <li class="dropdown-item"><i class="icon-settings mr-2"></i> Setting</li>
                             <li class="dropdown-divider"></li>
-                            <li class="dropdown-item"> <i class="icon-power mr-2"></i> <a href="~/Login/Index">Logout</a></li>
+                            <li class="dropdown-item"> <i class="icon-power mr-2"></i> <a href="~/Login/Logout">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -344,12 +320,15 @@
         </div>
         <!--end color switcher-->
     </div>
-
-
     <!--End wrapper-->
-    @Scripts.Render("~/Scripts/jquery_Common.js")
+
+    <!--Jquery-->
     @Scripts.Render("~/assets/js/popper.min.js")
     @Scripts.Render("~/assets/js/bootstrap.min.js")
+
+    <!--Kendo-->
+    @*@Scripts.Render("~/assets/kendo/js/kendo.web.min.js")*@
+    @Scripts.Render("~/assets/kendo/js/kendo.all.min.js")
 
     <!-- simplebar js -->
     @Scripts.Render("~/assets/plugins/simplebar/js/simplebar.js")
@@ -360,20 +339,22 @@
     <!-- Custom scripts -->
     @Scripts.Render("~/assets/js/app-script.js")
     <!-- Chart js -->
-
-    @Scripts.Render("~/assets/plugins/Chart.js/Chart.min.js")
-    <!-- Vector map JavaScript -->
-    @Scripts.Render("~/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js")
-    @Scripts.Render("~/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js")
-    <!-- Easy Pie Chart JS -->
-    @Scripts.Render("~/assets/plugins/jquery.easy-pie-chart/jquery.easypiechart.min.js")
-    <!-- Sparkline JS -->
-    @Scripts.Render("~/assets/plugins/sparkline-charts/jquery.sparkline.min.js")
-    @Scripts.Render("~/assets/plugins/jquery-knob/excanvas.js")
+    @*@Scripts.Render("~/assets/plugins/Chart.js/Chart.min.js")
+        <!-- Vector map JavaScript -->
+        @Scripts.Render("~/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js")
+        @Scripts.Render("~/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js")
+        <!-- Easy Pie Chart JS -->
+        @Scripts.Render("~/assets/plugins/jquery.easy-pie-chart/jquery.easypiechart.min.js")
+        <!-- Sparkline JS -->
+        @Scripts.Render("~/assets/plugins/sparkline-charts/jquery.sparkline.min.js")*@
+    @*@Scripts.Render("~/assets/plugins/jquery-knob/excanvas.js")*@
     @Scripts.Render("~/assets/plugins/jquery-knob/jquery.knob.js")
 
     <!--Bootstrap Datepicker Js-->
-    @Scripts.Render("~/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js")
+    @*@Scripts.Render("~/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js")*@
+
+    @*Excel Download*@
+    @Scripts.Render("~/assets/kendo/js/jszip.min.js")
 
     <!--loading overlay Js-->
     @Scripts.Render("~/assets/js/loadingoverlay.min.js")
@@ -417,8 +398,25 @@
 
     </script>
     <!-- Index js -->
-    @Scripts.Render("~/assets/js/index.js")
+    @*@Scripts.Render("~/assets/js/index.js")*@
 
     @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        //var cookie = 'HttpContext.Current.Request.Cookies["UserInfo"]["Name"]';
+        var vUserName = getCookieValueByName("UserInfo", "Name");
+        $('#UserName').text('@HttpContext.Current.Request.Cookies["UserInfo"]["Name"]');
+        $('#UserNameTop').text('@HttpContext.Current.Request.Cookies["UserInfo"]["Name"]');
+        $('#UserEmailTop').text('@HttpContext.Current.Request.Cookies["UserInfo"]["Email"]');
+
+
+        var vLastLoginTime = '@HttpContext.Current.Request.Cookies["UserInfo"]["LastLoginTime"]';
+        var vLastLoginIP = '@HttpContext.Current.Request.Cookies["UserInfo"]["LastLoginIP"]';
+        var vCurrentLoginTime = '@HttpContext.Current.Request.Cookies["UserInfo"]["CurrentLoginTime"]';
+        var vCurrentLoginIP = '@HttpContext.Current.Request.Cookies["UserInfo"]["CurrentLoginIP"]';
+
+        $('#spanLastSeen').html('<b>Last Seen </b>: ' + vLastLoginTime + ', <b>IP</b>  : ' + vLastLoginIP);
+        $('#spanCurrentLogin').html('<b>Current Login</b> : ' + vCurrentLoginTime + ',  <b>IP</b>  : ' + vCurrentLoginIP);
+    </script>
 </body>
 </html>

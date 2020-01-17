@@ -1,0 +1,101 @@
+﻿@model BE.Core.M_User
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "User", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    @*@Html.ValidationSummary("", new { @class = "text-danger" })*@
+
+    <div class="row">
+        <div class="col-sm-9">
+            @*<h4 class="page-title">Blank Page</h4>*@
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="@Html.Raw(Url.Action("Index", "Home"))">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">User</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">Form 1</div>
+                    <hr>
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.Name, new { @class = "col-sm-3 col-form-label" })
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "Enter Your Name" })
+                            @Html.ValidationMessageFor(model => model.Name)
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.Email, new { @class = "col-sm-3 col-form-label" })
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Enter Your Email Address" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.Phone, new { @class = "col-sm-3 col-form-label" })
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", @placeholder = "Enter Your Mobile Number" })
+                            @Html.ValidationMessageFor(model => model.Phone)
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.RoleId, new { @class = "col-sm-3 col-form-label" })
+                        <div class="col-sm-9">
+                            @Html.DropDownListFor(model => model.RoleId, (IEnumerable<SelectListItem>)ViewBag.RoleList, "Select", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.RoleId)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">Form 2</div>
+                    <hr>
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.UserName, new { @class = "col-sm-3 col-form-label" })
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @placeholder = "Enter User Name" })
+                            @Html.ValidationMessageFor(model => model.UserName)
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        @Html.LabelFor(model => model.UserPassword, new { @class = "col-sm-3 col-form-label" })
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(model => model.UserPassword, new { @class = "form-control", @placeholder = "Enter Password" })
+                            @Html.ValidationMessageFor(model => model.UserPassword)
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <button type="submit" class="btn btn-primary px-5">Submit</button>
+
+                            <a href="@Html.Raw(Url.Action("Index", "User"))"> Back To List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    if (!string.IsNullOrWhiteSpace(ViewBag.ErrorMsg))
+    {
+        <script type="text/javascript">
+            alert("@ViewBag.ErrorMsg");
+        </script>
+    }
+}

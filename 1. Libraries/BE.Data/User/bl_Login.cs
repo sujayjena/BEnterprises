@@ -24,5 +24,21 @@ namespace BE.Data.User
                 throw ex;
             }
         }
+        public string GetUserRoleName(M_User ObjUser)
+        {
+            try
+            {
+                var vItem = (from u in _objUnitOfWork.M_User_Repository.Get()
+                            join r in _objUnitOfWork._M_Roles_Repository.Get() on u.RoleId equals r.Id
+                            where u.UserName == ObjUser.UserName
+                            select new { RoleName = r.RoleName }).FirstOrDefault();
+
+                return vItem.RoleName;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

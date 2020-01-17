@@ -3,8 +3,17 @@ D:\Applications\BEnterprises\1. Libraries\BE.Core\bin\Debug\BE.Core.pdb
 D:\Applications\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.csproj.CoreCompileInputs.cache
 D:\Applications\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.dll
 D:\Applications\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.pdb
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Core\bin\Debug\BE.Core.dll
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Core\bin\Debug\BE.Core.pdb
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.dll
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.pdb
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Core\bin\Debug\BE.Core.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Core\bin\Debug\BE.Core.pdb
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.pdb
 D:\Project\BEnterprises\1. Libraries\BE.Core\bin\Debug\BE.Core.dll
 D:\Project\BEnterprises\1. Libraries\BE.Core\bin\Debug\BE.Core.pdb
+D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.csprojAssemblyReference.cache
 D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.csproj.CoreCompileInputs.cache
 D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.dll
 D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.pdb

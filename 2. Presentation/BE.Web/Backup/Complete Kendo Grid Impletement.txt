@@ -1,0 +1,136 @@
+    @Scripts.Render("~/assets/js/jquery.min.js")
+    @Styles.Render("~/Kendo/styles/kendo.default.min.css")
+    @Styles.Render("~/Kendo/styles/kendo.common.min.css")
+    @Scripts.Render("~/Kendo/js/kendo.web.min.js")
+
+
+
+<div id="gridItemInfo"></div>
+@* GridView Inbuilt Function *@
+<script>
+    $(document).ready(function () {
+        ItemInfoManager.gridDataSource();
+    });
+
+    var ItemInfoManager = {
+        gridDataSource: function () {
+            $("#gridItemInfo").kendoGrid({
+                type: "json",
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: "@Html.Raw(Url.Action("WorkerList", "kendo"))",
+                            type: "POST",
+                            dataType: "json",
+                            //data: addAntiForgeryToken,
+                        },
+                        create: {}, update: {}, destroy: {},
+                        parameterMap: function (options) {
+                            return JSON.stringify(options);
+                        }
+                    },
+                    pageSize: 5,
+                    requestEnd: function (e) {
+                        if (e.type == "create" || e.type == "update" || e.type == "destroy") {
+                            this.read();
+                        }
+                    },
+                    error: function (e) {
+                        display_kendoui_grid_error(e);
+                        this.cancelChanges();
+                    },
+                },
+                height: 350,
+                selectable: "row",
+                sortable: true,
+                filterable: true,
+                groupable: true,
+                pageable: {
+                    refresh: true,
+                    pageSizes: true,
+                    buttonCount: 5
+                },
+                column: ItemInfoManager.GenerateItemColumn(),
+                //editable: {mode: "incell"},
+                //change: onChange,
+                //dataBound: onDataBound,
+                //dataBinding: onDataBinding,
+                //sort: onSorting,
+                //filter: onFiltering,
+                //group: onGrouping,
+                //page: onPaging,
+                //groupExpand: onGroupExpand,
+                //groupCollapse: onGroupCollapse,
+            });
+        },
+        GenerateItemColumn: function () {
+            return columns = [
+               {
+                   field: "FIRST_NAME",
+                   title: "First Name"
+               },
+                {
+                    field: "LAST_NAME",
+                    title: "Last Name",
+                },
+                {
+                    field: "SALARY",
+                    title: "Salary",
+                    format: "{0:c}"
+                },
+                {
+                    field: "JOINING_DATE",
+                    title: "Doj",
+                    template: "#= (JOINING_DATE == null) ? ' ' : kendo.toString(kendo.parseDate(JOINING_DATE, 'yyyy-MM-dd'), 'dd/MM/yyyy') #",
+                },
+                {
+                    field: "DEPARTMENT",
+                    title: "Department",
+                }
+            ];
+        }
+    };
+</script>
+
+@* GridView Inbuilt Function *@
+<script>
+    //function onChange(arg) {
+    //    var selected = $.map(this.select(), function (item) {
+    //        return $(item).text();
+    //    });
+
+    //    alert("Selected: " + selected.length + " item(s), [" + selected.join(", ") + "]");
+    //}
+
+    //function onDataBound(arg) {
+    //    alert("Grid data bound");
+    //}
+
+    //function onDataBinding(arg) {
+    //    alert("Grid data binding");
+    //}
+
+    //function onSorting(arg) {
+    //    alert("Sorting on field: " + arg.sort.field + ", direction:" + (arg.sort.dir || "none"));
+    //}
+
+    //function onFiltering(arg) {
+    //    alert("Filter on " + kendo.stringify(arg.filter));
+    //}
+
+    //function onPaging(arg) {
+    //    alert("Paging to page index:" + arg.page);
+    //}
+
+    //function onGrouping(arg) {
+    //    alert("Group on " + kendo.stringify(arg.groups));
+    //}
+
+    //function onGroupExpand(arg) {
+    //    alert("The group to be expanded: " + kendo.stringify(arg.group));
+    //}
+
+    //function onGroupCollapse(arg) {
+    //    alert("The group to be collapsed: " + kendo.stringify(arg.group));
+    //}
+</script>

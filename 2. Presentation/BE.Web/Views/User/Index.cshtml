@@ -6,92 +6,64 @@
 }
 
 <h2>User</h2>
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
-    <div class="row">
-        <div class="col-sm-9">
-            @*<h4 class="page-title">Blank Page</h4>*@
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javaScript:void();">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">User</li>
-            </ol>
+<div class="row">
+    <div class="col-sm-6">
+        @*<h4 class="page-title">Blank Page</h4>*@
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="@Html.Raw(Url.Action("Index", "Home"))">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">User</li>
+        </ol>
+    </div>
+    <div class="col-sm-6" style="text-align:right;">
+        <div class="btn-group m-1">
+            <a href="@Url.Action("Create","User")" class="btn-social-text btn-outline-tumblr waves-effect waves-light m-1"><span>CREATE</span></a>
         </div>
-        <div class="col-sm-3">
-            <div class="btn-group float-sm-right">
-                <button type="button" class="btn btn-light waves-effect waves-light"><i class="fa fa-cog mr-1"></i> Setting</button>
-                <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split waves-effect waves-light" data-toggle="dropdown">
-                    <span class="caret"></span>
-                </button>
-                <div class="dropdown-menu">
-                    <a href="javaScript:void();" class="dropdown-item">Action</a>
-                    <a href="javaScript:void();" class="dropdown-item">Another action</a>
-                    <a href="javaScript:void();" class="dropdown-item">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="javaScript:void();" class="dropdown-item">Separated link</a>
-                </div>
-            </div>
+        <div class="btn-group m-1">
+            <a href="javascript:void()" class="btn-social-text btn-outline-twitter waves-effect waves-light m-1"><span>IMPORT</span></a>
+        </div>
+        <div class="btn-group m-1">
+            <a href="javascript:void()" class="btn-social-text btn-outline-pinterest waves-effect waves-light m-1"><span>DELETE</span></a>
         </div>
     </div>
+</div>
 
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <div class="card">
-                <div class="card-body">
-                    <div class="card-title">Form 1</div>
-                    <hr>
-                    <div class="form-group row">
-                        @Html.LabelFor(model => model.Name, new { @class = "col-sm-3 col-form-label" })
-                        <div class="col-sm-9">
-                            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "Enter Your Name" })
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        @Html.LabelFor(model => model.Email, new { @class = "col-sm-3 col-form-label" })
-                        <div class="col-sm-9">
-                            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Enter Your Email Address" })
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        @Html.LabelFor(model => model.Phone, new { @class = "col-sm-3 col-form-label" })
-                        <div class="col-sm-9">
-                            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", @placeholder = "Enter Your Mobile Number" })
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        @Html.LabelFor(model => model.RoleId, new { @class = "col-sm-3 col-form-label" })
-                        <div class="col-sm-9">
-                            @Html.TextBoxFor(model => model.RoleId, new { @class = "form-control", @placeholder = "Enter Your Role" })
-                        </div>
-                    </div>
+                <div class="card-header">
+                    <a data-toggle="collapse" href="#collapse1">Search</a>
                 </div>
-            </div>
-        </div>
-
-        <div class="col-lg-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="card-title">Form 2</div>
-                    <hr>
-                    <div class="form-group row">
-                        @Html.LabelFor(model => model.UserName, new { @class = "col-sm-3 col-form-label" })
-                        <div class="col-sm-9">
-                            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @placeholder = "Enter User Name" })
+                <div id="collapse1" class="panel-collapse collapse">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    @Html.LabelFor(model => model.Name, new { @class = "col-sm-3 col-form-label" })
+                                    <div class="col-sm-9">
+                                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "Enter Name" })
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        @Html.LabelFor(model => model.UserPassword, new { @class = "col-sm-3 col-form-label" })
-                        <div class="col-sm-9">
-                            @Html.TextBoxFor(model => model.UserPassword, new { @class = "form-control", @placeholder = "Enter Password" })
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label"></label>
-                        <div class="col-sm-9">
-                            <button type="submit" class="btn btn-primary px-5"><i class="icon-lock"></i> Submit</button>
+                        <div class="col-lg-6">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    @Html.LabelFor(model => model.Phone, new { @class = "col-sm-3 col-form-label" })
+                                    <div class="col-sm-9">
+                                        @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", @placeholder = "Enter Phone" })
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label"></label>
+                                    <div class="col-sm-9">
+                                        <input type="button" id="btnSearch" name="btnSearch" value="Search" class="btn btn-gradient-violet px-5" onclick="BtnSearch()" />
+                                        <input type="button" id="btnClear" name="btnClear" value="Clear" class="btn btn-gradient-dusk px-5" onclick="BtnClear()" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -99,6 +71,152 @@
         </div>
     </div>
 
+    @*GridItemInfo*@
+    <div id="GridItemInfo-grid"></div>
+    @*GridItemInfo*@
+    <script>
+        function LoadGrid() {
+            $("#GridItemInfo-grid").kendoGrid({
+                dataSource: GridItemInfoDataSource,
+                height: 350,
+                selectable: "Multiple",
+                sortable: true,
+                filterable: true,
+                groupable: true,
+                scrollable: false,
+                pageable: { refresh: true, pageSizes: true, buttonCount: 5 },
+                editable: { mode: "inline", update: true, destroy: true },
+                change: onChange,
+                toolbar: ["search", "excel", "pdf"],
+                excel: {
+                    allPages: true
+                },
+                pdf: {
+                    allPages: true,
+                    paperSize: "A4",
+                    margin: { top: "3cm", right: "1cm", bottom: "1cm", left: "1cm" },
+                    landscape: true
+                },
+                columns: [
+                    {
+                        hidden: true,
+                        field: "Id"
+                    }, {
+                        selectable: true,
+                        width: "50px"
+                    },
+                    {
+                        field: "Name",
+                        title: "Name"
+                    },
+                    {
+                        field: "Phone",
+                        title: "Phone",
+                    },
+                    {
+                        field: "UserName",
+                        title: "User Name",
+                    },
+                    {
+                        field: "CreatedDate",
+                        title: "Created Date",
+                        template: "#= (CreatedDate == null) ? ' ' : kendo.toString(kendo.parseDate(CreatedDate, 'yyyy-MM-dd'), 'dd/MM/yyyy') #",
+                    },
+                    {
+                        command: [
+                            { name: "edit", text: { edit: " ", update: " ", cancel: " " } },
+                            { name: "destroy", text: " " }
+                        ], title: "&nbsp;", width: "160px"
+                    }
+                ]
+            });
+        }
+        var GridItemInfoDataSource = {
+            transport: {
+                read: {
+                    url: "@Html.Raw(Url.Action("GetList", "User"))",
+                    type: "GET",
+                    dataType: "json",
+                    data: additionalData,
+                },
+                update: {
+                    url: "@Html.Raw(Url.Action("Update", "User"))",
+                    type: "POST",
+                    dataType: "json",
+                    data: addAntiForgeryToken
+                },
+                destroy: {
+                    type: "POST",
+                    url: "@Html.Raw(Url.Action("Delete", "User"))",
+                    dataType: "json",
+                    data: addAntiForgeryToken
+                },
+                create: {
+                    @*url: "@Html.Raw(Url.Action("GetUserList", "User"))",
+                    dataType: "json"*@
+                },
+                //parameterMap: function (options, operation) {
+                //    if (operation !== "read" && options.model) {
+                //        return { model: kendo.stringify(options.model) };
+                //    }
+                //}
+            },
+            pageSize: 10,
+            requestEnd: function (e) {
+                if (e.type == "update") {
+                    SucessMsgAllert('Record update successfully');
+                    this.read();
+                }
+                if (e.type == "destroy") {
+                    SucessMsgAllert('Record deleted successfully');
+                    this.read();
+                }
+            },
+            error: function (e) {
+                display_kendoui_grid_error(e);
+                this.cancelChanges();
+            },
+            schema: {
+                model: {
+                    id: "Id",
+                    fields: {
+                        Name: { editable: false, validation: { required: true } },
+                        Phone: { validation: { required: true } },
+                        UserName: { editable: false, required: true },
+                        CreatedDate: { editable: false, nullable: true },
+                    }
+                }
+            }
+        };
+        // Pass Search Parameter During Search
+        function additionalData() {
+            var data = {
+                Name: $('#Name').val(),
+                UserName: $('#UserName').val(),
+                Phone: $('#Phone').val()
+            };
+            addAntiForgeryToken(data);
+            return data;
+        }
+        // Checkbox Selection
+        function onChange(arg) {
+            //  alert("The selected product ids are: [" + this.selectedKeyNames().join(", ") + "]");
+        }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            LoadGrid();
+        });
+        function BtnSearch() {
+            var grid = $('#GridItemInfo-grid').data('kendoGrid');
+            grid.dataSource.page(1); //new search. Set page size to 1
+            grid.dataSource.read();// we already loaded the grid above using "page" function
+            return false;
+        }
+        function BtnClear() {
+            $('#Name').val("");
+            $('#Phone').val("");
+        }
+    </script>
 }
-
-

@@ -7,22 +7,11 @@ using System.Web.Security;
 
 namespace BE.Web.Controllers
 {
+    [CustomAuthentication]
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
-            FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
-
-            string cookiePath = ticket.CookiePath;
-            DateTime expiration = ticket.Expiration;
-            bool expired = ticket.Expired;
-            bool isPersistent = ticket.IsPersistent;
-            DateTime issueDate = ticket.IssueDate;
-            string name = ticket.Name;
-            string userData = ticket.UserData;
-            int version = ticket.Version;
-
             return View();
         }
 

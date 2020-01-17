@@ -116,6 +116,246 @@ D:\Applications\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csproj.Core
 D:\Applications\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csproj.CopyComplete
 D:\Applications\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.dll
 D:\Applications\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.pdb
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\BE.Web.dll.config
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\BE.Web.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\BE.Web.pdb
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\csc.exe
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\csc.exe.config
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\csc.rsp
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\csi.exe
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\csi.exe.config
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\csi.rsp
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.AppContext.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Collections.Immutable.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Console.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Globalization.Calendars.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.IO.Compression.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.IO.FileSystem.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Net.Http.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Net.Sockets.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Reflection.Metadata.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.ValueTuple.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Xml.XPath.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\vbc.exe
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\vbc.exe.config
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\vbc.rsp
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\VBCSCompiler.exe
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\roslyn\VBCSCompiler.exe.config
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Antlr3.Runtime.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\BE.Core.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\BE.Data.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\EntityFramework.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\EntityFramework.SqlServer.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.Google.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Web.Infrastructure.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Newtonsoft.Json.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Owin.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Buffers.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Diagnostics.DiagnosticSource.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Memory.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Helpers.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Mvc.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Optimization.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Razor.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.Deployment.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.Razor.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\WebGrease.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\BE.Services.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\BE.Core.pdb
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\BE.Data.pdb
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\EntityFramework.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\EntityFramework.SqlServer.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.Google.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Newtonsoft.Json.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Buffers.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Diagnostics.DiagnosticSource.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Memory.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Helpers.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Mvc.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Razor.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.Deployment.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.Razor.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Optimization.xml
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\Antlr3.Runtime.pdb
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\bin\BE.Services.pdb
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csprojResolveAssemblyReference.cache
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.dll
+E:\Sujay\Projects\Other\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.pdb
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\BE.Web.dll.config
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\BE.Web.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\BE.Web.pdb
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\csc.exe
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\csc.exe.config
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\csc.rsp
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\csi.exe
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\csi.exe.config
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\csi.rsp
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.AppContext.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Collections.Immutable.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Console.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Globalization.Calendars.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.IO.Compression.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.IO.FileSystem.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Net.Http.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Net.Sockets.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Reflection.Metadata.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.ValueTuple.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Xml.XPath.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\vbc.exe
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\vbc.exe.config
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\vbc.rsp
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\VBCSCompiler.exe
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\roslyn\VBCSCompiler.exe.config
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Antlr3.Runtime.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\BE.Core.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\BE.Data.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\EntityFramework.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\EntityFramework.SqlServer.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.Google.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Web.Infrastructure.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Newtonsoft.Json.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Owin.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Buffers.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Diagnostics.DiagnosticSource.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Memory.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Helpers.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Mvc.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Optimization.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Razor.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.Deployment.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.Razor.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\WebGrease.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\BE.Services.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\BE.Core.pdb
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\BE.Data.pdb
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\EntityFramework.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\EntityFramework.SqlServer.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.Google.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Newtonsoft.Json.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Buffers.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Diagnostics.DiagnosticSource.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Memory.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Helpers.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Mvc.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Razor.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.Deployment.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Web.WebPages.Razor.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\System.Web.Optimization.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\Antlr3.Runtime.pdb
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\bin\BE.Services.pdb
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.csprojResolveAssemblyReference.cache
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\2. Presentation\BE.Web\obj\Debug\BE.Web.pdb
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Web.dll.config
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Web.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\BE.Web.pdb
@@ -189,6 +429,7 @@ D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.Twitt
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Web.Infrastructure.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Newtonsoft.Json.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Owin.dll
+D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Quartz.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Buffers.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Diagnostics.DiagnosticSource.dll
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Memory.dll
@@ -220,6 +461,8 @@ D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.Micro
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Newtonsoft.Json.xml
+D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Quartz.pdb
+D:\Project\BEnterprises\2. Presentation\BE.Web\bin\Quartz.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Buffers.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Diagnostics.DiagnosticSource.xml
 D:\Project\BEnterprises\2. Presentation\BE.Web\bin\System.Memory.xml

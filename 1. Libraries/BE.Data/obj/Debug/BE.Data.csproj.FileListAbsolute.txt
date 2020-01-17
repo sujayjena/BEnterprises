@@ -4,6 +4,28 @@ D:\Applications\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csprojAssemb
 D:\Applications\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csproj.CoreCompileInputs.cache
 D:\Applications\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.dll
 D:\Applications\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.pdb
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Data.dll
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Data.pdb
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Core.dll
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Services.dll
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Data\bin\Debug\EntityFramework.dll
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Core.pdb
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Services.pdb
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Data\bin\Debug\EntityFramework.xml
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csprojResolveAssemblyReference.cache
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.dll
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.pdb
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Data.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Data.pdb
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Core.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Services.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Data\bin\Debug\EntityFramework.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Core.pdb
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Services.pdb
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Data\bin\Debug\EntityFramework.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csprojResolveAssemblyReference.cache
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.pdb
 D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Data.dll
 D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Data.pdb
 D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Core.dll

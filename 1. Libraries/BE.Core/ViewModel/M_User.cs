@@ -7,6 +7,7 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -42,7 +43,8 @@ namespace BE.Core
         public string UserPassword { get; set; }
 
         [Display(Name= "RoleId")]
-        public Nullable<Guid> RoleId { get; set; }
+        [Required(ErrorMessage = "{0} is required")]
+        public string RoleId { get; set; }
 
         [Display(Name= "LastLoginTime")]
         public Nullable<System.DateTime> LastLoginTime { get; set; }

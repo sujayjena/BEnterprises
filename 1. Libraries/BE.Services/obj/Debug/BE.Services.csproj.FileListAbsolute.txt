@@ -3,6 +3,28 @@ D:\Applications\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Services.pdb
 D:\Applications\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.csproj.CoreCompileInputs.cache
 D:\Applications\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.dll
 D:\Applications\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.pdb
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Services.dll
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Services.pdb
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Core.dll
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Services\bin\Debug\EntityFramework.dll
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Services\bin\Debug\EntityFramework.SqlServer.dll
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Core.pdb
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Services\bin\Debug\EntityFramework.xml
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Services\bin\Debug\EntityFramework.SqlServer.xml
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.csprojResolveAssemblyReference.cache
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.dll
+E:\Sujay\Projects\Other\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.pdb
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Services.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Services.pdb
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Core.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Services\bin\Debug\EntityFramework.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Services\bin\Debug\EntityFramework.SqlServer.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Core.pdb
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Services\bin\Debug\EntityFramework.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Services\bin\Debug\EntityFramework.SqlServer.xml
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.csprojResolveAssemblyReference.cache
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.dll
+E:\Sujay\Zappit\Zappit ARS\Query\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.pdb
 D:\Project\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Services.dll
 D:\Project\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Services.pdb
 D:\Project\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Core.dll
