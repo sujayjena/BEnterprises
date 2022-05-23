@@ -1,0 +1,14 @@
+D:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\BE.Services.dll
+D:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\BE.Services.pdb
+D:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\BE.Core.dll
+D:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\EntityFramework.dll
+D:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\EntityFramework.SqlServer.dll
+D:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\System.Web.Mvc.dll
+D:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\BE.Core.pdb
+D:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\EntityFramework.xml
+D:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\EntityFramework.SqlServer.xml
+D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Release\BE.Services.csprojAssemblyReference.cache
+D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Release\BE.Services.csproj.CoreCompileInputs.cache
+D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Release\BE.Services.csproj.CopyComplete
+D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Release\BE.Services.dll
+D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Release\BE.Services.pdb

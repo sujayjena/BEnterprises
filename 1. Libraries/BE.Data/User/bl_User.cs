@@ -1,8 +1,8 @@
-﻿using BE.Core;
-using BE.Services.UnitOfWork;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using BE.Core;
+using BE.Services.UnitOfWork;
 
 namespace BE.Data.User
 {
@@ -77,7 +77,7 @@ namespace BE.Data.User
                     {
                         queryObjList = queryObjList.Where(x => x.Phone.Contains(objUser.Phone));
                     }
-                    ObjList = queryObjList.ToList();
+                    ObjList = queryObjList.OrderByDescending(x => x.CreatedDate).ToList();
                 }
             }
             catch (Exception ex)
@@ -114,7 +114,7 @@ namespace BE.Data.User
                     var queryObjList = _objUnitOfWork._M_User_Repository.Query();
                     if (!string.IsNullOrWhiteSpace(UserName))
                     {
-                        queryObjList = queryObjList.Where(x => x.UserName==UserName || x.Email == Email);
+                        queryObjList = queryObjList.Where(x => x.UserName == UserName || x.Email == Email);
                     }
                     ObjUser = queryObjList.FirstOrDefault();
                 }
@@ -142,6 +142,26 @@ namespace BE.Data.User
                 throw ex;
             }
             return ObjList;
+        }
+
+        public bool BulkDelete(List<M_User> objList)
+        {
+            bool bSuccess = false;
+            try
+            {
+                foreach (var item in objList)
+                {
+                    var vCheckUser = GetById(item.Id);
+                    if (vCheckUser != null)
+                        Delete(vCheckUser);
+                }
+                bSuccess = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return bSuccess;
         }
     }
 }

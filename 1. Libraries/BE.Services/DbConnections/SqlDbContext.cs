@@ -31,12 +31,23 @@ namespace BE.Services.DbConnections
         public virtual DbSet<M_Branch> M_Branch{ get; set; }
         public virtual DbSet<M_Brand> M_Brand{ get; set; }
         public virtual DbSet<M_Company> M_Company{ get; set; }
+        public virtual DbSet<M_ExpenseType> M_ExpenseType{ get; set; }
         public virtual DbSet<M_Guage> M_Guage{ get; set; }
+        public virtual DbSet<M_Items> M_Items{ get; set; }
+        public virtual DbSet<M_ItemsType> M_ItemsType{ get; set; }
         public virtual DbSet<M_Product> M_Product{ get; set; }
-        public virtual DbSet<M_ProductType> M_ProductType{ get; set; }
         public virtual DbSet<M_Roles> M_Roles{ get; set; }
         public virtual DbSet<M_Supplier> M_Supplier{ get; set; }
         public virtual DbSet<M_UOM> M_UOM{ get; set; }
         public virtual DbSet<M_User> M_User{ get; set; }
+        public virtual DbSet<T_Expense> T_Expense{ get; set; }
+        public virtual DbSet<T_Loan> T_Loan{ get; set; }
+        public virtual DbSet<T_LoanDetails> T_LoanDetails{ get; set; }
+        public virtual DbSet<T_OutStanding> T_OutStanding{ get; set; }
+        public virtual DbSet<T_OutStandingDetails> T_OutStandingDetails{ get; set; }
+        public virtual DbSet<T_PurchaseOrder> T_PurchaseOrder{ get; set; }
+        public virtual DbSet<T_PurchaseOrderDetails> T_PurchaseOrderDetails{ get; set; }
+        public virtual DbSet<T_SalesOrder> T_SalesOrder{ get; set; }
+        public virtual DbSet<T_SalesOrderDetails> T_SalesOrderDetails{ get; set; }
     }
 }

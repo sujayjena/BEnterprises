@@ -7,7 +7,6 @@
 //------------------------------------------------------------------------------
 
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -62,7 +61,8 @@ namespace BE.Core
         public string CreatedBy { get; set; }
 
         [Display(Name= "CreatedDate")]
-        public Nullable<System.DateTime> CreatedDate { get; set; }
+        [Required(ErrorMessage = "{0} is required")]
+        public System.DateTime CreatedDate { get; set; }
 
         [Display(Name= "ModifyBy")]
         public string ModifyBy { get; set; }

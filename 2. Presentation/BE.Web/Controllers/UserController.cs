@@ -1,18 +1,19 @@
-﻿using BE.Core;
-using BE.Data.User;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using BE.Core;
+using BE.Data.User;
 
 namespace BE.Web.Controllers
 {
+    [CustomAuthentication]
     public class UserController : Controller
     {
         protected readonly bl_User _blUser = new bl_User();
+        protected readonly CustomAuthentication _objAuthentication = new CustomAuthentication();
 
         [HttpGet]
-        [ActionName("Index")]
         public ActionResult Index()
         {
             return View();
@@ -56,8 +57,8 @@ namespace BE.Web.Controllers
                             UserName = objUser.UserName,
                             UserPassword = objUser.UserPassword,
                             RoleId = objUser.RoleId,
-                            CreatedBy = objUser.CreatedBy,
-                            CreatedDate = DateTime.Now
+                            CreatedBy = _objAuthentication.UserName,
+                            CreatedDate = DateTime.Now,
                         };
                         var vReturnObj = _blUser.Create(_Obj_M_User);
                     }
@@ -93,7 +94,9 @@ namespace BE.Web.Controllers
                     if (vObj != null)
                     {
                         vObj.Phone = objUser.Phone;
-                        _blUser.Update(objUser);
+                        vObj.ModifyDate = DateTime.Now;
+                        vObj.ModifyBy = _objAuthentication.UserName;
+                        _blUser.Update(vObj);
                     }
                 }
             }
@@ -123,6 +126,27 @@ namespace BE.Web.Controllers
                 throw ex;
             }
             return Json(objUser);
+        }
+
+        [HttpPost]
+        public ActionResult BulkDelete(List<M_User> DeletedRecord)
+        {
+            try
+            {
+                if (DeletedRecord.Count > 0)
+                {
+                    var vUser = _blUser.BulkDelete(DeletedRecord);
+                    if (vUser)
+                    {
+                        return Json(new { Result = true, Message = "Sucess" }, JsonRequestBehavior.AllowGet);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return Json(new { Result = false, Message = "Faield" }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]

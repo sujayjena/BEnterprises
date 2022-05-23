@@ -23,7 +23,7 @@ namespace BE.Core
         public string Phone { get; set; }
         public string Email { get; set; }
         public string CreatedBy { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public System.DateTime CreatedDate { get; set; }
         public string ModifyBy { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
 

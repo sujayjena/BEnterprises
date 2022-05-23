@@ -83,6 +83,7 @@ namespace BE.Web.Controllers
             var vRoleName = _objLogin.GetUserRoleName(ObjUser);
 
             HttpCookie cookieUser = new HttpCookie("UserInfo");
+            cookieUser.Values.Add("Id", Convert.ToString(ObjUser.Id));
             cookieUser.Values.Add("UserId", Convert.ToString(ObjUser.UserName));
             cookieUser.Values.Add("Name", Convert.ToString(ObjUser.Name));
             cookieUser.Values.Add("Email", Convert.ToString(ObjUser.Email));

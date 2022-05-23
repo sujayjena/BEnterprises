@@ -34,6 +34,10 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,24 +49,51 @@
     <Compile Include="Model\M_Branch.cs" />
     <Compile Include="Model\M_Brand.cs" />
     <Compile Include="Model\M_Company.cs" />
+    <Compile Include="Model\M_ExpenseType.cs" />
     <Compile Include="Model\M_Guage.cs" />
+    <Compile Include="Model\M_Items.cs" />
+    <Compile Include="Model\M_ItemsType.cs" />
     <Compile Include="Model\M_Product.cs" />
-    <Compile Include="Model\M_ProductType.cs" />
+    <Compile Include="Model\M_MaterialType.cs" />
     <Compile Include="Model\M_Roles.cs" />
     <Compile Include="Model\M_Supplier.cs" />
     <Compile Include="Model\M_UOM.cs" />
     <Compile Include="Model\M_User.cs" />
+    <Compile Include="Model\T_Expense.cs" />
+    <Compile Include="Model\T_Loan.cs" />
+    <Compile Include="Model\T_LoanDetails.cs" />
+    <Compile Include="Model\T_OutStanding.cs" />
+    <Compile Include="Model\T_OutStandingDetails.cs" />
+    <Compile Include="Model\T_PurchaseOrder.cs" />
+    <Compile Include="Model\T_PurchaseOrderDetails.cs" />
+    <Compile Include="Model\T_SalesOrder.cs" />
+    <Compile Include="Model\T_SalesOrderDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\API\Common\VM_Common.cs" />
+    <Compile Include="ViewModel\API\Common\VM_CommonData.cs" />
     <Compile Include="ViewModel\M_Branch.cs" />
     <Compile Include="ViewModel\M_Brand.cs" />
     <Compile Include="ViewModel\M_Company.cs" />
+    <Compile Include="ViewModel\M_ExpenseType.cs" />
     <Compile Include="ViewModel\M_Guage.cs" />
+    <Compile Include="ViewModel\M_Items.cs" />
+    <Compile Include="ViewModel\M_ItemsType.cs" />
+    <Compile Include="ViewModel\M_MaterialType.cs" />
     <Compile Include="ViewModel\M_Product.cs" />
-    <Compile Include="ViewModel\M_ProductType.cs" />
     <Compile Include="ViewModel\M_Roles.cs" />
     <Compile Include="ViewModel\M_Supplier.cs" />
     <Compile Include="ViewModel\M_UOM.cs" />
     <Compile Include="ViewModel\M_User.cs" />
+    <Compile Include="ViewModel\Sys_Dashboard.cs" />
+    <Compile Include="ViewModel\T_Expense.cs" />
+    <Compile Include="ViewModel\T_Loan.cs" />
+    <Compile Include="ViewModel\T_LoanDetails.cs" />
+    <Compile Include="ViewModel\T_OutStanding.cs" />
+    <Compile Include="ViewModel\T_OutStandingDetails.cs" />
+    <Compile Include="ViewModel\T_PurchaseOrder.cs" />
+    <Compile Include="ViewModel\T_PurchaseOrderDetails.cs" />
+    <Compile Include="ViewModel\T_SalesOrder.cs" />
+    <Compile Include="ViewModel\T_SalesOrderDetails.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

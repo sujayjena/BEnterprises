@@ -21,7 +21,7 @@ namespace BE.Core
     {
         [Display(Name= "Id")]
         [Required(ErrorMessage = "{0} is required")]
-        public Guid Id { get; set; }
+        public string Id { get; set; }
 
         [Display(Name= "RoleName")]
         [Required(ErrorMessage = "{0} is required")]

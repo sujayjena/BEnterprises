@@ -15,7 +15,7 @@ namespace BE.Core
 {
     public partial class M_Roles
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "08b3d4aa-f316-4924-8182-178cc9897ba9:DoNotCallOverridableMethodsInConstructors")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "c174b52a-da19-41a7-98a4-ad4eb26b209f:DoNotCallOverridableMethodsInConstructors")]
         public M_Roles()
         {
            this.M_User = new HashSet<M_User>();
@@ -30,7 +30,7 @@ namespace BE.Core
         public Nullable<System.DateTime> ModifyDate { get; set; }
 
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "aefbe8c0-260c-4c28-aaa4-a11467e267db:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "cb6e6744-f8eb-424f-aa40-c19d1b6ffaf6:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<M_User> M_User { get; set; }
     }
 }

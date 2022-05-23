@@ -1,0 +1,8 @@
+D:\Project\BEnterprises\1. Libraries\BE.Core\bin\Release\BE.Core.dll
+D:\Project\BEnterprises\1. Libraries\BE.Core\bin\Release\BE.Core.pdb
+D:\Project\BEnterprises\1. Libraries\BE.Core\bin\Release\System.Web.Mvc.dll
+D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Release\BE.Core.csprojAssemblyReference.cache
+D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Release\BE.Core.csproj.CoreCompileInputs.cache
+D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Release\BE.Core.csproj.CopyComplete
+D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Release\BE.Core.dll
+D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Release\BE.Core.pdb

@@ -28,7 +28,7 @@ namespace BE.Core
         public Nullable<System.DateTime> CurrentLoginTime { get; set; }
         public string CurrentLoginIP { get; set; }
         public string CreatedBy { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public System.DateTime CreatedDate { get; set; }
         public string ModifyBy { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
 

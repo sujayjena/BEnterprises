@@ -7,6 +7,12 @@ namespace BE.Services.Repository
 {
     public interface IGenericRepository<TEntity> where TEntity : class
     {
+        // Store Procedure 
+        IList<TEntity> ExecuteStoredProcedureList<TEntity>(string commandText, params object[] parameters) where TEntity : class, new();
+        IEnumerable<TElement> SqlQuery<TElement>(string sql, params object[] parameters);
+        int ExecuteSqlCommand(string sql, bool doNotEnsureTransaction = false, int? timeout = null, params object[] parameters);
+
+
         /// <summary>
         /// Get all entities from db
         /// </summary>

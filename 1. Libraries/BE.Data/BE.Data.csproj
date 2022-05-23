@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BE.Core\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -42,14 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\Common\api_bl_Common.cs" />
+    <Compile Include="Branch\bl_Branch.cs" />
+    <Compile Include="Brand\bl_Brand.cs" />
+    <Compile Include="Company\bl_Company.cs" />
+    <Compile Include="Dashboard\bl_Dashboard.cs" />
     <Compile Include="Entity\bl_Entity.cs" />
+    <Compile Include="Expense\bl_Expense.cs" />
+    <Compile Include="Expense\bl_ExpenseType.cs" />
+    <Compile Include="Guage\bl_Guage.cs" />
+    <Compile Include="ItemsType\bl_ItemsType.cs" />
+    <Compile Include="Items\bl_Items.cs" />
+    <Compile Include="Loan\bl_Loan.cs" />
+    <Compile Include="Order\bl_PurchaseOrder.cs" />
+    <Compile Include="Order\bl_SalesOrder.cs" />
+    <Compile Include="OutStanding\bl_OutStanding.cs" />
+    <Compile Include="Supplier\bl_Supplier.cs" />
+    <Compile Include="UOM\bl_Uom.cs" />
     <Compile Include="User\bl_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\bl_User.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Menu\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BE.Core\BE.Core.csproj">
       <Project>{6b14219c-7c2b-491a-898c-b8e2571dcae5}</Project>

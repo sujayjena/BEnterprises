@@ -15,13 +15,25 @@ namespace BE.Core
 {
     public partial class M_Brand
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "acae259a-5aab-49ad-a768-8b65dc65b41c:DoNotCallOverridableMethodsInConstructors")]
+        public M_Brand()
+        {
+           this.T_PurchaseOrderDetails = new HashSet<T_PurchaseOrderDetails>();
+           this.T_SalesOrderDetails = new HashSet<T_SalesOrderDetails>();
+        }
+
         [Key]
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string CreatedBy { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public System.DateTime CreatedDate { get; set; }
         public string ModifyBy { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
 
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "ab26d284-a1a9-41c4-9cc1-d2b7956e5808:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<T_PurchaseOrderDetails> T_PurchaseOrderDetails { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "ab26d284-a1a9-41c4-9cc1-d2b7956e5808:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<T_SalesOrderDetails> T_SalesOrderDetails { get; set; }
     }
 }

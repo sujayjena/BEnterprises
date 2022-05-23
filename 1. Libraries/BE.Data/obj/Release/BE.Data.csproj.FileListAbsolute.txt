@@ -1,0 +1,14 @@
+D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\BE.Data.dll
+D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\BE.Data.pdb
+D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\BE.Core.dll
+D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\BE.Services.dll
+D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\System.Web.Mvc.dll
+D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\EntityFramework.dll
+D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\BE.Core.pdb
+D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\BE.Services.pdb
+D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\EntityFramework.xml
+D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Release\BE.Data.csprojAssemblyReference.cache
+D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Release\BE.Data.csproj.CoreCompileInputs.cache
+D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Release\BE.Data.csproj.CopyComplete
+D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Release\BE.Data.dll
+D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Release\BE.Data.pdb

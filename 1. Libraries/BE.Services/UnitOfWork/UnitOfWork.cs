@@ -62,23 +62,35 @@ namespace BE.Services.UnitOfWork
             get { return M_Company_Repository ?? (M_Company_Repository= new GenericRepository<M_Company>(_context)); }
             set { _M_Company_Repository = value; }
         }
+        public IGenericRepository<M_ExpenseType> M_ExpenseType_Repository { get; set; }
+        public IGenericRepository<M_ExpenseType> _M_ExpenseType_Repository
+        {
+            get { return M_ExpenseType_Repository ?? (M_ExpenseType_Repository= new GenericRepository<M_ExpenseType>(_context)); }
+            set { _M_ExpenseType_Repository = value; }
+        }
         public IGenericRepository<M_Guage> M_Guage_Repository { get; set; }
         public IGenericRepository<M_Guage> _M_Guage_Repository
         {
             get { return M_Guage_Repository ?? (M_Guage_Repository= new GenericRepository<M_Guage>(_context)); }
             set { _M_Guage_Repository = value; }
         }
+        public IGenericRepository<M_Items> M_Items_Repository { get; set; }
+        public IGenericRepository<M_Items> _M_Items_Repository
+        {
+            get { return M_Items_Repository ?? (M_Items_Repository= new GenericRepository<M_Items>(_context)); }
+            set { _M_Items_Repository = value; }
+        }
+        public IGenericRepository<M_ItemsType> M_ItemsType_Repository { get; set; }
+        public IGenericRepository<M_ItemsType> _M_ItemsType_Repository
+        {
+            get { return M_ItemsType_Repository ?? (M_ItemsType_Repository= new GenericRepository<M_ItemsType>(_context)); }
+            set { _M_ItemsType_Repository = value; }
+        }
         public IGenericRepository<M_Product> M_Product_Repository { get; set; }
         public IGenericRepository<M_Product> _M_Product_Repository
         {
             get { return M_Product_Repository ?? (M_Product_Repository= new GenericRepository<M_Product>(_context)); }
             set { _M_Product_Repository = value; }
-        }
-        public IGenericRepository<M_ProductType> M_ProductType_Repository { get; set; }
-        public IGenericRepository<M_ProductType> _M_ProductType_Repository
-        {
-            get { return M_ProductType_Repository ?? (M_ProductType_Repository= new GenericRepository<M_ProductType>(_context)); }
-            set { _M_ProductType_Repository = value; }
         }
         public IGenericRepository<M_Roles> M_Roles_Repository { get; set; }
         public IGenericRepository<M_Roles> _M_Roles_Repository
@@ -103,6 +115,60 @@ namespace BE.Services.UnitOfWork
         {
             get { return M_User_Repository ?? (M_User_Repository= new GenericRepository<M_User>(_context)); }
             set { _M_User_Repository = value; }
+        }
+        public IGenericRepository<T_Expense> T_Expense_Repository { get; set; }
+        public IGenericRepository<T_Expense> _T_Expense_Repository
+        {
+            get { return T_Expense_Repository ?? (T_Expense_Repository= new GenericRepository<T_Expense>(_context)); }
+            set { _T_Expense_Repository = value; }
+        }
+        public IGenericRepository<T_Loan> T_Loan_Repository { get; set; }
+        public IGenericRepository<T_Loan> _T_Loan_Repository
+        {
+            get { return T_Loan_Repository ?? (T_Loan_Repository= new GenericRepository<T_Loan>(_context)); }
+            set { _T_Loan_Repository = value; }
+        }
+        public IGenericRepository<T_LoanDetails> T_LoanDetails_Repository { get; set; }
+        public IGenericRepository<T_LoanDetails> _T_LoanDetails_Repository
+        {
+            get { return T_LoanDetails_Repository ?? (T_LoanDetails_Repository= new GenericRepository<T_LoanDetails>(_context)); }
+            set { _T_LoanDetails_Repository = value; }
+        }
+        public IGenericRepository<T_OutStanding> T_OutStanding_Repository { get; set; }
+        public IGenericRepository<T_OutStanding> _T_OutStanding_Repository
+        {
+            get { return T_OutStanding_Repository ?? (T_OutStanding_Repository= new GenericRepository<T_OutStanding>(_context)); }
+            set { _T_OutStanding_Repository = value; }
+        }
+        public IGenericRepository<T_OutStandingDetails> T_OutStandingDetails_Repository { get; set; }
+        public IGenericRepository<T_OutStandingDetails> _T_OutStandingDetails_Repository
+        {
+            get { return T_OutStandingDetails_Repository ?? (T_OutStandingDetails_Repository= new GenericRepository<T_OutStandingDetails>(_context)); }
+            set { _T_OutStandingDetails_Repository = value; }
+        }
+        public IGenericRepository<T_PurchaseOrder> T_PurchaseOrder_Repository { get; set; }
+        public IGenericRepository<T_PurchaseOrder> _T_PurchaseOrder_Repository
+        {
+            get { return T_PurchaseOrder_Repository ?? (T_PurchaseOrder_Repository= new GenericRepository<T_PurchaseOrder>(_context)); }
+            set { _T_PurchaseOrder_Repository = value; }
+        }
+        public IGenericRepository<T_PurchaseOrderDetails> T_PurchaseOrderDetails_Repository { get; set; }
+        public IGenericRepository<T_PurchaseOrderDetails> _T_PurchaseOrderDetails_Repository
+        {
+            get { return T_PurchaseOrderDetails_Repository ?? (T_PurchaseOrderDetails_Repository= new GenericRepository<T_PurchaseOrderDetails>(_context)); }
+            set { _T_PurchaseOrderDetails_Repository = value; }
+        }
+        public IGenericRepository<T_SalesOrder> T_SalesOrder_Repository { get; set; }
+        public IGenericRepository<T_SalesOrder> _T_SalesOrder_Repository
+        {
+            get { return T_SalesOrder_Repository ?? (T_SalesOrder_Repository= new GenericRepository<T_SalesOrder>(_context)); }
+            set { _T_SalesOrder_Repository = value; }
+        }
+        public IGenericRepository<T_SalesOrderDetails> T_SalesOrderDetails_Repository { get; set; }
+        public IGenericRepository<T_SalesOrderDetails> _T_SalesOrderDetails_Repository
+        {
+            get { return T_SalesOrderDetails_Repository ?? (T_SalesOrderDetails_Repository= new GenericRepository<T_SalesOrderDetails>(_context)); }
+            set { _T_SalesOrderDetails_Repository = value; }
         }
     }
 }

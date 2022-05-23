@@ -15,13 +15,25 @@ namespace BE.Core
 {
     public partial class M_Guage
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "23dc995a-7a2c-4afd-b3db-e3628b99adb6:DoNotCallOverridableMethodsInConstructors")]
+        public M_Guage()
+        {
+           this.T_PurchaseOrderDetails = new HashSet<T_PurchaseOrderDetails>();
+           this.T_SalesOrderDetails = new HashSet<T_SalesOrderDetails>();
+        }
+
         [Key]
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string CreatedBy { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public System.DateTime CreatedDate { get; set; }
         public string ModifyBy { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
 
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "5df70dae-be92-4748-a68b-f9fe5806ed70:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<T_PurchaseOrderDetails> T_PurchaseOrderDetails { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "5df70dae-be92-4748-a68b-f9fe5806ed70:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<T_SalesOrderDetails> T_SalesOrderDetails { get; set; }
     }
 }

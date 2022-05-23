@@ -9,12 +9,15 @@
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BE.Core
 {
     [MetadataType(typeof(M_Branch_MetaData))]
     public partial class M_Branch
     {
+        [NotMappedAttribute]
+        public string CompanyName { get; set; }
     }
 
     public class M_Branch_MetaData
@@ -44,7 +47,8 @@ namespace BE.Core
         public string CreatedBy { get; set; }
 
         [Display(Name= "CreatedDate")]
-        public Nullable<System.DateTime> CreatedDate { get; set; }
+        [Required(ErrorMessage = "{0} is required")]
+        public System.DateTime CreatedDate { get; set; }
 
         [Display(Name= "ModifyBy")]
         public string ModifyBy { get; set; }

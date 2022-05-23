@@ -228,9 +228,10 @@ namespace BE.Services.Tool
                         sw.WriteLine(@"");
 
                         sw.WriteLine(@"using System;");
-                        //sw.WriteLine(@"using System.Collections.Generic;");
+                        sw.WriteLine(@"using System.Collections.Generic;");
                         sw.WriteLine(@"using System.ComponentModel;");
                         sw.WriteLine(@"using System.ComponentModel.DataAnnotations;");
+                        sw.WriteLine(@"using System.ComponentModel.DataAnnotations.Schema;");
                         string sProjectNameForInheritance = Assembly.GetCallingAssembly().GetName().Name;
                         //sw.WriteLine(string.Format(@"using {0}.{1};", sProjectNameForInheritance, sInheritFromBaseClass));
                         //sw.WriteLine(string.Format(@"using BE.Core.Model;"));
