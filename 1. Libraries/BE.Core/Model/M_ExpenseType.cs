@@ -15,7 +15,7 @@ namespace BE.Core
 {
     public partial class M_ExpenseType
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "5b458ef3-d47a-4faa-8100-adabffdc698b:DoNotCallOverridableMethodsInConstructors")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "89e0a432-492b-4760-899a-f11670908111:DoNotCallOverridableMethodsInConstructors")]
         public M_ExpenseType()
         {
            this.T_Expense = new HashSet<T_Expense>();
@@ -31,7 +31,7 @@ namespace BE.Core
         public Nullable<System.DateTime> ModifyDate { get; set; }
 
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "320d8a48-7334-4108-ba75-13d97b565625:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "22777c2d-4369-48f9-9107-2fd79675829b:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_Expense> T_Expense { get; set; }
     }
 }

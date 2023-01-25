@@ -46,11 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\M_Branch.cs" />
-    <Compile Include="Model\M_Brand.cs" />
     <Compile Include="Model\M_Company.cs" />
     <Compile Include="Model\M_ExpenseType.cs" />
-    <Compile Include="Model\M_Guage.cs" />
     <Compile Include="Model\M_Items.cs" />
     <Compile Include="Model\M_ItemsType.cs" />
     <Compile Include="Model\M_Product.cs" />
@@ -71,11 +68,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\API\Common\VM_Common.cs" />
     <Compile Include="ViewModel\API\Common\VM_CommonData.cs" />
-    <Compile Include="ViewModel\M_Branch.cs" />
-    <Compile Include="ViewModel\M_Brand.cs" />
     <Compile Include="ViewModel\M_Company.cs" />
     <Compile Include="ViewModel\M_ExpenseType.cs" />
-    <Compile Include="ViewModel\M_Guage.cs" />
     <Compile Include="ViewModel\M_Items.cs" />
     <Compile Include="ViewModel\M_ItemsType.cs" />
     <Compile Include="ViewModel\M_MaterialType.cs" />

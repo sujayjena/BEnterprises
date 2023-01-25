@@ -15,7 +15,7 @@ namespace BE.Core
 {
     public partial class M_Items
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "260c447b-232f-4006-857d-7b8478d79def:DoNotCallOverridableMethodsInConstructors")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "8f422efb-e206-4daf-b89c-b4a8c73c6f23:DoNotCallOverridableMethodsInConstructors")]
         public M_Items()
         {
            this.T_PurchaseOrderDetails = new HashSet<T_PurchaseOrderDetails>();
@@ -36,9 +36,9 @@ namespace BE.Core
         [ForeignKey("ItemsTypeId")]
         public virtual M_ItemsType M_ItemsType { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "6330629e-ef97-44d0-8c10-ac6a9af960df:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "86b1c32c-153b-4423-abfc-b26a98553a13:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_PurchaseOrderDetails> T_PurchaseOrderDetails { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "6330629e-ef97-44d0-8c10-ac6a9af960df:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "86b1c32c-153b-4423-abfc-b26a98553a13:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_SalesOrderDetails> T_SalesOrderDetails { get; set; }
     }
 }

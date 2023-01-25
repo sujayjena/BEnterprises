@@ -15,10 +15,9 @@ namespace BE.Core
 {
     public partial class M_Company
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "500cc708-0031-4250-b873-37b79913fdff:DoNotCallOverridableMethodsInConstructors")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "317b0ea8-ecfb-4e54-a322-e0fb1c172f1e:DoNotCallOverridableMethodsInConstructors")]
         public M_Company()
         {
-           this.M_Branch = new HashSet<M_Branch>();
         }
 
         [Key]
@@ -31,9 +30,5 @@ namespace BE.Core
         public System.DateTime CreatedDate { get; set; }
         public string ModifyBy { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
-
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "8a833773-cfe6-469a-81f9-cb8461f9b5a6:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<M_Branch> M_Branch { get; set; }
     }
 }

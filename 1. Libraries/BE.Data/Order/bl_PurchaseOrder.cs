@@ -261,12 +261,6 @@ namespace BE.Data.Order
                                  join product in _objUnitOfWork._M_Items_Repository.Get() on productDetail.ItemsId equals product.Id
                                  join uom in _objUnitOfWork._M_UOM_Repository.Get() on productDetail.UomId equals uom.Id
 
-                                 join brand in _objUnitOfWork._M_Brand_Repository.Get() on productDetail.BrandId equals brand.Id into _brand
-                                 from brand in _brand.DefaultIfEmpty()
-
-                                 join guage in _objUnitOfWork._M_Guage_Repository.Get() on productDetail.GuageId equals guage.Id into _guage
-                                 from guage in _guage.DefaultIfEmpty()
-
                                  where productDetail.PurchaseOrderId == ObjPurchaseOrder.Id
 
                                  select new T_PurchaseOrderDetails()
@@ -276,10 +270,6 @@ namespace BE.Data.Order
                                      SlNo = productDetail.SlNo,
                                      ItemsId = productDetail.ItemsId,
                                      ItemsName = product.Name,
-                                     BrandId = productDetail.BrandId,
-                                     BrandName = brand.Name,
-                                     GuageId = productDetail.GuageId,
-                                     GuageName = guage.Name,
                                      UomId = productDetail.UomId,
                                      UomName = uom.Name,
                                      Quantity = productDetail.Quantity,

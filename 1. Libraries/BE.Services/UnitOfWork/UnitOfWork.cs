@@ -43,19 +43,6 @@ namespace BE.Services.UnitOfWork
             disposed = true;
         }
 
-
-        public IGenericRepository<M_Branch> M_Branch_Repository { get; set; }
-        public IGenericRepository<M_Branch> _M_Branch_Repository
-        {
-            get { return M_Branch_Repository ?? (M_Branch_Repository= new GenericRepository<M_Branch>(_context)); }
-            set { _M_Branch_Repository = value; }
-        }
-        public IGenericRepository<M_Brand> M_Brand_Repository { get; set; }
-        public IGenericRepository<M_Brand> _M_Brand_Repository
-        {
-            get { return M_Brand_Repository ?? (M_Brand_Repository= new GenericRepository<M_Brand>(_context)); }
-            set { _M_Brand_Repository = value; }
-        }
         public IGenericRepository<M_Company> M_Company_Repository { get; set; }
         public IGenericRepository<M_Company> _M_Company_Repository
         {
@@ -67,12 +54,6 @@ namespace BE.Services.UnitOfWork
         {
             get { return M_ExpenseType_Repository ?? (M_ExpenseType_Repository= new GenericRepository<M_ExpenseType>(_context)); }
             set { _M_ExpenseType_Repository = value; }
-        }
-        public IGenericRepository<M_Guage> M_Guage_Repository { get; set; }
-        public IGenericRepository<M_Guage> _M_Guage_Repository
-        {
-            get { return M_Guage_Repository ?? (M_Guage_Repository= new GenericRepository<M_Guage>(_context)); }
-            set { _M_Guage_Repository = value; }
         }
         public IGenericRepository<M_Items> M_Items_Repository { get; set; }
         public IGenericRepository<M_Items> _M_Items_Repository

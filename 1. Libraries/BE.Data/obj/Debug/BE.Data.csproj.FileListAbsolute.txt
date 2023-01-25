@@ -41,6 +41,8 @@ D:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\EntityFramework.xml
 D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csproj.CopyComplete
 D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.dll
 D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.pdb
+E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\EntityFramework.xml
+E:\Project\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csproj.CoreCompileInputs.cache
 E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Data.dll
 E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Data.pdb
 E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Core.dll
@@ -49,9 +51,7 @@ E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\EntityFramework.dll
 E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\System.Web.Mvc.dll
 E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Core.pdb
 E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\BE.Services.pdb
-E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Debug\EntityFramework.xml
 E:\Project\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csproj.AssemblyReference.cache
-E:\Project\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csproj.CoreCompileInputs.cache
 E:\Project\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.csproj.CopyComplete
 E:\Project\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.dll
 E:\Project\BEnterprises\1. Libraries\BE.Data\obj\Debug\BE.Data.pdb

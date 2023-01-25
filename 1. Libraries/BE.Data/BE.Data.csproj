@@ -47,15 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\Common\api_bl_Common.cs" />
-    <Compile Include="Branch\bl_Branch.cs" />
-    <Compile Include="Brand\bl_Brand.cs" />
     <Compile Include="Common\bl_Common.cs" />
     <Compile Include="Company\bl_Company.cs" />
     <Compile Include="Dashboard\bl_Dashboard.cs" />
     <Compile Include="Entity\bl_Entity.cs" />
     <Compile Include="Expense\bl_Expense.cs" />
     <Compile Include="Expense\bl_ExpenseType.cs" />
-    <Compile Include="Guage\bl_Guage.cs" />
     <Compile Include="ItemsType\bl_ItemsType.cs" />
     <Compile Include="Items\bl_Items.cs" />
     <Compile Include="Loan\bl_Loan.cs" />

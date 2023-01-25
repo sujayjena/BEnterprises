@@ -28,11 +28,8 @@ namespace BE.Services.DbConnections
             base.OnModelCreating(modelBuilder);
         }
 
-        public virtual DbSet<M_Branch> M_Branch{ get; set; }
-        public virtual DbSet<M_Brand> M_Brand{ get; set; }
         public virtual DbSet<M_Company> M_Company{ get; set; }
         public virtual DbSet<M_ExpenseType> M_ExpenseType{ get; set; }
-        public virtual DbSet<M_Guage> M_Guage{ get; set; }
         public virtual DbSet<M_Items> M_Items{ get; set; }
         public virtual DbSet<M_ItemsType> M_ItemsType{ get; set; }
         public virtual DbSet<M_Product> M_Product{ get; set; }

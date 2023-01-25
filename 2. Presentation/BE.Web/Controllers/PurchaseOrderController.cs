@@ -1,6 +1,4 @@
 ﻿using BE.Core;
-using BE.Data.Brand;
-using BE.Data.Guage;
 using BE.Data.ItemsType;
 using BE.Data.Order;
 using BE.Data.Items;
@@ -25,9 +23,7 @@ namespace BE.Web.Controllers
         protected readonly bl_PurchaseOrder _blPurchaseOrder = new bl_PurchaseOrder();
         protected readonly bl_Supplier _blSupplier = new bl_Supplier();
         protected readonly bl_Items _blItems = new bl_Items();
-        protected readonly bl_Brand _blBrand = new bl_Brand();
         protected readonly bl_ItemsType _blItemsType = new bl_ItemsType();
-        protected readonly bl_Guage _blGuage = new bl_Guage();
         protected readonly bl_Uom _blUOM = new bl_Uom();
         T_PurchaseOrder model = new T_PurchaseOrder();
 
@@ -105,8 +101,6 @@ namespace BE.Web.Controllers
                         Guid guidId = Guid.NewGuid();
                         Guid guidPurchaseOrderId = Guid.Parse(Convert.ToString(ObjModel.PurchaseOrderId));
                         Guid guidItemsId = Guid.Parse(Convert.ToString(ObjModel.ItemsId));
-                        Guid guidBrandId = Guid.Parse(Convert.ToString(ObjModel.BrandId));
-                        Guid guidGuageId = Guid.Parse(Convert.ToString(ObjModel.GuageId));
                         Guid guidUomId = Guid.Parse(Convert.ToString(ObjModel.UomId));
 
                         T_PurchaseOrderDetails _Obj_T_PurchaseOrder = new T_PurchaseOrderDetails()
@@ -115,8 +109,6 @@ namespace BE.Web.Controllers
                             PurchaseOrderId = guidPurchaseOrderId,
                             SlNo = ObjModel.SlNo,
                             ItemsId = guidItemsId,
-                            BrandId = guidBrandId,
-                            GuageId = guidGuageId,
                             UomId = guidUomId,
                             Quantity = ObjModel.Quantity,
                             BuyingRate = ObjModel.BuyingRate,
@@ -137,13 +129,9 @@ namespace BE.Web.Controllers
                         Guid guidId = Guid.Parse(Convert.ToString(ObjModel.Id));
                         Guid guidPurchaseOrderId = Guid.Parse(Convert.ToString(ObjModel.PurchaseOrderId));
                         Guid guidItemsId = Guid.Parse(Convert.ToString(ObjModel.ItemsId));
-                        Guid guidBrandId = Guid.Parse(Convert.ToString(ObjModel.BrandId));
-                        Guid guidGuageId = Guid.Parse(Convert.ToString(ObjModel.GuageId));
                         Guid guidUomId = Guid.Parse(Convert.ToString(ObjModel.UomId));
 
                         vObjExists.ItemsId = guidItemsId;
-                        vObjExists.BrandId = guidBrandId;
-                        vObjExists.GuageId = guidGuageId;
                         vObjExists.UomId = guidUomId;
                         vObjExists.Quantity = ObjModel.Quantity;
                         vObjExists.BuyingRate = ObjModel.BuyingRate;
@@ -185,12 +173,6 @@ namespace BE.Web.Controllers
             }
             M_Items ObjItemsModel = new M_Items();
             model.ItemsList = _blItems.GetList(ObjItemsModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).OrderBy(x=>x.Text).ToList();
-
-            M_Brand objBrandModel = new M_Brand();
-            model.BrandList = _blBrand.GetList(objBrandModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).OrderBy(x => x.Text).ToList();
-
-            M_Guage objGuageModel = new M_Guage();
-            model.GuageList = _blGuage.GetList(objGuageModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).OrderBy(x => x.Text).ToList();
 
             M_UOM objUomModel = new M_UOM();
             model.UomList = _blUOM.GetList(objUomModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).OrderBy(x => x.Text).ToList();
@@ -335,26 +317,10 @@ namespace BE.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult BrandList()
-        {
-            M_Brand objModel = new M_Brand();
-            var vlist = _blBrand.GetList(objModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).OrderBy(x => x.Text).ToList();
-            return Json(vlist, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpGet]
         public ActionResult ItemsTypeList()
         {
             M_ItemsType objModel = new M_ItemsType();
             var vlist = _blItemsType.GetList(objModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).OrderBy(x => x.Text).ToList();
-            return Json(vlist, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpGet]
-        public ActionResult GuageList()
-        {
-            M_Guage objModel = new M_Guage();
-            var vlist = _blGuage.GetList(objModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).OrderBy(x => x.Text).ToList();
             return Json(vlist, JsonRequestBehavior.AllowGet);
         }
 

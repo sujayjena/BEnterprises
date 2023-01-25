@@ -15,7 +15,7 @@ namespace BE.Core
 {
     public partial class M_UOM
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "d4426218-610e-48d8-8e84-9cc369fa4857:DoNotCallOverridableMethodsInConstructors")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "a961ccb3-62d7-4108-8e1e-754698fa27d3:DoNotCallOverridableMethodsInConstructors")]
         public M_UOM()
         {
            this.T_PurchaseOrderDetails = new HashSet<T_PurchaseOrderDetails>();
@@ -31,9 +31,9 @@ namespace BE.Core
         public Nullable<System.DateTime> ModifyDate { get; set; }
 
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "bb229eb7-6efd-4998-862f-2cfe1648c92d:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "624f66b4-606b-47be-9853-d94b014225ed:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_PurchaseOrderDetails> T_PurchaseOrderDetails { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "bb229eb7-6efd-4998-862f-2cfe1648c92d:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "624f66b4-606b-47be-9853-d94b014225ed:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_SalesOrderDetails> T_SalesOrderDetails { get; set; }
     }
 }

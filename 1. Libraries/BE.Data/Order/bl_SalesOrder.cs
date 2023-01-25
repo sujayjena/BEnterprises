@@ -254,12 +254,6 @@ namespace BE.Data.Order
                                  join product in _objUnitOfWork._M_Items_Repository.Get() on productDetail.ItemsId equals product.Id
                                  join uom in _objUnitOfWork._M_UOM_Repository.Get() on productDetail.UomId equals uom.Id
 
-                                 join brand in _objUnitOfWork._M_Brand_Repository.Get() on productDetail.BrandId equals brand.Id into _brand
-                                 from brand in _brand.DefaultIfEmpty()
-
-                                 join guage in _objUnitOfWork._M_Guage_Repository.Get() on productDetail.GuageId equals guage.Id into _guage
-                                 from guage in _guage.DefaultIfEmpty()
-
                                  where productDetail.SalesOrderId == ObjSalesOrder.Id
 
                                  select new T_SalesOrderDetails()
@@ -269,10 +263,6 @@ namespace BE.Data.Order
                                      SlNo = productDetail.SlNo,
                                      ItemsId = productDetail.ItemsId,
                                      ItemsName = product.Name,
-                                     BrandId = productDetail.BrandId,
-                                     BrandName = brand.Name,
-                                     GuageId = productDetail.GuageId,
-                                     GuageName = guage.Name,
                                      UomId = productDetail.UomId,
                                      UomName = uom.Name,
                                      StockQuantity = productDetail.StockQuantity,
@@ -316,36 +306,15 @@ namespace BE.Data.Order
                 using (_objUnitOfWork = new UnitOfWork())
                 {
                     var vQueryPurchaseOrder = _objUnitOfWork._T_PurchaseOrderDetails_Repository.Query();
-                    var vQuerySalesOrder = _objUnitOfWork._T_SalesOrderDetails_Repository.Query();
+                    //var vQuerySalesOrder = _objUnitOfWork._T_SalesOrderDetails_Repository.Query(); 
 
-                    if (!string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.ItemsId)) && !string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.BrandId)))
-                    {
-                        vQueryPurchaseOrder = vQueryPurchaseOrder.Where(x => x.ItemsId == Objmodel.ItemsId && x.BrandId == Objmodel.BrandId);
-                    }
-                    else if (!string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.ItemsId)))
-                    {
-                        vQueryPurchaseOrder = vQueryPurchaseOrder.Where(x => x.ItemsId == Objmodel.ItemsId);
-                    }
-                    else if (!string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.BrandId)))
-                    {
-                        vQueryPurchaseOrder = vQueryPurchaseOrder.Where(x => x.BrandId == Objmodel.BrandId);
-                    }
-
-                    if (!string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.ItemsId)) && !string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.BrandId)))
-                    {
-                        vQuerySalesOrder = vQuerySalesOrder.Where(x => x.ItemsId == Objmodel.ItemsId && x.BrandId == Objmodel.BrandId);
-                    }
-                    else if (!string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.ItemsId)))
-                    {
-                        vQuerySalesOrder = vQuerySalesOrder.Where(x => x.ItemsId == Objmodel.ItemsId);
-                    }
-                    else if (!string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.BrandId)))
-                    {
-                        vQuerySalesOrder = vQuerySalesOrder.Where(x => x.BrandId == Objmodel.BrandId);
-                    }
+                    //else if (!string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.ItemsId)))
+                    //{
+                    //    vQuerySalesOrder = vQuerySalesOrder.Where(x => x.ItemsId == Objmodel.ItemsId);
+                    //}
 
                     var vTotalPurchaseOrderQuantity = vQueryPurchaseOrder.ToList().Sum(x => x.Quantity);
-                    var vTotalSalesOrderQuantity = vQuerySalesOrder.ToList().Sum(x => x.Quantity);
+                    var vTotalSalesOrderQuantity =0; // vQuerySalesOrder.ToList().Sum(x => x.Quantity);
 
                     return (vTotalPurchaseOrderQuantity - vTotalSalesOrderQuantity);
                 }
@@ -363,22 +332,13 @@ namespace BE.Data.Order
             {
                 using (_objUnitOfWork = new UnitOfWork())
                 {
-                    var vQuery = _objUnitOfWork._T_PurchaseOrderDetails_Repository.Query();
+                    //var vQuery = _objUnitOfWork._T_PurchaseOrderDetails_Repository.Query();
 
-                    if (!string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.ItemsId)) && !string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.BrandId)))
-                    {
-                        vQuery = vQuery.Where(x => x.ItemsId == Objmodel.ItemsId && x.BrandId == Objmodel.BrandId);
-                    }
-                    else if (!string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.ItemsId)))
-                    {
-                        vQuery = vQuery.Where(x => x.ItemsId == Objmodel.ItemsId);
-                    }
-                    else if (!string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.BrandId)))
-                    {
-                        vQuery = vQuery.Where(x => x.BrandId == Objmodel.BrandId);
-                    }
-
-                    objPurchaseList = vQuery.ToList();
+                    //else if (!string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.ItemsId)))
+                    //{
+                    //    vQuery = vQuery.Where(x => x.ItemsId == Objmodel.ItemsId);
+                    //}
+                    //objPurchaseList = vQuery.ToList();
                 }
             }
             catch (Exception ex)
@@ -386,38 +346,6 @@ namespace BE.Data.Order
                 throw ex;
             }
             return objPurchaseList;
-        }
-
-        public List<M_Brand> GetItemsBrand(T_PurchaseOrderDetails Objmodel)
-        {
-            List<M_Brand> objBrandList = new List<M_Brand>();
-            try
-            {
-                using (_objUnitOfWork = new UnitOfWork())
-                {
-                    var vQuery = _objUnitOfWork._T_PurchaseOrderDetails_Repository.Query();
-                    var vQueryBrand = _objUnitOfWork._M_Brand_Repository.Query();
-
-                    if (!string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.ItemsId)))
-                    {
-                        vQuery = vQuery.Where(x => x.ItemsId == Objmodel.ItemsId && x.Quantity > 0);
-                    }
-                    var vJoinQuery = vQuery.Join(vQueryBrand, p => p.BrandId, b => b.Id, (p, b) => new { p, b }).ToList();
-
-                    var vObjList = vJoinQuery.Select(x => new M_Brand()
-                    {
-                        Id = x.b.Id,
-                        Name = x.b.Name
-                    }).ToList();
-
-                    objBrandList = vObjList;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return objBrandList;
         }
     }
 }

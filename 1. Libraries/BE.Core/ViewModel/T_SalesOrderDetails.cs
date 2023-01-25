@@ -20,11 +20,7 @@ namespace BE.Core
         [NotMapped]
         public string ItemsName { get; set; }
         [NotMapped]
-        public string BrandName { get; set; }
-        [NotMapped]
         public string ItemsTypeName { get; set; }
-        [NotMapped]
-        public string GuageName { get; set; }
         [NotMapped]
         public string UomName { get; set; }
     }
@@ -46,14 +42,6 @@ namespace BE.Core
         [Display(Name= "ItemsId")]
         [Required(ErrorMessage = "{0} is required")]
         public Guid ItemsId { get; set; }
-
-        [Display(Name= "BrandId")]
-        [Required(ErrorMessage = "{0} is required")]
-        public Guid BrandId { get; set; }
-
-        [Display(Name= "GuageId")]
-        [Required(ErrorMessage = "{0} is required")]
-        public Guid GuageId { get; set; }
 
         [Display(Name= "UomId")]
         [Required(ErrorMessage = "{0} is required")]

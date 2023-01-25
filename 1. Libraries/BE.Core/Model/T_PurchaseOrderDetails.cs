@@ -20,8 +20,6 @@ namespace BE.Core
         public Guid PurchaseOrderId { get; set; }
         public int SlNo { get; set; }
         public Guid ItemsId { get; set; }
-        public Guid BrandId { get; set; }
-        public Guid GuageId { get; set; }
         public Guid UomId { get; set; }
         public decimal Quantity { get; set; }
         public decimal BuyingRate { get; set; }
@@ -35,10 +33,6 @@ namespace BE.Core
         public string ModifyBy { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
 
-        [ForeignKey("BrandId")]
-        public virtual M_Brand M_Brand { get; set; }
-        [ForeignKey("GuageId")]
-        public virtual M_Guage M_Guage { get; set; }
         [ForeignKey("ItemsId")]
         public virtual M_Items M_Items { get; set; }
         [ForeignKey("UomId")]

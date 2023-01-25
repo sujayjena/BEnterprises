@@ -47,14 +47,6 @@ namespace BE.Core
         [Required(ErrorMessage = "{0} is required")]
         public Guid ItemsId { get; set; }
 
-        [Display(Name= "BrandId")]
-        [Required(ErrorMessage = "{0} is required")]
-        public Guid BrandId { get; set; }
-
-        [Display(Name= "GuageId")]
-        [Required(ErrorMessage = "{0} is required")]
-        public Guid GuageId { get; set; }
-
         [Display(Name= "UomId")]
         [Required(ErrorMessage = "{0} is required")]
         public Guid UomId { get; set; }

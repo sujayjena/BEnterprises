@@ -15,7 +15,7 @@ namespace BE.Core
 {
     public partial class M_ItemsType
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "82feb89f-74a3-44bd-8360-4a8c87b29ad9:DoNotCallOverridableMethodsInConstructors")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "d48d277c-e1e2-4a72-8df9-bcc09eedddd7:DoNotCallOverridableMethodsInConstructors")]
         public M_ItemsType()
         {
            this.M_Items = new HashSet<M_Items>();
@@ -30,7 +30,7 @@ namespace BE.Core
         public Nullable<System.DateTime> ModifyDate { get; set; }
 
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "388e2551-97a4-4b16-9e93-4a10352dcb42:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "f91c7048-4f11-499d-83ef-6aacddc6b2bb:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<M_Items> M_Items { get; set; }
     }
 }

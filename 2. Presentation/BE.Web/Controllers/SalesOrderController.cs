@@ -1,6 +1,4 @@
 ﻿using BE.Core;
-using BE.Data.Brand;
-using BE.Data.Guage;
 using BE.Data.Items;
 using BE.Data.ItemsType;
 using BE.Data.Order;
@@ -22,9 +20,7 @@ namespace BE.Web.Controllers
         protected readonly bl_SalesOrder _blSalesOrder = new bl_SalesOrder();
         protected readonly bl_Supplier _blSupplier = new bl_Supplier();
         protected readonly bl_Items _blItems = new bl_Items();
-        protected readonly bl_Brand _blBrand = new bl_Brand();
         protected readonly bl_ItemsType _blItemsType = new bl_ItemsType();
-        protected readonly bl_Guage _blGuage = new bl_Guage();
         protected readonly bl_Uom _blUOM = new bl_Uom();
         //protected readonly bl_PurchaseOrder _blPurchaseOrder = new bl_PurchaseOrder();
         T_SalesOrder model = new T_SalesOrder();
@@ -116,14 +112,6 @@ namespace BE.Web.Controllers
             M_Items ObjItemsModel = new M_Items();
             model.ItemsList = _blItems.GetList(ObjItemsModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).OrderBy(x => x.Text).ToList();
             model.ItemsList.Insert(0, new SelectListItem() { Text = "Select", Value = "0", Selected = true });
-
-            M_Brand objBrandModel = new M_Brand();
-            model.BrandList = _blBrand.GetList(objBrandModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).OrderBy(x => x.Text).ToList();
-            model.BrandList.Insert(0, new SelectListItem() { Text = "Select", Value = "0", Selected = true });
-
-            M_Guage objGuageModel = new M_Guage();
-            model.GuageList = _blGuage.GetList(objGuageModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).OrderBy(x => x.Text).ToList();
-            model.GuageList.Insert(0, new SelectListItem() { Text = "Select", Value = "0", Selected = true });
 
             M_UOM objUomModel = new M_UOM();
             model.UomList = _blUOM.GetList(objUomModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).OrderBy(x => x.Text).ToList();
@@ -232,8 +220,6 @@ namespace BE.Web.Controllers
                         Guid guidId = Guid.NewGuid();
                         Guid guidSalesOrderId = Guid.Parse(Convert.ToString(ObjModel.SalesOrderId));
                         Guid guidItemsId = Guid.Parse(Convert.ToString(ObjModel.ItemsId));
-                        Guid guidBrandId = Guid.Parse(Convert.ToString(ObjModel.BrandId));
-                        Guid guidGuageId = Guid.Parse(Convert.ToString(ObjModel.GuageId));
                         Guid guidUomId = Guid.Parse(Convert.ToString(ObjModel.UomId));
 
                         T_SalesOrderDetails _Obj_T_SalesOrder = new T_SalesOrderDetails()
@@ -242,8 +228,6 @@ namespace BE.Web.Controllers
                             SalesOrderId = guidSalesOrderId,
                             SlNo = ObjModel.SlNo,
                             ItemsId = guidItemsId,
-                            BrandId = guidBrandId,
-                            GuageId = guidGuageId,
                             UomId = guidUomId,
                             StockQuantity = ObjModel.StockQuantity,
                             Quantity = ObjModel.Quantity,
@@ -261,13 +245,9 @@ namespace BE.Web.Controllers
                         Guid guidId = Guid.Parse(Convert.ToString(ObjModel.Id));
                         Guid guidSalesOrderId = Guid.Parse(Convert.ToString(ObjModel.SalesOrderId));
                         Guid guidItemsId = Guid.Parse(Convert.ToString(ObjModel.ItemsId));
-                        Guid guidBrandId = Guid.Parse(Convert.ToString(ObjModel.BrandId));
-                        Guid guidGuageId = Guid.Parse(Convert.ToString(ObjModel.GuageId));
                         Guid guidUomId = Guid.Parse(Convert.ToString(ObjModel.UomId));
 
                         vObjExists.ItemsId = guidItemsId;
-                        vObjExists.BrandId = guidBrandId;
-                        vObjExists.GuageId = guidGuageId;
                         vObjExists.UomId = guidUomId;
                         vObjExists.Quantity = ObjModel.Quantity;
                         vObjExists.StockQuantity = ObjModel.StockQuantity;
@@ -327,21 +307,6 @@ namespace BE.Web.Controllers
         }
 
         [HttpPost]
-        public JsonResult GetItemsBrand(T_PurchaseOrderDetails ObjPurchaseOrder)
-        {
-            var ObjModelList = new List<M_Brand>();
-            try
-            {
-                ObjModelList = _blSalesOrder.GetItemsBrand(ObjPurchaseOrder);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return Json(new { data = ObjModelList, Success = true }, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpPost]
         public JsonResult GetItemsStock(T_PurchaseOrderDetails ObjPurchaseOrder)
         {
             var ObjModel = new T_PurchaseOrderDetails();
@@ -391,14 +356,12 @@ namespace BE.Web.Controllers
             workSheet.Cells["A1"].Value = "Slno";
             //sheet["A3:A4"].Merge();
             workSheet.Cells["B1"].Value = "Item";
-            workSheet.Cells["C1"].Value = "Brand";
-            workSheet.Cells["D1"].Value = "Guage";
-            workSheet.Cells["E1"].Value = "Stock Quantity";
-            workSheet.Cells["F1"].Value = "Quantity";
-            workSheet.Cells["G1"].Value = "UOM";
-            workSheet.Cells["H1"].Value = "Latest Price";
-            workSheet.Cells["I1"].Value = "Selling Price";
-            workSheet.Cells["J1"].Value = "Created Dated";
+            workSheet.Cells["C1"].Value = "Stock Quantity";
+            workSheet.Cells["D1"].Value = "Quantity";
+            workSheet.Cells["E1"].Value = "UOM";
+            workSheet.Cells["F1"].Value = "Latest Price";
+            workSheet.Cells["G1"].Value = "Selling Price";
+            workSheet.Cells["H1"].Value = "Created Dated";
 
             string dateformat = "dd-MM-yyyy";
             int row = 2;
@@ -409,13 +372,11 @@ namespace BE.Web.Controllers
 
                 workSheet.Cells[string.Format("A{0}", row)].Value = item.SlNo;
                 workSheet.Cells[string.Format("B{0}", row)].Value = item.ItemsName;
-                workSheet.Cells[string.Format("C{0}", row)].Value = item.BrandName;
-                workSheet.Cells[string.Format("D{0}", row)].Value = item.GuageName;
-                workSheet.Cells[string.Format("E{0}", row)].Value = item.StockQuantity;
-                workSheet.Cells[string.Format("F{0}", row)].Value = item.Quantity;
-                workSheet.Cells[string.Format("G{0}", row)].Value = item.UomName;
-                workSheet.Cells[string.Format("H{0}", row)].Value = item.LatestPrice;
-                workSheet.Cells[string.Format("I{0}", row)].Value = item.SellingPrice;
+                workSheet.Cells[string.Format("C{0}", row)].Value = item.StockQuantity;
+                workSheet.Cells[string.Format("D{0}", row)].Value = item.Quantity;
+                workSheet.Cells[string.Format("E{0}", row)].Value = item.UomName;
+                workSheet.Cells[string.Format("F{0}", row)].Value = item.LatestPrice;
+                workSheet.Cells[string.Format("G{0}", row)].Value = item.SellingPrice;
 
                 workSheet.Cells[string.Format("J{0}", row)].Value = item.CreatedDate;
                 workSheet.Cells[string.Format("J{0}", row)].Style.Numberformat.Format = dateformat;
@@ -452,26 +413,10 @@ namespace BE.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult BrandList()
-        {
-            M_Brand objModel = new M_Brand();
-            var vlist = _blBrand.GetList(objModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
-            return Json(vlist, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpGet]
         public ActionResult ItemsTypeList()
         {
             M_ItemsType objModel = new M_ItemsType();
             var vlist = _blItemsType.GetList(objModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
-            return Json(vlist, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpGet]
-        public ActionResult GuageList()
-        {
-            M_Guage objModel = new M_Guage();
-            var vlist = _blGuage.GetList(objModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
             return Json(vlist, JsonRequestBehavior.AllowGet);
         }
 

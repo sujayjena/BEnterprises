@@ -16,11 +16,8 @@ namespace BE.Services.UnitOfWork
     {
         void Save();
 
-        IGenericRepository<M_Branch> M_Branch_Repository { get; set; }
-        IGenericRepository<M_Brand> M_Brand_Repository { get; set; }
         IGenericRepository<M_Company> M_Company_Repository { get; set; }
         IGenericRepository<M_ExpenseType> M_ExpenseType_Repository { get; set; }
-        IGenericRepository<M_Guage> M_Guage_Repository { get; set; }
         IGenericRepository<M_Items> M_Items_Repository { get; set; }
         IGenericRepository<M_ItemsType> M_ItemsType_Repository { get; set; }
         IGenericRepository<M_Product> M_Product_Repository { get; set; }

@@ -181,9 +181,7 @@ namespace BE.Data.Items
                 var queryItemType = _objUnitOfWork._M_ItemsType_Repository.Query();
                 var queryPurchaseOrderDetails = _objUnitOfWork._T_PurchaseOrderDetails_Repository.Query();
                 var querySalesOrderDetails = _objUnitOfWork._T_SalesOrderDetails_Repository.Query();
-                var queryBrand = _objUnitOfWork._M_Brand_Repository.Query();
                 var queryUom = _objUnitOfWork._M_UOM_Repository.Query();
-                var queryGuage = _objUnitOfWork._M_Guage_Repository.Query();
 
                 if (!string.IsNullOrWhiteSpace(ObjItems.Name))
                 {
@@ -199,20 +197,14 @@ namespace BE.Data.Items
                                 join it in queryItemType on i.ItemsTypeId equals it.Id
                                 join p in queryPurchaseOrderDetails on i.Id equals p.ItemsId into ip
                                 from ipj in ip.DefaultIfEmpty()
-                                join b in queryBrand on ipj.BrandId equals b.Id into ib
-                                from ibj in ib.DefaultIfEmpty()
                                 join u in queryUom on ipj.UomId equals u.Id into iu
                                 from iuj in iu.DefaultIfEmpty()
-                                join g in queryGuage on ipj.GuageId equals g.Id into ig
-                                from igj in ig.DefaultIfEmpty()
                                 select new
                                 {
                                     itemId = i.Id,
                                     itemName = i.Name,
                                     itemTypeName = it.Name,
-                                    brandName = ibj.Name,
                                     uomName = iuj.Name,
-                                    guageName = igj.Name,
                                     purchaseQuantity = ipj.Quantity != null ? ipj.Quantity : 0,
                                     salesQuantity = (querySalesOrderDetails.Where(x => x.ItemsId == i.Id)).ToList().Count > 0 ? querySalesOrderDetails.Where(x => x.ItemsId == i.Id).ToList().Sum(c => c.Quantity) : 0,
                                     createDate=i.CreatedDate
@@ -223,9 +215,7 @@ namespace BE.Data.Items
                     Id = x.itemId,
                     Name = x.itemName,
                     ItemsTypeName = x.itemTypeName,
-                    BrandName = x.brandName,
                     UomName = x.uomName,
-                    GuageName = x.guageName,
                     PurchaseQuantity = x.purchaseQuantity,
                     SalesQuantity = x.salesQuantity,
                     StockQuantity = (Convert.ToDecimal(x.purchaseQuantity) - Convert.ToDecimal(x.salesQuantity)),
