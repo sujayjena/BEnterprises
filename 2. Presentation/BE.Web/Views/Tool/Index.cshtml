@@ -37,6 +37,31 @@
     @Html.AntiForgeryToken();
 
     <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">Form 1</div>
+                    <hr>
+                    <div class="form-group row">
+                        @Html.Label("Table Name", new { @class = "col-sm-3 col-form-label" })
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="txtTableName" id="txtTableName" required />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
         <div oncl class="col-12 col-lg-4 col-xl-4">
             <div class="card gradient-warning rounded-0">
                 <div class="card-body p-1">
@@ -116,167 +141,129 @@
 }
 
 <script>
+    function CheckTableName() {
+        var vTavleName = $('#txtTableName').val();
+        if (vTavleName == "") {
+            return false;
+        }
+        else
+            return true;
+    }
+
     function GenerateModel() {
-        $.ajax({
-            type: "GET",
-            url: "@Url.Action("GenerateModel", "Tool")",
-            dataType: 'JSON',
-            cache: false,
-            async: true
-        }).done(function (response) {
-            if (response.Result) {
-                SucessMsgAllert(response.Message)
-            }
-            })
-            .fail(function (jqXHR, exception) {
-                var msg = '';
-                if (jqXHR.status === 0) {
-                    msg = 'Not connect.\n Verify Network.';
-                } else if (jqXHR.status == 404) {
-                    msg = 'Requested page not found. [404]';
-                } else if (jqXHR.status == 500) {
-                    msg = 'Internal Server Error [500].';
-                } else if (exception === 'parsererror') {
-                    msg = 'Requested JSON parse failed.';
-                } else if (exception === 'timeout') {
-                    msg = 'Time out error.';
-                } else if (exception === 'abort') {
-                    msg = 'Ajax request aborted.';
-                } else {
-                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
-                }
-                if (msg != '') {
-                    ErrorMsgAllert(msg)
-                }
-                else {
+        if (!CheckTableName()) {
+            alert('Please enter table name!')
+        } else {
+            var vDataModel = {
+                TableName: $('#txtTableName').val(),
+            };
+
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("GenerateModel", "Tool")",
+                dataType: 'JSON',
+                data: vDataModel,
+                cache: false,
+                async: true,
+                success: function (response) {
+                    if (response.Result) {
+                        SucessMsgAllert(response.Message);
+                    } else {
+                        ErrorMsgAllert(response.Message);
+                    }
+                },
+                error: function (request, status, error) {
                     ErrorMsgAllert(response.Message)
-                }            })
-            .always(function () {
-               // alert("complete");
-            });
+                }
+            })
+        }
     }
 
     function GenerateViewModel() {
-        $.ajax({
-            type: "GET",
-            url: "@Url.Action("GenerateViewModel", "Tool")",
-            dataType: 'JSON',
-            cache: false,
-            async: true
-        }).done(function (response) {
-            if (response.Result) {
-                SucessMsgAllert(response.Message)
-            }
-            })
-            .fail(function (jqXHR, exception) {
-                var msg = '';
-                if (jqXHR.status === 0) {
-                    msg = 'Not connect.\n Verify Network.';
-                } else if (jqXHR.status == 404) {
-                    msg = 'Requested page not found. [404]';
-                } else if (jqXHR.status == 500) {
-                    msg = 'Internal Server Error [500].';
-                } else if (exception === 'parsererror') {
-                    msg = 'Requested JSON parse failed.';
-                } else if (exception === 'timeout') {
-                    msg = 'Time out error.';
-                } else if (exception === 'abort') {
-                    msg = 'Ajax request aborted.';
-                } else {
-                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
-                }
-                if (msg != '') {
-                    ErrorMsgAllert(msg)
-                }
-                else {
+        if (!CheckTableName()) {
+            alert('Please enter table name!')
+        } else {
+            var vDataModel = {
+                TableName: $('#txtTableName').val(),
+            };
+
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("GenerateViewModel", "Tool")",
+                dataType: 'JSON',
+                data: vDataModel,
+                cache: false,
+                async: true,
+              success: function (response) {
+                    if (response.Result) {
+                        SucessMsgAllert(response.Message);
+                    } else {
+                        ErrorMsgAllert(response.Message);
+                    }
+                },
+                error: function (request, status, error) {
                     ErrorMsgAllert(response.Message)
                 }
             })
-            .always(function () {
-               // alert("complete");
-            });
+        }
     }
 
     function GenerateUnitOfWork() {
-        $.ajax({
-            type: "GET",
-            url: "@Url.Action("GenerateUnitOfWork", "Tool")",
-            dataType: 'JSON',
-            cache: false,
-            async: true
-        }).done(function (response) {
-            if (response.Result) {
-                SucessMsgAllert(response.Message)
-            }
-            })
-            .fail(function (jqXHR, exception) {
-                var msg = '';
-                if (jqXHR.status === 0) {
-                    msg = 'Not connect.\n Verify Network.';
-                } else if (jqXHR.status == 404) {
-                    msg = 'Requested page not found. [404]';
-                } else if (jqXHR.status == 500) {
-                    msg = 'Internal Server Error [500].';
-                } else if (exception === 'parsererror') {
-                    msg = 'Requested JSON parse failed.';
-                } else if (exception === 'timeout') {
-                    msg = 'Time out error.';
-                } else if (exception === 'abort') {
-                    msg = 'Ajax request aborted.';
-                } else {
-                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
-                }
-                if (msg != '') {
-                    ErrorMsgAllert(msg)
-                }
-                else {
+        if (!CheckTableName()) {
+            alert('Please enter table name!')
+        } else {
+            var vDataModel = {
+                TableName: $('#txtTableName').val(),
+            };
+
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("GenerateUnitOfWork", "Tool")",
+                dataType: 'JSON',
+                cache: false,
+                async: true,
+                data: vDataModel,
+                success: function (response) {
+                    if (response.Result) {
+                        SucessMsgAllert(response.Message);
+                    } else {
+                        ErrorMsgAllert(response.Message);
+                    }
+                },
+                error: function (request, status, error) {
                     ErrorMsgAllert(response.Message)
                 }
             })
-            .always(function () {
-               // alert("complete");
-            });
+        }
     }
 
     function GenerateDbContext() {
-        $.ajax({
-            type: "GET",
-            url: "@Url.Action("GenerateDbContext", "Tool")",
-            dataType: 'JSON',
-            cache: false,
-            async: true
-        }).done(function (response) {
-            if (response.Result) {
-                SucessMsgAllert(response.Message)
-            }
-            })
-            .fail(function (jqXHR, exception) {
-                var msg = '';
-                if (jqXHR.status === 0) {
-                    msg = 'Not connect.\n Verify Network.';
-                } else if (jqXHR.status == 404) {
-                    msg = 'Requested page not found. [404]';
-                } else if (jqXHR.status == 500) {
-                    msg = 'Internal Server Error [500].';
-                } else if (exception === 'parsererror') {
-                    msg = 'Requested JSON parse failed.';
-                } else if (exception === 'timeout') {
-                    msg = 'Time out error.';
-                } else if (exception === 'abort') {
-                    msg = 'Ajax request aborted.';
-                } else {
-                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
-                }
-                if (msg != '') {
-                    ErrorMsgAllert(msg)
-                }
-                else {
+        if (!CheckTableName()) {
+            alert('Please enter table name!')
+        } else {
+            var vDataModel = {
+                TableName: $('#txtTableName').val(),
+            };
+
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("GenerateDbContext", "Tool")",
+                dataType: 'JSON',
+                cache: false,
+                async: true,
+                data: vDataModel,
+                success: function (response) {
+                    if (response.Result) {
+                        SucessMsgAllert(response.Message);
+                    } else {
+                        ErrorMsgAllert(response.Message);
+                    }
+                },
+                error: function (request, status, error) {
                     ErrorMsgAllert(response.Message)
                 }
             })
-            .always(function () {
-               // alert("complete");
-            });
+        }
     }
 </script>
 

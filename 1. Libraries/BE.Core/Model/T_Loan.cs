@@ -15,7 +15,7 @@ namespace BE.Core
 {
     public partial class T_Loan
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "2a8f67e7-e996-407c-aa0c-0980876adb50:DoNotCallOverridableMethodsInConstructors")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "e6e97224-bcb8-4c83-92e4-1163b90c5aba:DoNotCallOverridableMethodsInConstructors")]
         public T_Loan()
         {
            this.T_LoanDetails = new HashSet<T_LoanDetails>();
@@ -34,7 +34,7 @@ namespace BE.Core
         public Nullable<System.DateTime> ModifyDate { get; set; }
 
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "d8a59fa3-ef17-4d2c-8f78-c5c335d1d2a0:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "bb6aa063-ea81-449f-a6a4-10a97aa632b3:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_LoanDetails> T_LoanDetails { get; set; }
     }
 }

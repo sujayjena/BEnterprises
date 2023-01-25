@@ -1,4 +1,5 @@
-﻿using BE.Services.DbConnections;
+﻿using BE.Core.ViewModel;
+using BE.Services.DbConnections;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -45,9 +46,9 @@ namespace BE.Services.Tool
 
         #region Constructure
 
-        public GenerateModel()
+        public GenerateModel(Sys_GenerateViewModel sys_GenerateViewModel)
         {
-            GenerateModelFiles();
+            GenerateModelFiles(sys_GenerateViewModel);
         }
 
         #endregion
@@ -253,7 +254,7 @@ namespace BE.Services.Tool
 
         #region Block For Generate Model Class Files
 
-        public void GenerateModelFiles()
+        public void GenerateModelFiles(Sys_GenerateViewModel sys_GenerateViewModel)
         {
             try
             {
@@ -325,7 +326,13 @@ namespace BE.Services.Tool
                 //------------------------------------------------------------------------------
                 #endregion
 
-                foreach (DataRow item in dtAllTables.Rows)
+                if (dtAllTables.AsEnumerable().Where(r => r.Field<string>("TABLE_NAME") == sys_GenerateViewModel.TableName).AsDataView().Count == 0)
+                {
+                    Exception exception = new Exception("Table does not below to the Database!");
+                    throw exception;
+                }
+
+                foreach (DataRow item in dtAllTables.AsEnumerable().Where(r => r.Field<string>("TABLE_NAME") == sys_GenerateViewModel.TableName))
                 {
                     string path = @"" + sPath + "\\" + Convert.ToString(item["TABLE_NAME"]) + ".cs";
                     if (File.Exists(path))

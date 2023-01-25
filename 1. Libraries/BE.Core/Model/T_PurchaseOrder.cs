@@ -15,7 +15,7 @@ namespace BE.Core
 {
     public partial class T_PurchaseOrder
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "598afda6-1b6a-4e7b-8fa1-3e8821289765:DoNotCallOverridableMethodsInConstructors")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "8c3c99e6-3646-459f-99a6-0d41c25bbf7b:DoNotCallOverridableMethodsInConstructors")]
         public T_PurchaseOrder()
         {
            this.T_PurchaseOrderDetails = new HashSet<T_PurchaseOrderDetails>();
@@ -32,7 +32,7 @@ namespace BE.Core
         public Nullable<System.DateTime> ModifyDate { get; set; }
 
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "10f34ec6-3fe9-450c-800c-b428ed9b7477:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "fecd5773-65fa-46a6-81c9-dea17bdd80dd:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_PurchaseOrderDetails> T_PurchaseOrderDetails { get; set; }
     }
 }

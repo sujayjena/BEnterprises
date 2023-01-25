@@ -40,8 +40,6 @@ D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.csproj.Co
 D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.csproj.CopyComplete
 D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.dll
 D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.pdb
-E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Debug\EntityFramework.xml
-E:\Project\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.csproj.CoreCompileInputs.cache
 E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Services.dll
 E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Services.pdb
 E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Core.dll
@@ -49,8 +47,10 @@ E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Debug\EntityFramework.dll
 E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Debug\EntityFramework.SqlServer.dll
 E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Debug\System.Web.Mvc.dll
 E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Debug\BE.Core.pdb
+E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Debug\EntityFramework.xml
 E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Debug\EntityFramework.SqlServer.xml
 E:\Project\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.csproj.AssemblyReference.cache
+E:\Project\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.csproj.CoreCompileInputs.cache
 E:\Project\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.csproj.CopyComplete
 E:\Project\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.dll
 E:\Project\BEnterprises\1. Libraries\BE.Services\obj\Debug\BE.Services.pdb

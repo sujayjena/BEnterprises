@@ -15,7 +15,7 @@ namespace BE.Core
 {
     public partial class T_OutStanding
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "e61c40fa-af57-413f-929e-e658bda8c7fd:DoNotCallOverridableMethodsInConstructors")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "3cba7712-2713-42a1-beb4-18d03030b147:DoNotCallOverridableMethodsInConstructors")]
         public T_OutStanding()
         {
            this.T_OutStandingDetails = new HashSet<T_OutStandingDetails>();
@@ -37,7 +37,7 @@ namespace BE.Core
         [ForeignKey("SalesOrderId")]
         public virtual T_SalesOrder T_SalesOrder { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "75d2186a-e990-4504-9908-397aa98aa807:CollectionPropertiesShouldBeReadOnly")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "b55875aa-68e4-4ac9-881c-466f0049be79:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_OutStandingDetails> T_OutStandingDetails { get; set; }
     }
 }

@@ -43,6 +43,7 @@ namespace BE.Services.UnitOfWork
             disposed = true;
         }
 
+
         public IGenericRepository<M_Company> M_Company_Repository { get; set; }
         public IGenericRepository<M_Company> _M_Company_Repository
         {

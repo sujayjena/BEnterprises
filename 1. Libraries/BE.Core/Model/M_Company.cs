@@ -15,11 +15,6 @@ namespace BE.Core
 {
     public partial class M_Company
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "317b0ea8-ecfb-4e54-a322-e0fb1c172f1e:DoNotCallOverridableMethodsInConstructors")]
-        public M_Company()
-        {
-        }
-
         [Key]
         public Guid Id { get; set; }
         public string Name { get; set; }
@@ -30,5 +25,6 @@ namespace BE.Core
         public System.DateTime CreatedDate { get; set; }
         public string ModifyBy { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
+
     }
 }

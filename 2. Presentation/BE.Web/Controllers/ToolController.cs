@@ -1,4 +1,5 @@
-﻿using BE.Data.Entity;
+﻿using BE.Core.ViewModel;
+using BE.Data.Entity;
 using System;
 using System.Web.Mvc;
 
@@ -15,30 +16,30 @@ namespace BE.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult GenerateModel()
+        public ActionResult GenerateModel(Sys_GenerateViewModel sys_GenerateViewModel)
         {
             try
             {
-                _bl_Entity.GenerateModel();
+                _bl_Entity.GenerateModel(sys_GenerateViewModel);
                 return Json(new { Result = true, Message = "Entity model generated" }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
-                return Json(new { Result = true,Message= ex.Message }, JsonRequestBehavior.AllowGet);
+                return Json(new { Result = false,Message= ex.Message }, JsonRequestBehavior.AllowGet);
             }
         }
 
         [HttpGet]
-        public ActionResult GenerateViewModel()
+        public ActionResult GenerateViewModel(Sys_GenerateViewModel sys_GenerateViewModel)
         {
             try
             {
-                _bl_Entity.GenerateViewModel();
+                _bl_Entity.GenerateViewModel(sys_GenerateViewModel);
                 return Json(new { Result = true, Message = "Entity view model generated" }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
-                return Json(new { Result = true, Message = ex.Message }, JsonRequestBehavior.AllowGet);
+                return Json(new { Result = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
             }
         }
 
@@ -52,7 +53,7 @@ namespace BE.Web.Controllers
             }
             catch (Exception ex)
             {
-                return Json(new { Result = true, Message = ex.Message }, JsonRequestBehavior.AllowGet);
+                return Json(new { Result = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
             }
         }
 
@@ -66,7 +67,7 @@ namespace BE.Web.Controllers
             }
             catch (Exception ex)
             {
-                return Json(new { Result = true, Message = ex.Message }, JsonRequestBehavior.AllowGet);
+                return Json(new { Result = false, Message = ex.Message }, JsonRequestBehavior.AllowGet);
             }
         }
     }
