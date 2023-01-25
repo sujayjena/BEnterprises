@@ -21,6 +21,7 @@ D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.pdb
 D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.csprojAssemblyReference.cache
 E:\Project\BEnterprises\1. Libraries\BE.Core\bin\Debug\BE.Core.dll
 E:\Project\BEnterprises\1. Libraries\BE.Core\bin\Debug\BE.Core.pdb
+E:\Project\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.csproj.AssemblyReference.cache
 E:\Project\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.csproj.CoreCompileInputs.cache
 E:\Project\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.csproj.CopyComplete
 E:\Project\BEnterprises\1. Libraries\BE.Core\obj\Debug\BE.Core.dll

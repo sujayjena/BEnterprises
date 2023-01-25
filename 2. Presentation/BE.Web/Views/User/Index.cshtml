@@ -9,26 +9,27 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-<div class="row">
-    <div class="col-sm-6">
-        @*<h4 class="page-title">Blank Page</h4>*@
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="@Html.Raw(Url.Action("Index", "Home"))">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">User</li>
-        </ol>
+    <div class="row">
+        <div class="col-sm-6">
+            @*<h4 class="page-title">Blank Page</h4>*@
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="@Html.Raw(Url.Action("Index", "Home"))">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">User</li>
+            </ol>
+        </div>
+        <div class="col-sm-6" style="text-align:right;">
+            <div class="btn-group m-1">
+                <a href="@Url.Action("Create","User")" class="btn-social-text btn-outline-tumblr waves-effect waves-light m-1"><span>CREATE</span></a>
+            </div>
+            <div class="btn-group m-1">
+                <a class="btn-social-text btn-outline-twitter waves-effect waves-light m-1"><span>IMPORT</span></a>
+            </div>
+            <div class="btn-group m-1">
+                <a class="btn-social-text btn-outline-pinterest waves-effect waves-light m-1" onclick="BulkDelete()">DELETE</a>
+
+            </div>
+        </div>
     </div>
-    <div class="col-sm-6" style="text-align:right;">
-        <div class="btn-group m-1">
-            <a href="@Url.Action("Create","User")" class="btn-social-text btn-outline-tumblr waves-effect waves-light m-1"><span>CREATE</span></a>
-        </div>
-        <div class="btn-group m-1">
-            <a href="javascript:void()" class="btn-social-text btn-outline-twitter waves-effect waves-light m-1"><span>IMPORT</span></a>
-        </div>
-        <div class="btn-group m-1">
-            <a href="javascript:void()" class="btn-social-text btn-outline-pinterest waves-effect waves-light m-1"><span>DELETE</span></a>
-        </div>
-    </div>
-</div>
 
     <div class="row">
         <div class="col-lg-12">
@@ -59,7 +60,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
-                                        <input type="button" id="btnSearch" name="btnSearch" value="Search" class="btn btn-gradient-violet px-5" onclick="BtnSearch()" />
+                                        <input type="button" id="btnSearch" name="btnSearch" value="Search" class="btn btn-gradient-violet px-5" autofocus onclick="BtnSearch()" />
                                         <input type="button" id="btnClear" name="btnClear" value="Clear" class="btn btn-gradient-dusk px-5" onclick="BtnClear()" />
                                     </div>
                                 </div>
@@ -79,7 +80,7 @@
             $("#GridItemInfo-grid").kendoGrid({
                 dataSource: GridItemInfoDataSource,
                 height: 350,
-                selectable: "Multiple",
+                //selectable: "Multiple",
                 sortable: true,
                 filterable: true,
                 groupable: true,
@@ -204,19 +205,108 @@
         }
     </script>
 
+    @*Search Panel*@
     <script>
         $(document).ready(function () {
             LoadGrid();
+
+            // Default Search button click when press enter key
+            $(function () {
+                $("form input").keypress(function (e) {
+                    if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+                        $('#btnSearch').click();
+                        return false;
+                    } else {
+                        return true;
+                    }
+                });
+            });
+
         });
+
         function BtnSearch() {
             var grid = $('#GridItemInfo-grid').data('kendoGrid');
             grid.dataSource.page(1); //new search. Set page size to 1
             grid.dataSource.read();// we already loaded the grid above using "page" function
             return false;
         }
+
         function BtnClear() {
             $('#Name').val("");
             $('#Phone').val("");
         }
+
+        function BulkDelete() {
+            debugger;
+            var vselectedRecords = [];
+            var vdeletedRecords = [];
+
+            var gridAdditive = $("#GridItemInfo-grid").data("kendoGrid");
+            gridAdditive.select().each(function () {
+                vselectedRecords.push(gridAdditive.dataItem($(this).closest("tr")));
+                //gridAdditive.dataSource.remove(gridAdditive.dataItem($(this).closest("tr")));
+            });
+
+            if (vselectedRecords.length) {
+                var tmpJson = JSON.parse(JSON.stringify(vselectedRecords));
+                if (tmpJson.length <= 0) {
+                    return;
+                }
+                for (var i = 0; i < tmpJson.length; i++) {
+                    vdeletedRecords.push(tmpJson[i]);
+                }
+
+                var vDataModel = { DeletedRecord: vdeletedRecords };
+                addAntiForgeryToken(vDataModel);
+
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("BulkDelete", "User")",
+                    dataType: 'JSON',
+                    data: vDataModel,
+                    cache: false,
+                    async: true
+                }).done(function (response) {
+                    if (response.Result) {
+                        SucessMsgAllert('Record deleted successfully');
+                        BtnSearch();
+                    }
+                    else {
+                        BtnSearch();
+                        ErrorMsgAllert(response.Message);
+                    }
+                })
+                    .fail(function (jqXHR, exception) {
+                        var msg = '';
+                        if (jqXHR.status === 0) {
+                            msg = 'Not connect.\n Verify Network.';
+                        } else if (jqXHR.status == 404) {
+                            msg = 'Requested page not found. [404]';
+                        } else if (jqXHR.status == 500) {
+                            msg = 'Internal Server Error [500].';
+                        } else if (exception === 'parsererror') {
+                            msg = 'Requested JSON parse failed.';
+                        } else if (exception === 'timeout') {
+                            msg = 'Time out error.';
+                        } else if (exception === 'abort') {
+                            msg = 'Ajax request aborted.';
+                        } else {
+                            msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                        }
+                        if (msg != '') {
+                            alert(response.Message);
+                        }
+                        else {
+                            alert(response.Message);
+                        }
+                    })
+                    .always(function () {
+                        // alert("complete");
+                    });
+            }
+            else
+                ErrorMsgAllert('Please select the records');
+        }
+
     </script>
 }

@@ -12,3 +12,17 @@ D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Release\BE.Services.csproj.
 D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Release\BE.Services.csproj.CopyComplete
 D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Release\BE.Services.dll
 D:\Project\BEnterprises\1. Libraries\BE.Services\obj\Release\BE.Services.pdb
+E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\BE.Services.dll
+E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\BE.Services.pdb
+E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\BE.Core.dll
+E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\EntityFramework.dll
+E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\EntityFramework.SqlServer.dll
+E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\System.Web.Mvc.dll
+E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\BE.Core.pdb
+E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\EntityFramework.xml
+E:\Project\BEnterprises\1. Libraries\BE.Services\bin\Release\EntityFramework.SqlServer.xml
+E:\Project\BEnterprises\1. Libraries\BE.Services\obj\Release\BE.Services.csproj.AssemblyReference.cache
+E:\Project\BEnterprises\1. Libraries\BE.Services\obj\Release\BE.Services.csproj.CoreCompileInputs.cache
+E:\Project\BEnterprises\1. Libraries\BE.Services\obj\Release\BE.Services.csproj.CopyComplete
+E:\Project\BEnterprises\1. Libraries\BE.Services\obj\Release\BE.Services.dll
+E:\Project\BEnterprises\1. Libraries\BE.Services\obj\Release\BE.Services.pdb

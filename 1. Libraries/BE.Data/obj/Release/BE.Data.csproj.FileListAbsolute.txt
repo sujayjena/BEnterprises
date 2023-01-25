@@ -12,3 +12,17 @@ D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Release\BE.Data.csproj.CoreComp
 D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Release\BE.Data.csproj.CopyComplete
 D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Release\BE.Data.dll
 D:\Project\BEnterprises\1. Libraries\BE.Data\obj\Release\BE.Data.pdb
+E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\BE.Data.dll
+E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\BE.Data.pdb
+E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\BE.Core.dll
+E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\BE.Services.dll
+E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\EntityFramework.dll
+E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\System.Web.Mvc.dll
+E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\BE.Core.pdb
+E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\BE.Services.pdb
+E:\Project\BEnterprises\1. Libraries\BE.Data\bin\Release\EntityFramework.xml
+E:\Project\BEnterprises\1. Libraries\BE.Data\obj\Release\BE.Data.csproj.AssemblyReference.cache
+E:\Project\BEnterprises\1. Libraries\BE.Data\obj\Release\BE.Data.csproj.CoreCompileInputs.cache
+E:\Project\BEnterprises\1. Libraries\BE.Data\obj\Release\BE.Data.csproj.CopyComplete
+E:\Project\BEnterprises\1. Libraries\BE.Data\obj\Release\BE.Data.dll
+E:\Project\BEnterprises\1. Libraries\BE.Data\obj\Release\BE.Data.pdb

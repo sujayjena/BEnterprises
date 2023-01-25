@@ -6,3 +6,11 @@ D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Release\BE.Core.csproj.CoreComp
 D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Release\BE.Core.csproj.CopyComplete
 D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Release\BE.Core.dll
 D:\Project\BEnterprises\1. Libraries\BE.Core\obj\Release\BE.Core.pdb
+E:\Project\BEnterprises\1. Libraries\BE.Core\bin\Release\BE.Core.dll
+E:\Project\BEnterprises\1. Libraries\BE.Core\bin\Release\BE.Core.pdb
+E:\Project\BEnterprises\1. Libraries\BE.Core\bin\Release\System.Web.Mvc.dll
+E:\Project\BEnterprises\1. Libraries\BE.Core\obj\Release\BE.Core.csproj.AssemblyReference.cache
+E:\Project\BEnterprises\1. Libraries\BE.Core\obj\Release\BE.Core.csproj.CoreCompileInputs.cache
+E:\Project\BEnterprises\1. Libraries\BE.Core\obj\Release\BE.Core.csproj.CopyComplete
+E:\Project\BEnterprises\1. Libraries\BE.Core\obj\Release\BE.Core.dll
+E:\Project\BEnterprises\1. Libraries\BE.Core\obj\Release\BE.Core.pdb

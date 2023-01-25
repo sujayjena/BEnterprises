@@ -49,6 +49,7 @@
     <Compile Include="API\Common\api_bl_Common.cs" />
     <Compile Include="Branch\bl_Branch.cs" />
     <Compile Include="Brand\bl_Brand.cs" />
+    <Compile Include="Common\bl_Common.cs" />
     <Compile Include="Company\bl_Company.cs" />
     <Compile Include="Dashboard\bl_Dashboard.cs" />
     <Compile Include="Entity\bl_Entity.cs" />

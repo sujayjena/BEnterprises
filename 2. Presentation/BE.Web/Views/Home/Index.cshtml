@@ -1,224 +1,643 @@
-﻿
+﻿@model  BE.Core.Sys_Dashboard
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutMaster.cshtml";
 }
+<script src="~/assets/plugins/apexcharts/apexcharts.js"></script>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <div class="row mt-3">
-        @*<div class="col-12 col-lg-6 col-xl-3">
-            <div class="card gradient-deepblue">
-                <div class="card-body">
-                    <h5 class="text-white mb-0">9526 <span class="float-right"><i class="fa fa-shopping-cart"></i></span></h5>
-                    <div class="progress my-3" style="height:3px;">
-                        <div class="progress-bar" style="width:55%"></div>
-                    </div>
-                    <p class="mb-0 text-white small-font">Total Orders <span class="float-right">+4.2% <i class="zmdi zmdi-long-arrow-up"></i></span></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-lg-6 col-xl-3">
-            <div class="card gradient-orange">
-                <div class="card-body">
-                    <h5 class="text-white mb-0">8323 <span class="float-right"><i class="fa fa-usd"></i></span></h5>
-                    <div class="progress my-3" style="height:3px;">
-                        <div class="progress-bar" style="width:55%"></div>
-                    </div>
-                    <p class="mb-0 text-white small-font">Total Revenue <span class="float-right">+1.2% <i class="zmdi zmdi-long-arrow-up"></i></span></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-lg-6 col-xl-3">
-            <div class="card gradient-ohhappiness">
-                <div class="card-body">
-                    <h5 class="text-white mb-0">6200 <span class="float-right"><i class="fa fa-eye"></i></span></h5>
-                    <div class="progress my-3" style="height:3px;">
-                        <div class="progress-bar" style="width:55%"></div>
-                    </div>
-                    <p class="mb-0 text-white small-font">Visitors <span class="float-right">+5.2% <i class="zmdi zmdi-long-arrow-up"></i></span></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-lg-6 col-xl-3">
-            <div class="card gradient-ibiza">
-                <div class="card-body">
-                    <h5 class="text-white mb-0">5630 <span class="float-right"><i class="fa fa-envira"></i></span></h5>
-                    <div class="progress my-3" style="height:3px;">
-                        <div class="progress-bar" style="width:55%"></div>
-                    </div>
-                    <p class="mb-0 text-white small-font">Messages <span class="float-right">+2.2% <i class="zmdi zmdi-long-arrow-up"></i></span></p>
-                </div>
-            </div>
-        </div>*@
-    </div>
-    <!--End Row-->
 
     <div class="row">
-        <div class="col-12 col-lg-8 col-xl-8">
-            @*<div class="card">
-                <div class="card-header">
-                    Site Traffic
-                    <div class="card-action">
-                        <div class="dropdown">
-                            <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
-                                <i class="icon-options"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="javascript:void();">Action</a>
-                                <a class="dropdown-item" href="javascript:void();">Another action</a>
-                                <a class="dropdown-item" href="javascript:void();">Something else here</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void();">Separated link</a>
+        <div class="col-12 col-lg-12">
+            <div class="row mt-3">
+                <div class="col-12 col-lg-6 col-xl-2">
+                    <div class="gradient-deepblue">
+                        <div class="card-body">
+                            <h5 class="text-white mb-0"> @Html.DisplayFor(model => model.TotalItems)</h5>
+                            <div class="progress my-3" style="height:3px;">
+                                <div class="progress-bar" style="width:55%"></div>
                             </div>
+                            <p class="mb-0 text-white small-font">Total Items <span class="float-right">+4.2% <i class="zmdi zmdi-long-arrow-up"></i></span></p>
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><i class="fa fa-circle mr-2" style="color: #14abef"></i>New Visitor</li>
-                        <li class="list-inline-item"><i class="fa fa-circle mr-2" style="color: #ade2f9"></i>Old Visitor</li>
-                    </ul>
-                    <div class="chart-container-1">
-                        <canvas id="chart1"></canvas>
-                    </div>
-                </div>
-
-                <div class="row m-0 row-group text-center border-top border-light-3">
-                    <div class="col-12 col-lg-4">
-                        <div class="p-3">
-                            <h5 class="mb-0">45.87M</h5>
-                            <small class="mb-0">Overall Visitor <span> <i class="fa fa-arrow-up"></i> 2.43%</span></small>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-4">
-                        <div class="p-3">
-                            <h5 class="mb-0">15:48</h5>
-                            <small class="mb-0">Visitor Duration <span> <i class="fa fa-arrow-up"></i> 12.65%</span></small>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-4">
-                        <div class="p-3">
-                            <h5 class="mb-0">245.65</h5>
-                            <small class="mb-0">Pages/Visit <span> <i class="fa fa-arrow-up"></i> 5.62%</span></small>
+                <div class="col-12 col-lg-6 col-xl-2">
+                    <div class="gradient-orange">
+                        <div class="card-body">
+                            <h5 class="text-white mb-0">&#x20B9 @Html.DisplayFor(model => model.TotalPurchaseAmount)</h5>
+                            <div class="progress my-3" style="height:3px;">
+                                <div class="progress-bar" style="width:55%"></div>
+                            </div>
+                            <p class="mb-0 text-white small-font">Total Purchase <span class="float-right">+1.2% <i class="zmdi zmdi-long-arrow-up"></i></span></p>
                         </div>
                     </div>
                 </div>
-
-            </div>*@
+                <div class="col-12 col-lg-6 col-xl-2">
+                    <div class="gradient-ohhappiness">
+                        <div class="card-body">
+                            <h5 class="text-white mb-0">&#x20B9 @Html.DisplayFor(model => model.TotalSalesAmount)</h5>
+                            <div class="progress my-3" style="height:3px;">
+                                <div class="progress-bar" style="width:55%"></div>
+                            </div>
+                            <p class="mb-0 text-white small-font">Total Sales <span class="float-right">+5.2% <i class="zmdi zmdi-long-arrow-up"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl-2">
+                    <div class="gradient-ibiza">
+                        <div class="card-body">
+                            <h5 class="text-white mb-0">&#x20B9 @Html.DisplayFor(model => model.TotalExpenseAmount)</h5>
+                            <div class="progress my-3" style="height:3px;">
+                                <div class="progress-bar" style="width:55%"></div>
+                            </div>
+                            <p class="mb-0 text-white small-font">Total Expense <span class="float-right">+2.2% <i class="zmdi zmdi-long-arrow-up"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl-2">
+                    <div class="gradient-primary">
+                        <div class="card-body">
+                            <h5 class="text-white mb-0">&#x20B9 @Html.DisplayFor(model => model.TotalProfitAmount)</h5>
+                            <div class="progress my-3" style="height:3px;">
+                                <div class="progress-bar" style="width:55%"></div>
+                            </div>
+                            <p class="mb-0 text-white small-font">Total Profit <span class="float-right">+2.2% <i class="zmdi zmdi-long-arrow-up"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl-2">
+                    <div class="btn-gradient-redmist">
+                        <div class="card-body">
+                            <h5 class="text-white mb-0">&#x20B9 @Html.DisplayFor(model => model.TotalLossAmount)</h5>
+                            <div class="progress my-3" style="height:3px;">
+                                <div class="progress-bar" style="width:55%"></div>
+                            </div>
+                            <p class="mb-0 text-white small-font">Total Loss <span class="float-right">+2.2% <i class="zmdi zmdi-long-arrow-up"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-12 col-lg-4 col-xl-4">
-            <div class="card">
-                @*<div class="card-header">
-                    Weekly sales
-                    <div class="card-action">
-                        <div class="dropdown">
-                            <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
-                                <i class="icon-options"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="javascript:void();">Action</a>
-                                <a class="dropdown-item" href="javascript:void();">Another action</a>
-                                <a class="dropdown-item" href="javascript:void();">Something else here</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void();">Separated link</a>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-12">
+            <div class="row mt-3">
+                <div class="col-12 col-lg-6 col-xl-3">
+                    <div class="card rounded-0 gradient-smile">
+                        <div class="card-body">
+                            <div class="media align-items-center">
+                                <div class="media-body">
+                                    <p class="mb-0 font-weight-bold text-white text-uppercase">Total Loan Taken</p>
+                                    <br /><br />
+                                    @*<small class="extra-small-font text-white">Oct 23 - Nov 23</small>*@
+                                </div>
+                            </div>
+                            <div class="media align-items-center">
+                                <div class="media-body">
+                                    <h5 class="mb-0 text-white">&#x20B9 @Html.DisplayFor(model => model.TotalLoanAmount)</h5>
+                                </div>
+                                <div id="data-chart6"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="chart-container-2">
-                        <canvas id="chart2"></canvas>
+                <div class="col-12 col-lg-6 col-xl-3">
+                    <div class="card rounded-0 btn-gradient-meridian">
+                        <div class="card-body">
+                            <div class="media align-items-center">
+                                <div class="media-body">
+                                    <p class="mb-0 font-weight-bold text-white text-uppercase">Total Loan Paid/Due</p>
+                                    @*<small class="extra-small-font text-white">Oct 23 - Nov 23</small>*@
+                                    <br />
+                                </div>
+                            </div>
+                            <div class="media align-items-center">
+                                <div class="media-body">
+                                    <h5 class="mb-0 text-white">Paid : &#x20B9 @Html.DisplayFor(model => model.TotalLoanPaidAmount)</h5>
+                                    <h5 class="mb-0 text-white">Due : &#x20B9 @Html.DisplayFor(model => model.TotalLoanOutstandingAmount)</h5>
+                                </div>
+                                <div id="data-chart6"></div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl-3">
+                    <div class="card rounded-0 btn-gradient-shifter">
+                        <div class="card-body">
+                            <div class="media align-items-center">
+                                <div class="media-body">
+                                    <p class="mb-0 font-weight-bold text-white text-uppercase">Total OutStanding</p>
+                                    @*<small class="extra-small-font text-white">Oct 23 - Nov 23</small>*@
+                                    <br /><br />
+                                </div>
+                            </div>
+                            <div class="media align-items-center">
+                                <div class="media-body">
+                                    <h5 class="mb-0 text-white">&#x20B9 @Html.DisplayFor(model => model.TotalOutStandingAmount)</h5>
+                                </div>
+                                <div id="data-chart6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl-3">
+                    <div class="card rounded-0 btn-gradient-royal">
+                        <div class="card-body">
+                            <div class="media align-items-center">
+                                <div class="media-body">
+                                    <p class="mb-0 font-weight-bold text-white text-uppercase">Total OutStanding</p>
+                                    @*<small class="extra-small-font text-white">Oct 23 - Nov 23</small>*@
+                                    <br />
+                                </div>
+                            </div>
+                            <div class="media align-items-center">
+                                <div class="media-body">
+                                    <h5 class="mb-0 text-white">Paid : &#x20B9 @Html.DisplayFor(model => model.TotalOutStandingPaidAmount)</h5>
+                                    <h5 class="mb-0 text-white">Due : &#x20B9 @Html.DisplayFor(model => model.TotalOutStandingDueAmount)</h5>
+                                </div>
+                                <div id="data-chart6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="card col-6 col-lg-6">
+            <div class="card" style="box-shadow: none;">
+                <div class="card-header">
+                    Monthly Total Purchase Order / Sales / Expense / Profit / Loss Report
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-6 col-lg-6 col-xl-6">
+                    <div class="card gradient-danger rounded-0">
+                        <div class="card-body p-1">
+                            <div class="media align-items-center bg-dark p-3">
+                                <div class="media-body">
+                                    <p class="text-white font-weight-bold">Monthly Purchase</p>
+                                    <h5 class="mb-0 text-white">&#x20B9 @Html.DisplayFor(model => model.TotalMonthlyPurchaseAmount)</h5>
+                                </div>
+                                @*<div class="circle-1 bg-danger-light1">
+                                        <div class="circle-2 bg-danger-light2">
+                                            <div class="circle-3 gradient-danger-light">
+                                                <i class="zmdi zmdi-money text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-6 col-xl-6">
+                    <div class="card gradient-warning rounded-0">
+                        <div class="card-body p-1">
+                            <div class="media align-items-center bg-dark p-3">
+                                <div class="media-body">
+                                    <p class="text-white font-weight-bold">Monthly Sales</p>
+                                    <h5 class="mb-0 text-white">&#x20B9 @Html.DisplayFor(model => model.TotalMonthlySaleAmount)</h5>
+                                </div>
+                                @*<div class="circle-1 bg-warning-light1">
+                                        <div class="circle-2 bg-warning-light2">
+                                            <div class="circle-3 gradient-warning-light">
+                                                <i class="zmdi zmdi-fire text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-6 col-xl-6">
+                    <div class="card gradient-secondary rounded-0">
+                        <div class="card-body p-1">
+                            <div class="media align-items-center bg-dark p-3">
+                                <div class="media-body">
+                                    <p class="text-white font-weight-bold">Monthly Expense</p>
+                                    <h5 class="mb-0 text-white">&#x20B9 @Html.DisplayFor(model => model.TotalMonthlyExpenseAmount)</h5>
+                                </div>
+                                @*<div class="circle-1 bg-secondary-light1">
+                                        <div class="circle-2 bg-secondary-light2">
+                                            <div class="circle-3 gradient-secondary-light">
+                                                <i class="zmdi zmdi-face text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-6 col-xl-6">
+                    <div class="card gradient-danger rounded-0">
+                        <div class="card-body p-1">
+                            <div class="media align-items-center bg-dark p-3">
+                                <div class="media-body">
+                                    <p class="text-white font-weight-bold">Monthly Profit</p>
+                                    <h5 class="mb-0 text-white">&#x20B9 @Html.DisplayFor(model => model.TotalMonthlyProfitAmount)</h5>
+                                </div>
+                                @*<div class="circle-1 bg-danger-light1">
+                                        <div class="circle-2 bg-danger-light2">
+                                            <div class="circle-3 gradient-danger-light">
+                                                <i class="zmdi zmdi-money text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-6 col-xl-6">
+                    <div class="card gradient-danger rounded-0">
+                        <div class="card-body p-1">
+                            <div class="media align-items-center bg-dark p-3">
+                                <div class="media-body">
+                                    <p class="text-white font-weight-bold">Monthly Loss</p>
+                                    <h5 class="mb-0 text-white">&#x20B9 @Html.DisplayFor(model => model.TotalMonthlyLossAmount)</h5>
+                                </div>
+                                @*<div class="circle-1 bg-danger-light1">
+                                        <div class="circle-2 bg-danger-light2">
+                                            <div class="circle-3 gradient-danger-light">
+                                                <i class="zmdi zmdi-money text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    Yearly Report
+                </div>
+                <div class="card-body">
+                    <div id="chart3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="card col-6 col-lg-6">
+            <div class="card" style="box-shadow: none;">
+                <div class="card-header">
+                    Daily Total Purchase Order / Sales / Expense / Profit / Loss Report
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-6 col-lg-6 col-xl-6">
+                    <div class="card gradient-esinto rounded-0">
+                        <div class="card-body">
+                            <div class="media align-items-center">
+                                <div class="media-body">
+                                    <h5 class="mb-0 text-white">&#x20B9 @Html.DisplayFor(model => model.TotalDailyPurchaseAmount)</h5>
+                                    <p class="mb-0 text-white">Daily Purchase</p>
+                                </div>
+                                <div class="w-icon"><i class="zmdi zmdi-money-box text-white"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-6 col-xl-6">
+                    <div class="card gradient-dunada rounded-0">
+                        <div class="card-body">
+                            <div class="media align-items-center">
+                                <div class="media-body">
+                                    <h5 class="mb-0 text-white">&#x20B9 @Html.DisplayFor(model => model.TotalDailySaleAmount)</h5>
+                                    <p class="mb-0 text-white">Daily Sales</p>
+                                </div>
+                                <div class="w-icon"><i class="zmdi zmdi-money-box text-white"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-6 col-xl-6">
+                    <div class="card gradient-linga rounded-0">
+                        <div class="card-body">
+                            <div class="media align-items-center">
+                                <div class="media-body">
+                                    <h5 class="mb-0 text-white">&#x20B9 @Html.DisplayFor(model => model.TotalDailyExpenseAmount)</h5>
+                                    <p class="mb-0 text-white">Daily Expense</p>
+                                </div>
+                                <div class="w-icon"><i class="zmdi zmdi-money-box text-white"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-6 col-xl-6">
+                    <div class="card gradient-esinto rounded-0">
+                        <div class="card-body">
+                            <div class="media align-items-center">
+                                <div class="media-body">
+                                    <h5 class="mb-0 text-white">&#x20B9 @Html.DisplayFor(model => model.TotalDailyProfitAmount)</h5>
+                                    <p class="mb-0 text-white">Daily Profit</p>
+                                </div>
+                                <div class="w-icon"><i class="zmdi zmdi-money-box text-white"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-6 col-xl-6">
+                    <div class="card gradient-linga rounded-0">
+                        <div class="card-body">
+                            <div class="media align-items-center">
+                                <div class="media-body">
+                                    <h5 class="mb-0 text-white">&#x20B9 @Html.DisplayFor(model => model.TotalDailyLossAmount)</h5>
+                                    <p class="mb-0 text-white">Daily Loss</p>
+                                </div>
+                                <div class="w-icon"><i class="zmdi zmdi-money-box text-white"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-6">
+            <div class="card" style="height: 450px;">
+                <div class="card-header">
+                    Low Stock
                 </div>
                 <div class="table-responsive">
+                    @Html.Raw(ViewBag.HtmlStr)
                     <table class="table align-items-center">
                         <tbody>
-                            <tr>
-                                <td><i class="fa fa-circle mr-2" style="color: #14abef"></i> Direct</td>
-                                <td>$5856</td>
-                                <td>+55%</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa fa-circle mr-2" style="color: #02ba5a"></i>Affiliate</td>
-                                <td>$2602</td>
-                                <td>+25%</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa fa-circle mr-2" style="color: #d13adf"></i>E-mail</td>
-                                <td>$1802</td>
-                                <td>+15%</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fa fa-circle mr-2" style="color: #fba540"></i>Other</td>
-                                <td>$1105</td>
-                                <td>+5%</td>
-                            </tr>
+                            @foreach (var item in Model.LowStockItemsList)
+                            {
+                                <tr>
+                                    <td style="padding: 4px;"><i class="fa fa-circle mr-2" style="color: #ff0000;"></i>@item.Name</td>
+                                    <td style="padding: 4px;">@item.StockQuantity</td>
+                                    <td style="padding: 4px;">@item.UomName</td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
-                </div>*@
+                </div>
             </div>
         </div>
     </div>
-    <!--End Row-->
 
     <div class="row">
-        @*<div class="col-12 col-lg-12">
+        <div class="col-6 col-lg-6">
             <div class="card">
                 <div class="card-header border-0">
-                    Recent Order Tables
-                    <div class="card-action">
-                        <div class="dropdown">
-                            <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
-                                <i class="icon-options"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="javascript:void();">Action</a>
-                                <a class="dropdown-item" href="javascript:void();">Another action</a>
-                                <a class="dropdown-item" href="javascript:void();">Something else here</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void();">Separated link</a>
-                            </div>
-                        </div>
-                    </div>
+                    Recent Purchase Order
                 </div>
                 <div class="table-responsive">
-                    <table class="table align-items-center table-flush">
-                        <thead>
-                            <tr>
-                                <th>Photo</th>
-                                <th>Product</th>
-                                <th>Amount</th>
-                                <th>Status</th>
-                                <th>Completion</th>
-                                <th>Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <img alt="Image placeholder" src="~/assets/images/products/01.png" class="product-img">
-                                </td>
-                                <td>Headphone GL</td>
-                                <td>$1,840 USD</td>
-                                <td>
-                                    <span class="badge-dot">
-                                        <i class="bg-danger"></i> pending
-                                    </span>
-                                </td>
-                                <td>
-                                    <div class="progress shadow" style="height: 4px;">
-                                        <div class="progress-bar gradient-ibiza" role="progressbar" style="width: 60%"></div>
-                                    </div>
-                                </td>
-                                <td>10 July 2018</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div id="GridPurchaseOrderItemInfo-grid"></div>
                 </div>
             </div>
-        </div>*@
+        </div>
+
+        <div class="col-6 col-lg-6">
+            <div class="card">
+                <div class="card-header border-0">
+                    Recent Sales Order
+                </div>
+                <div class="table-responsive">
+                    <div id="GridSalesOrderItemInfo-grid"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!--End Row-->
 }
+
+<script>
+    $(document).ready(function () {
+        var vProfitAmountArray = @Html.Raw(Json.Encode(Model.ChartTotalProfit));
+        if (vProfitAmountArray != null && vProfitAmountArray != "")
+            vProfitAmountArray = vProfitAmountArray.split(",");
+        else
+            vProfitAmountArray = [];
+
+        var vLossAmountArray = @Html.Raw(Json.Encode(Model.ChartTotalLoss));
+        if (vLossAmountArray != null && vLossAmountArray != "")
+            vLossAmountArray = vLossAmountArray.split(",");
+        else
+            vLossAmountArray = [];
+
+        var vPurchaseAmountArray = @Html.Raw(Json.Encode(Model.ChartTotalPurchaseAmount));
+        if (vPurchaseAmountArray != null && vPurchaseAmountArray != "")
+            vPurchaseAmountArray = vPurchaseAmountArray.split(",");
+        else
+            vPurchaseAmountArray = [];
+
+        var vSalesAmountArray = @Html.Raw(Json.Encode(Model.ChartTotalSaleAmount));
+        if (vSalesAmountArray != null && vSalesAmountArray != "")
+            vSalesAmountArray = vSalesAmountArray.split(",");
+        else
+            vSalesAmountArray = [];
+
+        var vExpenseAmountArray = @Html.Raw(Json.Encode(Model.ChartTotalExpenseAmount));
+        if (vExpenseAmountArray != null && vExpenseAmountArray != "")
+            vExpenseAmountArray = vExpenseAmountArray.split(",");
+        else
+            vExpenseAmountArray = [];
+
+        "use strict";
+        var options = {
+            chart: {
+                height: 350,
+                type: 'bar',
+                foreColor: '#4e4e4e',
+                toolbar: {
+                    show: false
+                }
+            },
+            plotOptions: {
+                bar: {
+                    horizontal: false,
+                    columnWidth: '55%',
+                    endingShape: 'rounded'
+                },
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                show: true,
+                width: 2,
+                colors: ['transparent']
+            },
+            grid: {
+                show: true,
+                borderColor: 'rgba(255, 255, 255, 0.00)',
+            },
+            series: [
+            {
+                name: 'Purchase',
+                data: vPurchaseAmountArray
+            },
+            {
+                name: 'Sales',
+                data: vSalesAmountArray
+            },
+            {
+                name: 'Expense',
+                data: vExpenseAmountArray
+            },
+            {
+                name: 'Net Profit',
+                data: vProfitAmountArray
+            },
+            {
+                name: 'Net Loss',
+                data: vLossAmountArray
+            }],
+            xaxis: {
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            },
+            fill: {
+                type: 'gradient',
+                gradient: {
+                    shade: 'dark',
+                    gradientToColors: ["#0072ff", "#33cc33", "#ff9900", "#b300b3", "#ff0000"],
+                    shadeIntensity: 1,
+                    type: 'horizontal',
+                    opacityFrom: 1,
+                    opacityTo: 1,
+                    stops: [0, 100, 100, 100]
+                },
+            },
+            colors: ["#0072ff", "#33cc33", "#ff9900", "#b300b3", "#ff0000"],
+            tooltip: {
+                theme: 'dark',
+                y: {
+                    formatter: function (val) {
+                        return "₹ " + val
+                        //return "₹ " + val + " thousands"
+                    }
+                }
+            }
+        }
+        var chart = new ApexCharts(
+            document.querySelector("#chart3"),
+            options
+        );
+        chart.render();
+
+        LoadSalesOrderGrid();
+        LoadPurchaseOrderGrid();
+    });
+</script>
+
+@* Grid Sales Order*@
+<script>
+    function LoadSalesOrderGrid() {
+            $("#GridSalesOrderItemInfo-grid").kendoGrid({
+                dataSource: GridSalesOrderItemInfoDataSource,
+                height: 400,
+                sortable: true,
+                filterable: true,
+                groupable: true,
+                scrollable: false,
+                pageable: { refresh: true, pageSizes: true, buttonCount: 5 },
+                toolbar: ["search"],
+                columns: [
+                    {
+                        hidden: true,
+                        field: "Id"
+                    },
+                    {
+                        field: "EventDate",
+                        title: "Date",
+                        template: "#= (EventDate == null) ? ' ' : kendo.toString(kendo.parseDate(EventDate, 'yyyy-MM-dd'), 'dd/MM/yyyy') #"
+                    },
+                    {
+                        field: "OrderId",
+                        title: "Order Id"
+                    },
+                    {
+                        field: "TotalAmount",
+                        title: "Total Amount"
+                    },
+                    {
+                        field: "BillerName",
+                        title: "Biller Name"
+                    },
+                    {
+                        template: '<a role="button" class=k-button k-button-icontext k-grid-edit" href="SalesOrder/Edit/#=Id#"><span class="k-icon k-i-edit"></span></a>',
+                        width: "30px"
+                    }
+                ]
+            });
+        }
+        var GridSalesOrderItemInfoDataSource = {
+            transport: {
+                read: {
+                    url: "@Html.Raw(Url.Action("GetList", "SalesOrder"))",
+                    type: "GET",
+                    dataType: "json",
+                },
+            },
+            pageSize: 10,
+            error: function (e) {
+                this.cancelChanges();
+            },
+        };
+</script>
+
+@* Grid Purchase Order*@
+<script>
+    function LoadPurchaseOrderGrid() {
+            $("#GridPurchaseOrderItemInfo-grid").kendoGrid({
+                dataSource: GridPurchaseOrderItemInfoDataSource,
+                height: 400,
+                sortable: true,
+                filterable: true,
+                groupable: true,
+                scrollable: false,
+                pageable: { refresh: true, pageSizes: true, buttonCount: 5 },
+                toolbar: ["search"],
+                columns: [
+                    {
+                        hidden: true,
+                        field: "Id"
+                    },
+                    {
+                        field: "EventDate",
+                        title: "Date",
+                        template: "#= (EventDate == null) ? ' ' : kendo.toString(kendo.parseDate(EventDate, 'yyyy-MM-dd'), 'dd/MM/yyyy') #"
+                    },
+                    {
+                        field: "OrderId",
+                        title: "Order Id"
+                    },
+                    {
+                        field: "TotalAmount",
+                        title: "Total Amount"
+                    },
+                    {
+                        field: "BillerName",
+                        title: "Biller Name"
+                    },
+                    {
+                        template: '<a role="button" class=k-button k-button-icontext k-grid-edit" href="SalesOrder/Edit/#=Id#"><span class="k-icon k-i-edit"></span></a>',
+                        width: "30px"
+                    }
+                ]
+            });
+        }
+    var GridPurchaseOrderItemInfoDataSource = {
+            transport: {
+                read: {
+                    url: "@Html.Raw(Url.Action("GetList", "PurchaseOrder"))",
+                    type: "GET",
+                    dataType: "json",
+                },
+            },
+            pageSize: 10,
+            error: function (e) {
+                this.cancelChanges();
+            },
+        };
+</script>

@@ -44,3 +44,15 @@ function getCookieValueByName(CookieName, CookieValue) {
     }
     return ReturnVal;
 }
+
+$(document).ready(function () {
+    $(".date").kendoDatePicker({
+        format: "{0:dd/MM/yyyy}",
+        change: function () {
+            //var value = this.value();
+            //alert(value);
+        }
+    });
+});
+
+
