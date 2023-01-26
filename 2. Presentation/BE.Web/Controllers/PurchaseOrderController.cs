@@ -1,5 +1,5 @@
 ﻿using BE.Core;
-using BE.Data.ItemsType;
+using BE.Data.Category;
 using BE.Data.Order;
 using BE.Data.Items;
 using BE.Data.Supplier;
@@ -23,7 +23,7 @@ namespace BE.Web.Controllers
         protected readonly bl_PurchaseOrder _blPurchaseOrder = new bl_PurchaseOrder();
         protected readonly bl_Supplier _blSupplier = new bl_Supplier();
         protected readonly bl_Items _blItems = new bl_Items();
-        protected readonly bl_ItemsType _blItemsType = new bl_ItemsType();
+        protected readonly bl_Category _blCategory = new bl_Category();
         protected readonly bl_Uom _blUOM = new bl_Uom();
         T_PurchaseOrder model = new T_PurchaseOrder();
 
@@ -100,7 +100,7 @@ namespace BE.Web.Controllers
                     {
                         Guid guidId = Guid.NewGuid();
                         Guid guidPurchaseOrderId = Guid.Parse(Convert.ToString(ObjModel.PurchaseOrderId));
-                        Guid guidItemsId = Guid.Parse(Convert.ToString(ObjModel.ItemsId));
+                        Guid guidProductId = Guid.Parse(Convert.ToString(ObjModel.ProductId));
                         Guid guidUomId = Guid.Parse(Convert.ToString(ObjModel.UomId));
 
                         T_PurchaseOrderDetails _Obj_T_PurchaseOrder = new T_PurchaseOrderDetails()
@@ -108,7 +108,7 @@ namespace BE.Web.Controllers
                             Id = guidId,
                             PurchaseOrderId = guidPurchaseOrderId,
                             SlNo = ObjModel.SlNo,
-                            ItemsId = guidItemsId,
+                            ProductId = guidProductId,
                             UomId = guidUomId,
                             Quantity = ObjModel.Quantity,
                             BuyingRate = ObjModel.BuyingRate,
@@ -128,10 +128,10 @@ namespace BE.Web.Controllers
                     {
                         Guid guidId = Guid.Parse(Convert.ToString(ObjModel.Id));
                         Guid guidPurchaseOrderId = Guid.Parse(Convert.ToString(ObjModel.PurchaseOrderId));
-                        Guid guidItemsId = Guid.Parse(Convert.ToString(ObjModel.ItemsId));
+                        Guid guidProductId = Guid.Parse(Convert.ToString(ObjModel.ProductId));
                         Guid guidUomId = Guid.Parse(Convert.ToString(ObjModel.UomId));
 
-                        vObjExists.ItemsId = guidItemsId;
+                        vObjExists.ProductId = guidProductId;
                         vObjExists.UomId = guidUomId;
                         vObjExists.Quantity = ObjModel.Quantity;
                         vObjExists.BuyingRate = ObjModel.BuyingRate;
@@ -171,7 +171,7 @@ namespace BE.Web.Controllers
                     model.BillerName = vDetails.BillerName;
                 }
             }
-            M_Items ObjItemsModel = new M_Items();
+            M_Product ObjItemsModel = new M_Product();
             model.ItemsList = _blItems.GetList(ObjItemsModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).OrderBy(x=>x.Text).ToList();
 
             M_UOM objUomModel = new M_UOM();
@@ -311,16 +311,16 @@ namespace BE.Web.Controllers
         [HttpGet]
         public ActionResult ItemsList()
         {
-            M_Items objModel = new M_Items();
+            M_Product objModel = new M_Product();
             var vlist = _blItems.GetList(objModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).OrderBy(x=>x.Text).ToList();
             return Json(vlist, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
-        public ActionResult ItemsTypeList()
+        public ActionResult CategoryList()
         {
-            M_ItemsType objModel = new M_ItemsType();
-            var vlist = _blItemsType.GetList(objModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).OrderBy(x => x.Text).ToList();
+            M_Category objModel = new M_Category();
+            var vlist = _blCategory.GetList(objModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).OrderBy(x => x.Text).ToList();
             return Json(vlist, JsonRequestBehavior.AllowGet);
         }
 
@@ -381,7 +381,6 @@ namespace BE.Web.Controllers
 
                 workSheet.Cells[string.Format("A{0}", row)].Value = item.SlNo;
                 workSheet.Cells[string.Format("B{0}", row)].Value = item.ItemsName;
-                workSheet.Cells[string.Format("C{0}", row)].Value = item.BrandName;
                 workSheet.Cells[string.Format("D{0}", row)].Value = item.GuageName;
                 workSheet.Cells[string.Format("E{0}", row)].Value = item.Quantity;
                 workSheet.Cells[string.Format("F{0}", row)].Value = item.UomName;

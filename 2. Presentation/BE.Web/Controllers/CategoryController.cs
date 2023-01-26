@@ -4,17 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BE.Core;
-using BE.Data.ItemsType;
+using BE.Data.Category;
 
 namespace BE.Web.Controllers
 {
     [CustomAuthentication]
-    public class ItemsTypeController : Controller
+    public class CategoryController : Controller
     {
-        protected readonly bl_ItemsType _blItemsType = new bl_ItemsType();
+        protected readonly bl_Category _blCategory = new bl_Category();
         protected readonly CustomAuthentication _objAuthentication = new CustomAuthentication();
 
-        // GET: ItemsType
+        // GET: Category
         public ActionResult Index()
         {
             return View();
@@ -27,14 +27,14 @@ namespace BE.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(M_ItemsType ObjItemsType)
+        public ActionResult Create(M_Category ObjCategory)
         {
             try
             {
                 bool bAnyError = false;
                 if (ModelState.IsValid)
                 {
-                    var vNameExists = _blItemsType.GetFirstOrDefault(ObjItemsType);
+                    var vNameExists = _blCategory.GetFirstOrDefault(ObjCategory);
                     if (vNameExists != null)
                     {
                         ViewBag.ErrorMsg = "Name alreay exists in our system";
@@ -42,14 +42,15 @@ namespace BE.Web.Controllers
                     }
                     if (bAnyError == false)
                     {
-                        M_ItemsType _Obj_M_ItemsType = new M_ItemsType()
+                        M_Category _Obj_M_Category = new M_Category()
                         {
                             Id = Guid.NewGuid(),
-                            Name = ObjItemsType.Name,
+                            CompanyId = ObjCategory.CompanyId,
+                            Name = ObjCategory.Name,
                             CreatedBy = _objAuthentication.UserName,
                             CreatedDate = DateTime.Now
                         };
-                        var vReturnObj = _blItemsType.Create(_Obj_M_ItemsType);
+                        var vReturnObj = _blCategory.Create(_Obj_M_Category);
                     }
                 }
                 else
@@ -59,9 +60,9 @@ namespace BE.Web.Controllers
 
                 if (bAnyError)
                 {
-                    return View(ObjItemsType);
+                    return View(ObjCategory);
                 }
-                return RedirectToAction("Index", "ItemsType");
+                return RedirectToAction("Index", "Category");
             }
             catch (Exception ex)
             {
@@ -72,10 +73,10 @@ namespace BE.Web.Controllers
         [HttpGet]
         public ActionResult Edit(string Id)
         {
-            M_ItemsType vModel = new M_ItemsType();
+            M_Category vModel = new M_Category();
             if (!string.IsNullOrWhiteSpace(Id))
             {
-                var vDetails = _blItemsType.GetById(new Guid(Id));
+                var vDetails = _blCategory.GetById(new Guid(Id));
                 if (vDetails != null)
                 {
                     vModel.Id = vDetails.Id;
@@ -86,21 +87,21 @@ namespace BE.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(M_ItemsType ObjItemsType)
+        public ActionResult Edit(M_Category ObjCategory)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    if (!string.IsNullOrWhiteSpace(Convert.ToString(ObjItemsType.Id)))
+                    if (!string.IsNullOrWhiteSpace(Convert.ToString(ObjCategory.Id)))
                     {
-                        var vObj = _blItemsType.GetById(ObjItemsType.Id);
+                        var vObj = _blCategory.GetById(ObjCategory.Id);
                         if (vObj != null)
                         {
-                            vObj.Name = ObjItemsType.Name;
+                            vObj.Name = ObjCategory.Name;
                             vObj.ModifyDate = DateTime.Now;
                             vObj.ModifyBy = _objAuthentication.UserName;
-                            _blItemsType.Update(vObj);
+                            _blCategory.Update(vObj);
                         }
                     }
                 }
@@ -109,20 +110,20 @@ namespace BE.Web.Controllers
             {
                 throw ex;
             }
-            return RedirectToAction("Index", "ItemsType");
+            return RedirectToAction("Index", "Category");
         }
 
         [HttpPost]
-        public ActionResult Delete(M_ItemsType ObjItemsType)
+        public ActionResult Delete(M_Category ObjCategory)
         {
             try
             {
-                if (!string.IsNullOrWhiteSpace(Convert.ToString(ObjItemsType.Id)))
+                if (!string.IsNullOrWhiteSpace(Convert.ToString(ObjCategory.Id)))
                 {
-                    var vObj = _blItemsType.GetById(ObjItemsType.Id);
+                    var vObj = _blCategory.GetById(ObjCategory.Id);
                     if (vObj != null)
                     {
-                        _blItemsType.Delete(ObjItemsType);
+                        _blCategory.Delete(ObjCategory);
                     }
                 }
             }
@@ -130,17 +131,17 @@ namespace BE.Web.Controllers
             {
                 throw ex;
             }
-            return Json(ObjItemsType);
+            return Json(ObjCategory);
         }
 
         [HttpPost]
-        public ActionResult BulkDelete(List<M_ItemsType> DeletedRecord)
+        public ActionResult BulkDelete(List<M_Category> DeletedRecord)
         {
             try
             {
                 if (DeletedRecord.Count > 0)
                 {
-                    var vUser = _blItemsType.BulkDelete(DeletedRecord);
+                    var vUser = _blCategory.BulkDelete(DeletedRecord);
                     if (vUser)
                     {
                         return Json(new { Result = true, Message = "Sucess" }, JsonRequestBehavior.AllowGet);
@@ -155,17 +156,17 @@ namespace BE.Web.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetList(M_ItemsType ObjItemsType)
+        public JsonResult GetList(M_Category ObjCategory)
         {
-            List<M_ItemsType> ObjList = new List<M_ItemsType>();
+            List<M_Category> ObjList = new List<M_Category>();
             try
             {
-                var vList = _blItemsType.GetList(ObjItemsType);
+                var vList = _blCategory.GetList(ObjCategory);
                 if (vList.Count > 0)
                 {
                     foreach (var item in vList)
                     {
-                        var vObjItemUser = new M_ItemsType()
+                        var vObjItemUser = new M_Category()
                         {
                             Id = item.Id,
                             Name = item.Name,

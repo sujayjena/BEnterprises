@@ -13,24 +13,27 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BE.Core
 {
-    public partial class M_ItemsType
+    public partial class M_Category
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "88a6d4ad-c029-442d-a526-91ebc6694ad9:DoNotCallOverridableMethodsInConstructors")]
-        public M_ItemsType()
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "95706d2d-d3ac-4e84-ad39-6cafcefbf2e9:DoNotCallOverridableMethodsInConstructors")]
+        public M_Category()
         {
-           this.M_Items = new HashSet<M_Items>();
+           this.M_Product = new HashSet<M_Product>();
         }
 
         [Key]
         public Guid Id { get; set; }
+        public Guid CompanyId { get; set; }
         public string Name { get; set; }
         public string CreatedBy { get; set; }
         public System.DateTime CreatedDate { get; set; }
         public string ModifyBy { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
 
+        [ForeignKey("CompanyId")]
+        public virtual M_Company M_Company { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "6cda2dfd-c989-43bc-83c7-52330c63b898:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<M_Items> M_Items { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "a7db10a4-ebd7-4b6a-95af-d22811454840:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<M_Product> M_Product { get; set; }
     }
 }

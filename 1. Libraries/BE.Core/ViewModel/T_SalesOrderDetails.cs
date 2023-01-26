@@ -20,7 +20,7 @@ namespace BE.Core
         [NotMapped]
         public string ItemsName { get; set; }
         [NotMapped]
-        public string ItemsTypeName { get; set; }
+        public string CategoryName { get; set; }
         [NotMapped]
         public string UomName { get; set; }
     }
@@ -39,9 +39,9 @@ namespace BE.Core
         [Required(ErrorMessage = "{0} is required")]
         public int SlNo { get; set; }
 
-        [Display(Name= "ItemsId")]
+        [Display(Name= "ProductId")]
         [Required(ErrorMessage = "{0} is required")]
-        public Guid ItemsId { get; set; }
+        public Guid ProductId { get; set; }
 
         [Display(Name= "UomId")]
         [Required(ErrorMessage = "{0} is required")]
@@ -57,12 +57,10 @@ namespace BE.Core
 
         [Display(Name= "LatestPrice")]
         [Required(ErrorMessage = "{0} is required")]
-        [DisplayFormat(DataFormatString = "{0:#.##}", ApplyFormatInEditMode = true)]
         public decimal LatestPrice { get; set; }
 
         [Display(Name= "SellingPrice")]
         [Required(ErrorMessage = "{0} is required")]
-        [DisplayFormat(DataFormatString = "{0:#.##}", ApplyFormatInEditMode = true)]
         public decimal SellingPrice { get; set; }
 
         [Display(Name= "CreatedBy")]

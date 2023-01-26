@@ -15,13 +15,31 @@ namespace BE.Core
 {
     public partial class M_Product
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "a09f18f1-c099-4337-aba0-761e4c3862a5:DoNotCallOverridableMethodsInConstructors")]
+        public M_Product()
+        {
+           this.T_PurchaseOrderDetails = new HashSet<T_PurchaseOrderDetails>();
+           this.T_SalesOrderDetails = new HashSet<T_SalesOrderDetails>();
+        }
+
         [Key]
         public Guid Id { get; set; }
+        public Guid CompanyId { get; set; }
+        public Guid CategoryId { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
+        public string Remark { get; set; }
         public string CreatedBy { get; set; }
         public System.DateTime CreatedDate { get; set; }
         public string ModifyBy { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
 
+        [ForeignKey("CategoryId")]
+        public virtual M_Category M_Category { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "c3146cd8-99d7-4183-ac45-1fb844c97a2e:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<T_PurchaseOrderDetails> T_PurchaseOrderDetails { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "c3146cd8-99d7-4183-ac45-1fb844c97a2e:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<T_SalesOrderDetails> T_SalesOrderDetails { get; set; }
     }
 }

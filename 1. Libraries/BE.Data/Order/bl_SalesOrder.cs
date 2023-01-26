@@ -251,7 +251,7 @@ namespace BE.Data.Order
                     var vList = (from productDetail in _objUnitOfWork._T_SalesOrderDetails_Repository.Get()
                                  join SalesOrder in _objUnitOfWork._T_SalesOrder_Repository.Get() on productDetail.SalesOrderId equals SalesOrder.Id
 
-                                 join product in _objUnitOfWork._M_Items_Repository.Get() on productDetail.ItemsId equals product.Id
+                                 join product in _objUnitOfWork._M_Product_Repository.Get() on productDetail.ProductId equals product.Id
                                  join uom in _objUnitOfWork._M_UOM_Repository.Get() on productDetail.UomId equals uom.Id
 
                                  where productDetail.SalesOrderId == ObjSalesOrder.Id
@@ -261,7 +261,7 @@ namespace BE.Data.Order
                                      Id = productDetail.Id,
                                      SalesOrderId = SalesOrder.Id,
                                      SlNo = productDetail.SlNo,
-                                     ItemsId = productDetail.ItemsId,
+                                     ProductId = productDetail.ProductId,
                                      ItemsName = product.Name,
                                      UomId = productDetail.UomId,
                                      UomName = uom.Name,
@@ -308,9 +308,9 @@ namespace BE.Data.Order
                     var vQueryPurchaseOrder = _objUnitOfWork._T_PurchaseOrderDetails_Repository.Query();
                     //var vQuerySalesOrder = _objUnitOfWork._T_SalesOrderDetails_Repository.Query(); 
 
-                    //else if (!string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.ItemsId)))
+                    //else if (!string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.ProductId)))
                     //{
-                    //    vQuerySalesOrder = vQuerySalesOrder.Where(x => x.ItemsId == Objmodel.ItemsId);
+                    //    vQuerySalesOrder = vQuerySalesOrder.Where(x => x.ProductId == Objmodel.ProductId);
                     //}
 
                     var vTotalPurchaseOrderQuantity = vQueryPurchaseOrder.ToList().Sum(x => x.Quantity);
@@ -334,9 +334,9 @@ namespace BE.Data.Order
                 {
                     //var vQuery = _objUnitOfWork._T_PurchaseOrderDetails_Repository.Query();
 
-                    //else if (!string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.ItemsId)))
+                    //else if (!string.IsNullOrWhiteSpace(Convert.ToString(Objmodel.ProductId)))
                     //{
-                    //    vQuery = vQuery.Where(x => x.ItemsId == Objmodel.ItemsId);
+                    //    vQuery = vQuery.Where(x => x.ProductId == Objmodel.ProductId);
                     //}
                     //objPurchaseList = vQuery.ToList();
                 }

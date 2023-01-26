@@ -43,7 +43,7 @@ namespace BE.Core
         public string ChartTotalSaleAmount { get; set; }
         public string ChartTotalExpenseAmount { get; set; }
 
-        public List<M_Items> LowStockItemsList { get; set; }
+        public List<M_Product> LowStockItemsList { get; set; }
 
 
         public decimal TotalLoanAmount { get; set; }

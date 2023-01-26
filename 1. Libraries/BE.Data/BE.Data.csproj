@@ -53,7 +53,7 @@
     <Compile Include="Entity\bl_Entity.cs" />
     <Compile Include="Expense\bl_Expense.cs" />
     <Compile Include="Expense\bl_ExpenseType.cs" />
-    <Compile Include="ItemsType\bl_ItemsType.cs" />
+    <Compile Include="Category\bl_Category.cs" />
     <Compile Include="Items\bl_Items.cs" />
     <Compile Include="Loan\bl_Loan.cs" />
     <Compile Include="Order\bl_PurchaseOrder.cs" />

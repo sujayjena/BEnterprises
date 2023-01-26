@@ -354,9 +354,9 @@ namespace BE.Web.Controllers
             return View();
         }
 
-        public List<M_Items> GetStockItem()
+        public List<M_Product> GetStockItem()
         {
-            M_Items ObjItems = new M_Items();
+            M_Product ObjItems = new M_Product();
             var vObjList = _blItems.GetStockList(ObjItems).Where(x => x.StockQuantity < 5);
             return vObjList.ToList();
         }

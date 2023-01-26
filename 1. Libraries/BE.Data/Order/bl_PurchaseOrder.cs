@@ -258,7 +258,7 @@ namespace BE.Data.Order
                     var vList = (from productDetail in _objUnitOfWork._T_PurchaseOrderDetails_Repository.Get()
                                  join purchaseOrder in _objUnitOfWork._T_PurchaseOrder_Repository.Get() on productDetail.PurchaseOrderId equals purchaseOrder.Id
 
-                                 join product in _objUnitOfWork._M_Items_Repository.Get() on productDetail.ItemsId equals product.Id
+                                 join product in _objUnitOfWork._M_Product_Repository.Get() on productDetail.ProductId equals product.Id
                                  join uom in _objUnitOfWork._M_UOM_Repository.Get() on productDetail.UomId equals uom.Id
 
                                  where productDetail.PurchaseOrderId == ObjPurchaseOrder.Id
@@ -268,7 +268,7 @@ namespace BE.Data.Order
                                      Id = productDetail.Id,
                                      PurchaseOrderId = purchaseOrder.Id,
                                      SlNo = productDetail.SlNo,
-                                     ItemsId = productDetail.ItemsId,
+                                     ProductId = productDetail.ProductId,
                                      ItemsName = product.Name,
                                      UomId = productDetail.UomId,
                                      UomName = uom.Name,

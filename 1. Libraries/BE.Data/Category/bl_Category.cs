@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 using BE.Core;
 using BE.Services.UnitOfWork;
 
-namespace BE.Data.ItemsType
+namespace BE.Data.Category
 {
-    public class bl_ItemsType
+    public class bl_Category
     {
         public UnitOfWork _objUnitOfWork = new UnitOfWork();
 
-        public M_ItemsType Create(M_ItemsType ObjItemsType)
+        public M_Category Create(M_Category ObjCategory)
         {
             try
             {
                 using (_objUnitOfWork = new UnitOfWork())
                 {
-                    _objUnitOfWork._M_ItemsType_Repository.Insert(ObjItemsType);
+                    _objUnitOfWork._M_Category_Repository.Insert(ObjCategory);
                     _objUnitOfWork.Save();
                 }
             }
@@ -26,16 +26,16 @@ namespace BE.Data.ItemsType
             {
                 throw ex;
             }
-            return ObjItemsType;
+            return ObjCategory;
         }
 
-        public M_ItemsType Update(M_ItemsType ObjItemsType)
+        public M_Category Update(M_Category ObjCategory)
         {
             try
             {
                 using (_objUnitOfWork = new UnitOfWork())
                 {
-                    _objUnitOfWork._M_ItemsType_Repository.Update(ObjItemsType);
+                    _objUnitOfWork._M_Category_Repository.Update(ObjCategory);
                     _objUnitOfWork.Save();
                 }
             }
@@ -43,16 +43,16 @@ namespace BE.Data.ItemsType
             {
                 throw ex;
             }
-            return ObjItemsType;
+            return ObjCategory;
         }
 
-        public M_ItemsType Delete(M_ItemsType ObjItemsType)
+        public M_Category Delete(M_Category ObjCategory)
         {
             try
             {
                 using (_objUnitOfWork = new UnitOfWork())
                 {
-                    _objUnitOfWork._M_ItemsType_Repository.Delete(ObjItemsType.Id);
+                    _objUnitOfWork._M_Category_Repository.Delete(ObjCategory.Id);
                     _objUnitOfWork.Save();
                 }
             }
@@ -60,10 +60,10 @@ namespace BE.Data.ItemsType
             {
                 throw ex;
             }
-            return ObjItemsType;
+            return ObjCategory;
         }
 
-        public bool BulkDelete(List<M_ItemsType> objList)
+        public bool BulkDelete(List<M_Category> objList)
         {
             bool bSuccess = false;
             try
@@ -83,14 +83,14 @@ namespace BE.Data.ItemsType
             return bSuccess;
         }
 
-        public M_ItemsType GetFirstOrDefault(M_ItemsType ObjItemsType)
+        public M_Category GetFirstOrDefault(M_Category ObjCategory)
         {
-            var ReturnCompanyObj = new M_ItemsType();
+            var ReturnCompanyObj = new M_Category();
             try
             {
                 using (_objUnitOfWork = new UnitOfWork())
                 {
-                    ReturnCompanyObj = _objUnitOfWork._M_ItemsType_Repository.GetFirstOrDefault(x => x.Name == ObjItemsType.Name);
+                    ReturnCompanyObj = _objUnitOfWork._M_Category_Repository.GetFirstOrDefault(x => x.Name == ObjCategory.Name);
                 }
             }
             catch (Exception ex)
@@ -100,34 +100,34 @@ namespace BE.Data.ItemsType
             return ReturnCompanyObj;
         }
 
-        public M_ItemsType GetById(Guid UserId)
+        public M_Category GetById(Guid UserId)
         {
-            var ObjItemsType = new M_ItemsType();
+            var ObjCategory = new M_Category();
             try
             {
                 using (_objUnitOfWork = new UnitOfWork())
                 {
-                    ObjItemsType = _objUnitOfWork._M_ItemsType_Repository.GetById(UserId);
+                    ObjCategory = _objUnitOfWork._M_Category_Repository.GetById(UserId);
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return ObjItemsType;
+            return ObjCategory;
         }
 
-        public List<M_ItemsType> GetList(M_ItemsType ObjItemsType)
+        public List<M_Category> GetList(M_Category ObjCategory)
         {
-            var ObjList = new List<M_ItemsType>();
+            var ObjList = new List<M_Category>();
             try
             {
                 using (_objUnitOfWork = new UnitOfWork())
                 {
-                    var queryObjList = _objUnitOfWork._M_ItemsType_Repository.Query();
-                    if (!string.IsNullOrWhiteSpace(ObjItemsType.Name))
+                    var queryObjList = _objUnitOfWork._M_Category_Repository.Query();
+                    if (!string.IsNullOrWhiteSpace(ObjCategory.Name))
                     {
-                        queryObjList = queryObjList.Where(x => x.Name.Contains(ObjItemsType.Name));
+                        queryObjList = queryObjList.Where(x => x.Name.Contains(ObjCategory.Name));
                     }
                     ObjList = queryObjList.OrderBy(x => x.Name).ToList();
                 }

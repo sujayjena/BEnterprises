@@ -9,7 +9,7 @@ using BE.Data.Items;
 namespace BE.Web.Controllers
 {
     [CustomAuthentication]
-    public class ItemsController : Controller
+    public class ProductController : Controller
     {
         protected readonly bl_Items _blItems = new bl_Items();
         protected readonly CustomAuthentication _objAuthentication = new CustomAuthentication();
@@ -17,21 +17,21 @@ namespace BE.Web.Controllers
         // GET: Items
         public ActionResult Index()
         {
-            var vItemsTypeList = _blItems.GetItemsTypeList().Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
-            ViewBag.ItemsTypeList = vItemsTypeList;
+            var vCategoryList = _blItems.GetCategoryList().Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
+            ViewBag.CategoryList = vCategoryList;
             return View();
         }
 
         [HttpGet]
         public ActionResult Create()
         {
-            var vItemsTypeList = _blItems.GetItemsTypeList().Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
-            ViewBag.ItemsTypeList = vItemsTypeList;
+            var vCategoryList = _blItems.GetCategoryList().Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
+            ViewBag.CategoryList = vCategoryList;
             return View();
         }
 
         [HttpPost]
-        public ActionResult Create(M_Items ObjItems)
+        public ActionResult Create(M_Product ObjItems)
         {
             try
             {
@@ -46,15 +46,15 @@ namespace BE.Web.Controllers
                     }
                     if (bAnyError == false)
                     {
-                        M_Items _Obj_M_Items = new M_Items()
+                        M_Product _Obj_M_Product = new M_Product()
                         {
                             Id = Guid.NewGuid(),
-                            ItemsTypeId = ObjItems.ItemsTypeId,
+                            CategoryId = ObjItems.CategoryId,
                             Name = ObjItems.Name,
                             CreatedBy = _objAuthentication.UserName,
                             CreatedDate = DateTime.Now
                         };
-                        var vReturnObj = _blItems.Create(_Obj_M_Items);
+                        var vReturnObj = _blItems.Create(_Obj_M_Product);
                     }
                 }
                 else
@@ -64,8 +64,8 @@ namespace BE.Web.Controllers
 
                 if (bAnyError)
                 {
-                    var vItemsTypeList = _blItems.GetItemsTypeList().Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
-                    ViewBag.ItemsTypeList = vItemsTypeList;
+                    var vCategoryList = _blItems.GetCategoryList().Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
+                    ViewBag.CategoryList = vCategoryList;
                     return View(ObjItems);
                 }
                 return RedirectToAction("Index", "Items");
@@ -79,7 +79,7 @@ namespace BE.Web.Controllers
         [HttpGet]
         public ActionResult Edit(string Id)
         {
-            M_Items vModel = new M_Items();
+            M_Product vModel = new M_Product();
             if (!string.IsNullOrWhiteSpace(Id))
             {
                 var vDetails = _blItems.GetById(new Guid(Id));
@@ -87,17 +87,17 @@ namespace BE.Web.Controllers
                 {
                     vModel.Id = vDetails.Id;
                     vModel.Name = vDetails.Name;
-                    vModel.ItemsTypeId = vDetails.ItemsTypeId;
+                    vModel.CategoryId = vDetails.CategoryId;
                 }
             }
-            var vItemsTypeList = _blItems.GetItemsTypeList().Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
-            ViewBag.ItemsTypeList = vItemsTypeList;
+            var vCategoryList = _blItems.GetCategoryList().Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
+            ViewBag.CategoryList = vCategoryList;
 
             return View(vModel);
         }
 
         [HttpPost]
-        public ActionResult Edit(M_Items ObjItems)
+        public ActionResult Edit(M_Product ObjItems)
         {
             try
             {
@@ -108,7 +108,7 @@ namespace BE.Web.Controllers
                         var vObj = _blItems.GetById(ObjItems.Id);
                         if (vObj != null)
                         {
-                            vObj.ItemsTypeId = ObjItems.ItemsTypeId;
+                            vObj.CategoryId = ObjItems.CategoryId;
                             vObj.Name = ObjItems.Name;
                             vObj.ModifyDate = DateTime.Now;
                             vObj.ModifyBy = _objAuthentication.UserName;
@@ -125,7 +125,7 @@ namespace BE.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(M_Items ObjItems)
+        public ActionResult Delete(M_Product ObjItems)
         {
             try
             {
@@ -146,7 +146,7 @@ namespace BE.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult BulkDelete(List<M_Items> DeletedRecord)
+        public ActionResult BulkDelete(List<M_Product> DeletedRecord)
         {
             try
             {
@@ -167,12 +167,12 @@ namespace BE.Web.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetList(M_Items ObjItems)
+        public JsonResult GetList(M_Product ObjItems)
         {
-            List<M_Items> ObjList = new List<M_Items>();
+            List<M_Product> ObjList = new List<M_Product>();
             try
             {
-                ObjList = _blItems.GetList(ObjItems).OrderBy(x=>x.ItemsTypeName).ToList();
+                ObjList = _blItems.GetList(ObjItems).OrderBy(x=>x.CategoryName).ToList();
             }
             catch (Exception ex)
             {

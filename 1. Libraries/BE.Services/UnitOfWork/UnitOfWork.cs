@@ -44,6 +44,12 @@ namespace BE.Services.UnitOfWork
         }
 
 
+        public IGenericRepository<M_Category> M_Category_Repository { get; set; }
+        public IGenericRepository<M_Category> _M_Category_Repository
+        {
+            get { return M_Category_Repository ?? (M_Category_Repository= new GenericRepository<M_Category>(_context)); }
+            set { _M_Category_Repository = value; }
+        }
         public IGenericRepository<M_Company> M_Company_Repository { get; set; }
         public IGenericRepository<M_Company> _M_Company_Repository
         {
@@ -55,18 +61,6 @@ namespace BE.Services.UnitOfWork
         {
             get { return M_ExpenseType_Repository ?? (M_ExpenseType_Repository= new GenericRepository<M_ExpenseType>(_context)); }
             set { _M_ExpenseType_Repository = value; }
-        }
-        public IGenericRepository<M_Items> M_Items_Repository { get; set; }
-        public IGenericRepository<M_Items> _M_Items_Repository
-        {
-            get { return M_Items_Repository ?? (M_Items_Repository= new GenericRepository<M_Items>(_context)); }
-            set { _M_Items_Repository = value; }
-        }
-        public IGenericRepository<M_ItemsType> M_ItemsType_Repository { get; set; }
-        public IGenericRepository<M_ItemsType> _M_ItemsType_Repository
-        {
-            get { return M_ItemsType_Repository ?? (M_ItemsType_Repository= new GenericRepository<M_ItemsType>(_context)); }
-            set { _M_ItemsType_Repository = value; }
         }
         public IGenericRepository<M_Product> M_Product_Repository { get; set; }
         public IGenericRepository<M_Product> _M_Product_Repository

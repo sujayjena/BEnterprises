@@ -9,12 +9,23 @@
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BE.Core
 {
     [MetadataType(typeof(M_Product_MetaData))]
     public partial class M_Product
     {
+        [NotMapped]
+        public string CategoryName { get; set; }
+        [NotMapped]
+        public string UomName { get; set; }
+        [NotMapped]
+        public decimal PurchaseQuantity { get; set; }
+        [NotMapped]
+        public decimal SalesQuantity { get; set; }
+        [NotMapped]
+        public decimal StockQuantity { get; set; }
     }
 
     public class M_Product_MetaData

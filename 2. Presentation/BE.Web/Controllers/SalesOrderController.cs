@@ -1,6 +1,6 @@
 ﻿using BE.Core;
 using BE.Data.Items;
-using BE.Data.ItemsType;
+using BE.Data.Category;
 using BE.Data.Order;
 using BE.Data.Supplier;
 using BE.Data.UOM;
@@ -20,7 +20,7 @@ namespace BE.Web.Controllers
         protected readonly bl_SalesOrder _blSalesOrder = new bl_SalesOrder();
         protected readonly bl_Supplier _blSupplier = new bl_Supplier();
         protected readonly bl_Items _blItems = new bl_Items();
-        protected readonly bl_ItemsType _blItemsType = new bl_ItemsType();
+        protected readonly bl_Category _blCategory = new bl_Category();
         protected readonly bl_Uom _blUOM = new bl_Uom();
         //protected readonly bl_PurchaseOrder _blPurchaseOrder = new bl_PurchaseOrder();
         T_SalesOrder model = new T_SalesOrder();
@@ -109,7 +109,7 @@ namespace BE.Web.Controllers
                 }
             }
 
-            M_Items ObjItemsModel = new M_Items();
+            M_Product ObjItemsModel = new M_Product();
             model.ItemsList = _blItems.GetList(ObjItemsModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).OrderBy(x => x.Text).ToList();
             model.ItemsList.Insert(0, new SelectListItem() { Text = "Select", Value = "0", Selected = true });
 
@@ -219,7 +219,7 @@ namespace BE.Web.Controllers
                     {
                         Guid guidId = Guid.NewGuid();
                         Guid guidSalesOrderId = Guid.Parse(Convert.ToString(ObjModel.SalesOrderId));
-                        Guid guidItemsId = Guid.Parse(Convert.ToString(ObjModel.ItemsId));
+                        Guid guidProductId = Guid.Parse(Convert.ToString(ObjModel.ProductId));
                         Guid guidUomId = Guid.Parse(Convert.ToString(ObjModel.UomId));
 
                         T_SalesOrderDetails _Obj_T_SalesOrder = new T_SalesOrderDetails()
@@ -227,7 +227,7 @@ namespace BE.Web.Controllers
                             Id = guidId,
                             SalesOrderId = guidSalesOrderId,
                             SlNo = ObjModel.SlNo,
-                            ItemsId = guidItemsId,
+                            ProductId = guidProductId,
                             UomId = guidUomId,
                             StockQuantity = ObjModel.StockQuantity,
                             Quantity = ObjModel.Quantity,
@@ -244,10 +244,10 @@ namespace BE.Web.Controllers
                     {
                         Guid guidId = Guid.Parse(Convert.ToString(ObjModel.Id));
                         Guid guidSalesOrderId = Guid.Parse(Convert.ToString(ObjModel.SalesOrderId));
-                        Guid guidItemsId = Guid.Parse(Convert.ToString(ObjModel.ItemsId));
+                        Guid guidProductId = Guid.Parse(Convert.ToString(ObjModel.ProductId));
                         Guid guidUomId = Guid.Parse(Convert.ToString(ObjModel.UomId));
 
-                        vObjExists.ItemsId = guidItemsId;
+                        vObjExists.ProductId = guidProductId;
                         vObjExists.UomId = guidUomId;
                         vObjExists.Quantity = ObjModel.Quantity;
                         vObjExists.StockQuantity = ObjModel.StockQuantity;
@@ -407,16 +407,16 @@ namespace BE.Web.Controllers
         [HttpGet]
         public ActionResult ProductList()
         {
-            M_Items objModel = new M_Items();
+            M_Product objModel = new M_Product();
             var vlist = _blItems.GetList(objModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
             return Json(vlist, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
-        public ActionResult ItemsTypeList()
+        public ActionResult CategoryList()
         {
-            M_ItemsType objModel = new M_ItemsType();
-            var vlist = _blItemsType.GetList(objModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
+            M_Category objModel = new M_Category();
+            var vlist = _blCategory.GetList(objModel).Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
             return Json(vlist, JsonRequestBehavior.AllowGet);
         }
 

@@ -20,9 +20,7 @@ namespace BE.Core
         [NotMapped]
         public string ItemsName { get; set; }
         [NotMapped]
-        public string BrandName { get; set; }
-        [NotMapped]
-        public string ItemsTypeName { get; set; }
+        public string CategoryName { get; set; }
         [NotMapped]
         public string GuageName { get; set; }
         [NotMapped]
@@ -43,9 +41,9 @@ namespace BE.Core
         [Required(ErrorMessage = "{0} is required")]
         public int SlNo { get; set; }
 
-        [Display(Name= "ItemsId")]
+        [Display(Name= "ProductId")]
         [Required(ErrorMessage = "{0} is required")]
-        public Guid ItemsId { get; set; }
+        public Guid ProductId { get; set; }
 
         [Display(Name= "UomId")]
         [Required(ErrorMessage = "{0} is required")]
@@ -57,27 +55,22 @@ namespace BE.Core
 
         [Display(Name= "BuyingRate")]
         [Required(ErrorMessage = "{0} is required")]
-        [DisplayFormat(DataFormatString = "{0:#.##}", ApplyFormatInEditMode = true)]
         public decimal BuyingRate { get; set; }
 
         [Display(Name= "BuyingPrice")]
         [Required(ErrorMessage = "{0} is required")]
-        [DisplayFormat(DataFormatString = "{0:#.##}", ApplyFormatInEditMode = true)]
         public decimal BuyingPrice { get; set; }
 
         [Display(Name= "SellingRate")]
         [Required(ErrorMessage = "{0} is required")]
-        [DisplayFormat(DataFormatString = "{0:#.##}", ApplyFormatInEditMode = true)]
         public decimal SellingRate { get; set; }
 
         [Display(Name= "SellingPrice")]
         [Required(ErrorMessage = "{0} is required")]
-        [DisplayFormat(DataFormatString = "{0:#.##}", ApplyFormatInEditMode = true)]
         public decimal SellingPrice { get; set; }
 
         [Display(Name= "DifferenceAmount")]
         [Required(ErrorMessage = "{0} is required")]
-        [DisplayFormat(DataFormatString = "{0:#.##}", ApplyFormatInEditMode = true)]
         public decimal DifferenceAmount { get; set; }
 
         [Display(Name= "Remark")]

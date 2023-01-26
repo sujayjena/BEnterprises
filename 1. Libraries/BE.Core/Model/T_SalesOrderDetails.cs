@@ -19,7 +19,7 @@ namespace BE.Core
         public Guid Id { get; set; }
         public Guid SalesOrderId { get; set; }
         public int SlNo { get; set; }
-        public Guid ItemsId { get; set; }
+        public Guid ProductId { get; set; }
         public Guid UomId { get; set; }
         public decimal StockQuantity { get; set; }
         public decimal Quantity { get; set; }
@@ -30,8 +30,8 @@ namespace BE.Core
         public string ModifyBy { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
 
-        [ForeignKey("ItemsId")]
-        public virtual M_Items M_Items { get; set; }
+        [ForeignKey("ProductId")]
+        public virtual M_Product M_Product { get; set; }
         [ForeignKey("UomId")]
         public virtual M_UOM M_UOM { get; set; }
         [ForeignKey("SalesOrderId")]

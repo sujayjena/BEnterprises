@@ -16,18 +16,18 @@ namespace BE.Web.Controllers
         // GET: Stock
         public ActionResult Index()
         {
-            var vItemsTypeList = _blItems.GetItemsTypeList().Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
-            ViewBag.ItemsTypeList = vItemsTypeList;
+            var vCategoryList = _blItems.GetCategoryList().Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
+            ViewBag.CategoryList = vCategoryList;
             return View();
         }
 
         [HttpPost]
-        public ActionResult GetStockList(M_Items ObjItems)
+        public ActionResult GetStockList(M_Product ObjItems)
         {
-            List<M_Items> ObjList = new List<M_Items>();
+            List<M_Product> ObjList = new List<M_Product>();
             try
             {
-                ObjList = _blItems.GetStockList(ObjItems).OrderBy(x => x.ItemsTypeName).ToList();
+                ObjList = _blItems.GetStockList(ObjItems).OrderBy(x => x.CategoryName).ToList();
             }
             catch (Exception ex)
             {

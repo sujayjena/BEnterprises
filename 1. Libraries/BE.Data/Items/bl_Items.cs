@@ -10,13 +10,13 @@ namespace BE.Data.Items
     {
         public UnitOfWork _objUnitOfWork = new UnitOfWork();
 
-        public M_Items Create(M_Items ObjItems)
+        public M_Product Create(M_Product ObjItems)
         {
             try
             {
                 using (_objUnitOfWork = new UnitOfWork())
                 {
-                    _objUnitOfWork._M_Items_Repository.Insert(ObjItems);
+                    _objUnitOfWork._M_Product_Repository.Insert(ObjItems);
                     _objUnitOfWork.Save();
                 }
             }
@@ -27,13 +27,13 @@ namespace BE.Data.Items
             return ObjItems;
         }
 
-        public M_Items Update(M_Items ObjItems)
+        public M_Product Update(M_Product ObjItems)
         {
             try
             {
                 using (_objUnitOfWork = new UnitOfWork())
                 {
-                    _objUnitOfWork._M_Items_Repository.Update(ObjItems);
+                    _objUnitOfWork._M_Product_Repository.Update(ObjItems);
                     _objUnitOfWork.Save();
                 }
             }
@@ -44,13 +44,13 @@ namespace BE.Data.Items
             return ObjItems;
         }
 
-        public M_Items Delete(M_Items ObjItems)
+        public M_Product Delete(M_Product ObjItems)
         {
             try
             {
                 using (_objUnitOfWork = new UnitOfWork())
                 {
-                    _objUnitOfWork._M_Items_Repository.Delete(ObjItems.Id);
+                    _objUnitOfWork._M_Product_Repository.Delete(ObjItems.Id);
                     _objUnitOfWork.Save();
                 }
             }
@@ -61,7 +61,7 @@ namespace BE.Data.Items
             return ObjItems;
         }
 
-        public bool BulkDelete(List<M_Items> objList)
+        public bool BulkDelete(List<M_Product> objList)
         {
             bool bSuccess = false;
             try
@@ -81,14 +81,14 @@ namespace BE.Data.Items
             return bSuccess;
         }
 
-        public M_Items GetFirstOrDefault(M_Items ObjItems)
+        public M_Product GetFirstOrDefault(M_Product ObjItems)
         {
-            var ReturnCompanyObj = new M_Items();
+            var ReturnCompanyObj = new M_Product();
             try
             {
                 using (_objUnitOfWork = new UnitOfWork())
                 {
-                    ReturnCompanyObj = _objUnitOfWork._M_Items_Repository.GetFirstOrDefault(x => x.Name == ObjItems.Name && x.ItemsTypeId == ObjItems.ItemsTypeId);
+                    ReturnCompanyObj = _objUnitOfWork._M_Product_Repository.GetFirstOrDefault(x => x.Name == ObjItems.Name && x.CategoryId == ObjItems.CategoryId);
                 }
             }
             catch (Exception ex)
@@ -98,14 +98,14 @@ namespace BE.Data.Items
             return ReturnCompanyObj;
         }
 
-        public M_Items GetById(Guid UserId)
+        public M_Product GetById(Guid UserId)
         {
-            var ObjItems = new M_Items();
+            var ObjItems = new M_Product();
             try
             {
                 using (_objUnitOfWork = new UnitOfWork())
                 {
-                    ObjItems = _objUnitOfWork._M_Items_Repository.GetById(UserId);
+                    ObjItems = _objUnitOfWork._M_Product_Repository.GetById(UserId);
                 }
             }
             catch (Exception ex)
@@ -115,34 +115,34 @@ namespace BE.Data.Items
             return ObjItems;
         }
 
-        public List<M_Items> GetList(M_Items ObjItems)
+        public List<M_Product> GetList(M_Product ObjItems)
         {
-            var ObjList = new List<M_Items>();
+            var ObjList = new List<M_Product>();
             try
             {
                 using (_objUnitOfWork = new UnitOfWork())
                 {
-                    var queryObjList = _objUnitOfWork._M_Items_Repository.Query();
-                    var queryItemsType = _objUnitOfWork._M_ItemsType_Repository.Query();
+                    var queryObjList = _objUnitOfWork._M_Product_Repository.Query();
+                    var queryCategory = _objUnitOfWork._M_Category_Repository.Query();
 
                     if (!string.IsNullOrWhiteSpace(ObjItems.Name))
                     {
                         queryObjList = queryObjList.Where(x => x.Name.Contains(ObjItems.Name));
                     }
-                    if (!string.IsNullOrWhiteSpace(ObjItems.ItemsTypeId.ToString()) && ObjItems.ItemsTypeId.ToString() != "00000000-0000-0000-0000-000000000000")
+                    if (!string.IsNullOrWhiteSpace(ObjItems.CategoryId.ToString()) && ObjItems.CategoryId.ToString() != "00000000-0000-0000-0000-000000000000")
                     {
-                        queryObjList = queryObjList.Where(x => x.ItemsTypeId == ObjItems.ItemsTypeId);
+                        queryObjList = queryObjList.Where(x => x.CategoryId == ObjItems.CategoryId);
                     }
 
                     queryObjList = queryObjList.OrderBy(x => x.Name);
 
-                    var vQuery = queryObjList.Join(queryItemsType, item => item.ItemsTypeId, itemType => itemType.Id, (item, itemType) => new { item, itemType }).ToList();
+                    var vQuery = queryObjList.Join(queryCategory, item => item.CategoryId, itemType => itemType.Id, (item, itemType) => new { item, itemType }).ToList();
 
-                    ObjList = vQuery.Select(x => new M_Items
+                    ObjList = vQuery.Select(x => new M_Product
                     {
                         Id = x.item.Id,
-                        ItemsTypeId = x.item.ItemsTypeId,
-                        ItemsTypeName = x.itemType.Name,
+                        CategoryId = x.item.CategoryId,
+                        CategoryName = x.itemType.Name,
                         Name = x.item.Name,
                         CreatedDate=x.item.CreatedDate
                     }).ToList();
@@ -155,14 +155,14 @@ namespace BE.Data.Items
             return ObjList;
         }
 
-        public List<M_ItemsType> GetItemsTypeList()
+        public List<M_Category> GetCategoryList()
         {
-            var ObjList = new List<M_ItemsType>();
+            var ObjList = new List<M_Category>();
             try
             {
                 using (_objUnitOfWork = new UnitOfWork())
                 {
-                    ObjList = _objUnitOfWork._M_ItemsType_Repository.Get().OrderBy(x => x.Name).ToList();
+                    ObjList = _objUnitOfWork._M_Category_Repository.Get().OrderBy(x => x.Name).ToList();
                 }
             }
             catch (Exception ex)
@@ -172,13 +172,13 @@ namespace BE.Data.Items
             return ObjList;
         }
 
-        public List<M_Items> GetStockList(M_Items ObjItems)
+        public List<M_Product> GetStockList(M_Product ObjItems)
         {
-            List<M_Items> objList = new List<M_Items>();
+            List<M_Product> objList = new List<M_Product>();
             try
             {
-                var queryItem = _objUnitOfWork._M_Items_Repository.Query();
-                var queryItemType = _objUnitOfWork._M_ItemsType_Repository.Query();
+                var queryItem = _objUnitOfWork._M_Product_Repository.Query();
+                var queryItemType = _objUnitOfWork._M_Category_Repository.Query();
                 var queryPurchaseOrderDetails = _objUnitOfWork._T_PurchaseOrderDetails_Repository.Query();
                 var querySalesOrderDetails = _objUnitOfWork._T_SalesOrderDetails_Repository.Query();
                 var queryUom = _objUnitOfWork._M_UOM_Repository.Query();
@@ -187,15 +187,15 @@ namespace BE.Data.Items
                 {
                     queryItem = queryItem.Where(x => x.Name.Contains(ObjItems.Name));
                 }
-                if (!string.IsNullOrWhiteSpace(ObjItems.ItemsTypeId.ToString()) && ObjItems.ItemsTypeId.ToString() != "00000000-0000-0000-0000-000000000000")
+                if (!string.IsNullOrWhiteSpace(ObjItems.CategoryId.ToString()) && ObjItems.CategoryId.ToString() != "00000000-0000-0000-0000-000000000000")
                 {
-                    queryItem = queryItem.Where(x => x.ItemsTypeId == ObjItems.ItemsTypeId);
+                    queryItem = queryItem.Where(x => x.CategoryId == ObjItems.CategoryId);
                 }
 
                 var vObjQuery = from i in queryItem
 
-                                join it in queryItemType on i.ItemsTypeId equals it.Id
-                                join p in queryPurchaseOrderDetails on i.Id equals p.ItemsId into ip
+                                join it in queryItemType on i.CategoryId equals it.Id
+                                join p in queryPurchaseOrderDetails on i.Id equals p.ProductId into ip
                                 from ipj in ip.DefaultIfEmpty()
                                 join u in queryUom on ipj.UomId equals u.Id into iu
                                 from iuj in iu.DefaultIfEmpty()
@@ -206,15 +206,15 @@ namespace BE.Data.Items
                                     itemTypeName = it.Name,
                                     uomName = iuj.Name,
                                     purchaseQuantity = ipj.Quantity != null ? ipj.Quantity : 0,
-                                    salesQuantity = (querySalesOrderDetails.Where(x => x.ItemsId == i.Id)).ToList().Count > 0 ? querySalesOrderDetails.Where(x => x.ItemsId == i.Id).ToList().Sum(c => c.Quantity) : 0,
+                                    salesQuantity = (querySalesOrderDetails.Where(x => x.ProductId == i.Id)).ToList().Count > 0 ? querySalesOrderDetails.Where(x => x.ProductId == i.Id).ToList().Sum(c => c.Quantity) : 0,
                                     createDate=i.CreatedDate
                                 };
 
-                objList = vObjQuery.ToList().Select(x => new M_Items()
+                objList = vObjQuery.ToList().Select(x => new M_Product()
                 {
                     Id = x.itemId,
                     Name = x.itemName,
-                    ItemsTypeName = x.itemTypeName,
+                    CategoryName = x.itemTypeName,
                     UomName = x.uomName,
                     PurchaseQuantity = x.purchaseQuantity,
                     SalesQuantity = x.salesQuantity,

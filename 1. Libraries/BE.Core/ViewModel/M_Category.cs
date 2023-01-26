@@ -14,16 +14,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BE.Core
 {
-    [MetadataType(typeof(M_ItemsType_MetaData))]
-    public partial class M_ItemsType
+    [MetadataType(typeof(M_Category_MetaData))]
+    public partial class M_Category
     {
     }
 
-    public class M_ItemsType_MetaData
+    public class M_Category_MetaData
     {
         [Display(Name= "Id")]
         [Required(ErrorMessage = "{0} is required")]
         public Guid Id { get; set; }
+
+        [Display(Name= "CompanyId")]
+        [Required(ErrorMessage = "{0} is required")]
+        public Guid CompanyId { get; set; }
 
         [Display(Name= "Name")]
         [Required(ErrorMessage = "{0} is required")]

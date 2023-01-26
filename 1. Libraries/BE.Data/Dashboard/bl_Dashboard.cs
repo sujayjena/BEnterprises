@@ -11,12 +11,12 @@ namespace BE.Data.Dashboard
         public UnitOfWork _objUnitOfWork = new UnitOfWork();
 
 
-        public List<M_Items> GetItems()
+        public List<M_Product> GetItems()
         {
-            List<M_Items> objList = new List<M_Items>();
+            List<M_Product> objList = new List<M_Product>();
             try
             {
-                objList = _objUnitOfWork._M_Items_Repository.Get();
+                objList = _objUnitOfWork._M_Product_Repository.Get();
             }
             catch (Exception ex)
             {
@@ -129,15 +129,15 @@ namespace BE.Data.Dashboard
                     var querySalesOrder = _objUnitOfWork._T_SalesOrder_Repository.Query();
 
                     var vquery = (from p in queryPurchaseOrderDetails
-                                  join s in querySalesOrderDetails on p.ItemsId equals s.ItemsId
+                                  join s in querySalesOrderDetails on p.ProductId equals s.ProductId
                                   join so in querySalesOrder on s.SalesOrderId equals so.Id
                                   select new
                                   {
-                                      purchaseItemId = p.ItemsId,
+                                      purchaseItemId = p.ProductId,
                                       purchaseBuyingRate = p.BuyingRate,
                                       purchaseQuantity = p.Quantity,
 
-                                      salesItemId = s.ItemsId,
+                                      salesItemId = s.ProductId,
                                       salesBuyingRate = s.SellingPrice,
                                       salesQuantity = s.Quantity,
                                       salesEventDate = so.EventDate
